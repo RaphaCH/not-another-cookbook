@@ -17,15 +17,20 @@ const puppeteer = require("puppeteer");
             );
             let pageLinks = []
             for (let k = cardSelector; k < (cardSelector + 8); k++) {
-                if(r===1){
-                    const myParent = await page.$$(`.web-1nlafhw:nth-child(${k})`)
-                    const link = await myParent[0].$eval('a', element => element.href)
-                    pageLinks.push(link)
-                }else{
-                    const myParent = await page.$$(`div:nth-child(${k})`)
-                    const link = await myParent[0].$eval('a', element => element.href)
-                    pageLinks.push(link)
+                try {
+                    if(r===1){
+                        const myParent = await page.$$(`.web-1nlafhw:nth-child(${k})`)
+                        const link = await myParent[0].$eval('a', element => element.href)
+                        pageLinks.push(link)
+                    }else{
+                        const myParent = await page.$$(`div:nth-child(${k})`)
+                        const link = await myParent[0].$eval('a', element => element.href)
+                        pageLinks.push(link)
+                    }
+                } catch (error) {
+                    
                 }
+              
                
             }
             linksPerPages.push(pageLinks)
@@ -125,3 +130,4 @@ const puppeteer = require("puppeteer");
 
 
     })()
+
