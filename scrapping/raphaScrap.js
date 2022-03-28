@@ -123,6 +123,8 @@ scrapUrls(baseUrl)
   let nutriString = nutriArray.toString();
 */
 
+module.exports = scrapUrls;
+
 
 
 
