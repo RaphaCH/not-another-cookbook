@@ -1,0 +1,22 @@
+{
+  "name": "not-another-cookbook",
+  "version": "1.0.0",
+  "description": "dev of the app with the same name(at least for now)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaphaCH/not-another-cookbook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaphaCH/not-another-cookbook/issues"
+  },
+  "homepage": "https://github.com/RaphaCH/not-another-cookbook#readme",
+  "dependencies": {
+    "puppeteer": "^13.5.1"
+  }
+}
