@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 
-(async () => {
+
+const scrapLaurent = async() =>{
     const browser = await puppeteer.launch({
         headless: false,
         defaultViewport: false,
@@ -127,7 +128,10 @@ const puppeteer = require("puppeteer");
     
         */
 
+}
+
+module.exports = scrapLaurent;
 
 
-    })()
+    
 
