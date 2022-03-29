@@ -65,17 +65,17 @@ const scrapeURLsFromOnePage = async (url) => {
 
 //Function to scrap the content from each recipe url
 const scrapContentFromUrls = async (urls) => {
-
+  console.log('First Stage, total time 30min scrapping or more...')
   let recipeData = [];
 
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     defaultViewport: false,
   });
   const page = await browser.newPage();
 
   for (let i = 0; i < urls.length; i++) {
-    recipe = {};
+    let recipe = {};
     await page.goto(urls[i]);
     await page.waitForTimeout(1000);
 
@@ -134,12 +134,19 @@ const scrapContentFromUrls = async (urls) => {
     } catch (error) {}
 
     recipeData.push(recipe);
+    console.clear()
+    console.log('recipe:'+recipe.title)
+    
   }
   console.log(recipeData);
+  fs.writeFileSync("recipeDataScraped.json", JSON.stringify(recipeData))
+
+
+  
   await browser.close();
 };
 
 //Calling the function to scrape 400 recipes (array has 472 items, but if it exceeds a certain amount of time, it crashes)
-scrapContentFromUrls(recipes.slice(0, 400));
+// scrapContentFromUrls(recipes.slice(0, 400));
 
 module.exports = scrapContentFromUrls;
