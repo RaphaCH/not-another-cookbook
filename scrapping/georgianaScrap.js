@@ -24,7 +24,7 @@ const baseurls = [
 let finalURLs2 = [];
 
 
-//This was the function to scrape all the urls from the baseurl and then save it in a JSON file
+//This was the function to scrape all the urls from the baseurl and then save it in a JSON file (won't be called again as all the links have already been saved in a JSON)
 const scrapeURLsFromOnePage = async (url) => {
   const browser = await puppeteer.launch({
     headless: true,
@@ -39,7 +39,6 @@ const scrapeURLsFromOnePage = async (url) => {
   const recipeParent = await page.$$(".card__titleLink");
 
   //Looping through the children to get all the URLs and push the data in the empty array
-
   for (const recipe of recipeParent) {
     const urls = await page.evaluate((el) => el.href, recipe);
     scrapingUrls.push(urls);
@@ -55,7 +54,7 @@ const scrapeURLsFromOnePage = async (url) => {
   await browser.close();
 };
 
-
+//(the urls are saved aleady in a JSON file so this next function won't be called again)
 // const loopThroughArray = async () => {
 //   for (const link of baseurls){
 //   await scrapeURLsFromOnePage(link)
@@ -63,8 +62,10 @@ const scrapeURLsFromOnePage = async (url) => {
 // fs.writeFileSync("recipeData.json", JSON.stringify(finalURLs2))  -> Saving the urls in the JSON so I don't scrape them each time
 // }
 
+
+//Function to scrap the content from each recipe url
 const scrapContentFromUrls = async (urls) => {
-  //Creating empty array to push all the data that we are going to scrape
+
   let recipeData = [];
 
   const browser = await puppeteer.launch({
@@ -138,7 +139,7 @@ const scrapContentFromUrls = async (urls) => {
   await browser.close();
 };
 
-//Calling the function to scrape 100 recipes, the limit needs to be tested (the array has almost 300 but it crashed with all of them)
-scrapContentFromUrls(recipes.slice(0, 100));
+//Calling the function to scrape 400 recipes (array has 472 items, but if it exceeds a certain amount of time, it crashes)
+scrapContentFromUrls(recipes.slice(0, 400));
 
 module.exports = scrapContentFromUrls;
