@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const fs = require("fs");
 
 baseUrl = 'https://www.bbcgoodfood.com/recipes/collection/easy-recipes'
 
@@ -105,6 +106,7 @@ const scrapContent = async (urls) => {
     }
     await browser.close()
     console.log(recipesData)
+    fs.writeFileSync("recipeDataScraped.json", JSON.stringify(recipesData))
   } catch (error) {
     console.log(error)
     await browser.close()

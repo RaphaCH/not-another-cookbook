@@ -97,13 +97,13 @@ const laurentScrap = async() =>{
                     
                     recipeAdded+= 1;
                     console.clear()
-                    console.log("recipeAdded: "+recipeAdded)
+                    console.log("recipeAdded: "+recipeAdded+ " +/- 110")
 
 
             }
         }
             console.log(arrayStoredRecipes[3].myRecipeObj + "  "+ arrayStoredRecipes[4].myRecipeObj) 
-            fs.writeFileSync("recipeData.json", JSON.stringify(arrayStoredRecipes))
+            fs.writeFileSync("recipeDataScraped.json", JSON.stringify(arrayStoredRecipes))
             await browser.close();
 
 
