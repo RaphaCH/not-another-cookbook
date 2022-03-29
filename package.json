@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RaphaCH/not-another-cookbook#readme",
   "dependencies": {
-    "puppeteer": "^13.5.1"
+    "puppeteer": "^13.5.1",
+    "fs": "^0.0.1-security"
   }
 }
