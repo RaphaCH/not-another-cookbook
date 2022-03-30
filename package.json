@@ -2,9 +2,10 @@
   "name": "not-another-cookbook",
   "version": "1.0.0",
   "description": "dev of the app with the same name(at least for now)",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,8 @@
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "puppeteer": "^13.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

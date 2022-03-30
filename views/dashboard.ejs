@@ -1,0 +1,86 @@
+<div class="search_container">
+  <input type="text" id="search_bar">
+  <div class="suggestions">
+
+  </div>
+</div>
+<% if(!user.profile){ %>
+  <h2>Create a profile</h2>
+  <form action="/profiles/new" method="POST">
+    <label>Username</label>
+    <input type="text" name="username">
+    <label for="favorite_animal">Favorite Animal</label>
+    <input type="text" name="favorite_animal">
+    <label for="Popularity_level">Popularity Level</label>
+    <input type="number" name="popularity_level">
+    <input type="submit">
+  </form>
+  <hr>
+  <% }else{ %>
+    <header>
+      <div class="container">
+        <div class="profile">
+          <div class="profile-image">
+            <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces"
+              alt="">
+          </div>
+          <div class="profile-user-settings">
+            <h1 class="profile-user-name">
+              <%= user.profile.username %>
+            </h1>
+            <button class="btn profile-edit-btn">Edit Profile</button>
+            <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog"
+                aria-hidden="true"></i></button>
+          </div>
+          <div class="profile-stats">
+            <ul>
+              <li><span class="profile-stat-count">
+                  <%= posts.posts.length %>
+                </span> posts</li>
+              <li><span class="profile-stat-count">
+                  <%= user.profile.popularity_level %>
+                </span> Popularity</li>
+            </ul>
+          </div>
+          <div class="profile-bio">
+            <p><span class="profile-real-name">
+                <%= user.name %>
+              </span> My favorite Animal is <%= user.profile.favorite_animal %>
+            </p>
+          </div>
+        </div>
+        <!-- End of profile section -->
+      </div>
+      <!-- End of container -->
+    </header>
+    <main>
+      <div class="container">
+        <div class="gallery">
+          <% posts.posts.reverse().forEach((post)=> { %>
+            <div class="gallery-item" tabindex="0">
+              <div class="post_image" style="background-image: url(<%= post.url %>)"></div>
+              <div class="gallery-item-info">
+              </div>
+            </div>
+            <% })%>
+        </div>
+        <!-- End of gallery -->
+        <!-- <div class="loader"></div> -->
+      </div>
+      <!-- End of container -->
+      <form action="/posts/new" method="POST" enctype="multipart/form-data">
+        <label for="title">Title</label>
+        <input type="text" name="title">
+        <label for="post_content"></label>
+        <input type="text" name="post_content">
+        <input type='file' name='image' />
+        <input type="submit">
+      </form>
+      <hr>
+    </main>
+    <% } %>
+
+      <p> Welcome <%= user.email %>
+      </p>
+      <a href="/users/logout">Logout</a>
+      <script src="static/scripts/searchProfile.js"></script>
