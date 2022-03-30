@@ -10,11 +10,13 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const fileupload = require('express-fileupload')
+const dotenv = require('dotenv');
+dotenv.config();
 
 //passport config:
 require('./config/passport')(passport)
-//mongoose
-mongoose.connect('', { useNewUrlParser: true, useUnifiedTopology: true })
+// mongoose
+mongoose.connect(process.env.DB_COOK, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('connected,,'))
   .catch((err) => console.log(err));
 
@@ -27,13 +29,13 @@ cloudinary.config({
   api_secret: ""
 });
 
-// const storage = new CloudinaryStorage({
-// cloudinary: cloudinary,
-// folder: "diogface",
-// allowedFormats: ["jpg", "png"],
-// transformation: [{ width: 500, height: 500, crop: "limit" }]
-// });
-// const parser = multer({ storage: storage });
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: "diogface",
+  allowedFormats: ["jpg", "png"],
+  transformation: [{ width: 500, height: 500, crop: "limit" }]
+});
+const parser = multer({ storage: storage });
 
 //EJS
 app.set('view engine', 'ejs');
@@ -41,7 +43,9 @@ app.use(expressEjsLayout);
 //BodyParser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+
 //express session
+
 app.use(session({
   secret: 'secret',
   resave: true,
@@ -59,6 +63,7 @@ app.use((req, res, next) => {
 
 app.use(fileupload({ useTempFiles: true }))
 app.use("/static", express.static("public"));
+app.set("views", __dirname + "/views");
 
 
 
@@ -72,4 +77,7 @@ app.use('/posts', require('./routes/posts'));
 
 
 
-app.listen(3000);
+
+
+
+app.listen(3000, () => { console.log('Server started on port 3000') });

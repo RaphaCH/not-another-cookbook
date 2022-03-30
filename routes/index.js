@@ -22,7 +22,7 @@ const getProfileAndPopulate = function (id) {
 
 
 const renderDashboardWithPosts = async function (req, res) {
-  posts = await getProfileAndPopulate(req.user.profile._id)
+  let posts = await getProfileAndPopulate(req.user.profile._id)
 
   res.render('dashboard', {
     user: req.user,
