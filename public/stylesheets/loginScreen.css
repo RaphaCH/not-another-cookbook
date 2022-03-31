@@ -42,7 +42,7 @@
         flex-direction: column;
         justify-content: space-between;
         /* align-items: center; */
-        height: 300px;
+        height: 500px;
         width: 100%;
         margin: 20px;
         /* padding: 20px; */
@@ -99,10 +99,10 @@
     }
     
     .login-nav-container {
-        height: 10px;
+        height: 25px;
         width: 100%;
         margin: 20px;
-        padding: 20px;
+        /* padding: 20px; */
         background-color: white;
         border-radius: 75px;
         /* opacity: 0.5; */
@@ -110,16 +110,40 @@
         align-items: center;
         justify-content: center;
     }
-    .login-nav-text {
-        font-size: 1em;
+    .login-forgot-container {
+        height: 16px;
+        width: 170px;
+        /* margin-top: ; */
+        /* padding: 20px; */
+        background-color: white;
+        border-radius: 75px;
+        /* opacity: 0.5; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+    .login-text {
+        font-size: 0.94em;
         font-family: quicksand, sans-serif;
         color: 3C1B43;
         cursor: pointer;
         align-self: center;
+        color: #5D737E;
     }
-    .login-nav-text {
+
+    .login-forgot-text{
+        font-size: 0.75em;
+        font-family: quicksand, sans-serif;
         color: 3C1B43;
         cursor: pointer;
+        align-self: center;
+        color: #5D737E;
+    }
+    .login-nav-text {
+        color: #3C1B43;
+        cursor: pointer;
+        text-decoration-line: underline;
     }
     
     
