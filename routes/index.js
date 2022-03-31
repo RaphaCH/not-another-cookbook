@@ -8,13 +8,13 @@ const Post = require("../models/post").Post
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
-    res.render('register2', { allposts: allPosts });
+    res.render('login2', { allposts: allPosts });
 
   })
 })
 //register page
 router.get('/register', (req, res) => {
-  res.render('register');
+  res.render('register2');
 })
 
 
@@ -26,7 +26,7 @@ const getProfileAndPopulate = function (id) {
 const renderDashboardWithPosts = async function (req, res) {
   let posts = await getProfileAndPopulate(req.user.profile._id)
 
-  res.render('dashboard', {
+  res.render('homepage', {
     user: req.user,
     posts: posts
   });
@@ -34,9 +34,9 @@ const renderDashboardWithPosts = async function (req, res) {
 
 
 
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
+router.get('/home', ensureAuthenticated, (req, res) => {
   if (!req.user.profile) {
-    res.render('dashboard', {
+    res.render('homepage', {
       user: req.user
     });
   } else {

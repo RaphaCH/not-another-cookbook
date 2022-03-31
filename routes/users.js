@@ -5,15 +5,15 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 //login handle
 router.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login2');
 })
 router.get('/register', (req, res) => {
-  res.render('register')
+  res.render('register2')
 })
 //Register handle
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/home',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next)
@@ -33,10 +33,10 @@ router.post('/register', (req, res) => {
 
   //check if password is more than 6 characters
   if (password.length < 6) {
-    errors.push({ msg: 'password atleast 6 characters' })
+    errors.push({ msg: 'Password at least 6 characters' })
   }
   if (errors.length > 0) {
-    res.render('register', {
+    res.render('register2', {
       errors: errors,
       name: name,
       email: email,
@@ -49,7 +49,7 @@ router.post('/register', (req, res) => {
       console.log(user);
       if (user) {
         errors.push({ msg: 'email already registered' });
-        res.render('register', { errors, name, email, password, password2 })
+        res.render('register2', { errors, name, email, password, password2 })
       } else {
         const newUser = new User({
           name: name,
