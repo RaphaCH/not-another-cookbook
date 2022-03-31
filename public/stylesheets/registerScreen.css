@@ -1,3 +1,9 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
 .background-image{
   background-image: url("../assets/background_photo.png");
   background-size: cover;
@@ -39,13 +45,14 @@
 
 .input-container {
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	height: 100%;
+	justify-content: space-between;
+	/* align-items: center; */
+	height: 80%;
 	width: 80%;
 	margin: 20px;
 	padding: 20px;
 	margin-top: 50px;
+	display: flex;
 }
 
 
@@ -54,7 +61,7 @@
 	box-shadow: none;
 	outline: 0;
 	background-color: transparent;
-	font-size: 5em;
+	font-size: 4em;
 	margin-bottom: 20px;
 	padding-left: 20px;
 }
@@ -72,10 +79,9 @@
 
 
 .button-container{
-  height: 15%;
-  width: 80%;
   margin: 20px;
   padding: 20px;
+	margin-bottom: 30px;
 }
 
 .register-button {
@@ -88,27 +94,33 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 	cursor: pointer;
-	height: 100%;
-	width: 100%;
+	height: 135px;
+	width: 600px;
 	font-size: 4em;
 }
 
-.nav-container{
-  height: 15%;
-  width: 80%;
-  margin: 20px;
-  padding: 20px;
+.nav-container {
+	height: 75px;
+	/* width: 80%; */
+	margin: 20px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 75px;
+	/* opacity: 0.5; */
+	display: flex;
+	align-items: center;
 }
 
-.nav-text{
-  font-size: 4em;
-  color: #5D737E;
-  cursor: pointer;
+.nav-text {
+	font-size: 1em;
+	color: 3C1B43;
+	cursor: pointer;
 }
-.text{
-  font-size: 4em;
-  color: #5D737E;
-  cursor: pointer;
+.text {
+	font-size: 3em;
+	color: #5D737E;
+	cursor: pointer;
+	font-weight: bolder;
 }
 
 
