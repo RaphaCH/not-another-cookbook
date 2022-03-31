@@ -103,7 +103,7 @@ box-sizing: border-box;
 	width: 100%;
 	margin: 20px;
 	/* padding: 20px; */
-	background-color: white;
+	/* background-color: white; */
 	border-radius: 75px;
 	/* opacity: 0.5; */
 	display: flex;
@@ -116,7 +116,7 @@ box-sizing: border-box;
 	color: 3C1B43;
 	cursor: pointer;
 	align-self: center;
-	color: #5D737E;
+	color: #1c2226;
 }
 .register-nav-text {
 	color: #3C1B43;

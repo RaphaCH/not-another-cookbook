@@ -8,7 +8,7 @@ const Post = require("../models/post").Post
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
-    res.render('login2', { allposts: allPosts });
+    res.render('register2', { allposts: allPosts });
 
   })
 })

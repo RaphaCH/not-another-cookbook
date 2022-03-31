@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     }
+
     
     /* .background-image{
       background-image: url("../assets/background_photo.png");
@@ -103,7 +104,7 @@
         width: 100%;
         margin: 20px;
         /* padding: 20px; */
-        background-color: white;
+        /* background-color: white; */
         border-radius: 75px;
         /* opacity: 0.5; */
         display: flex;
@@ -115,7 +116,7 @@
         width: 170px;
         /* margin-top: ; */
         /* padding: 20px; */
-        background-color: white;
+        /* background-color: white; */
         border-radius: 75px;
         /* opacity: 0.5; */
         display: flex;
@@ -129,7 +130,7 @@
         color: 3C1B43;
         cursor: pointer;
         align-self: center;
-        color: #5D737E;
+        color: #1c2226;
     }
 
     .login-forgot-text{
@@ -138,7 +139,7 @@
         color: 3C1B43;
         cursor: pointer;
         align-self: center;
-        color: #5D737E;
+        color: #1c2226;
     }
     .login-nav-text {
         color: #3C1B43;
