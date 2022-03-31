@@ -7,7 +7,9 @@ const Post = require("../models/post").Post
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
+
     res.render('homepage2', { allposts: allPosts });
+
   })
 })
 //register page
