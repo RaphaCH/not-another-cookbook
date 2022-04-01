@@ -1,12 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-image: url("https://i.postimg.cc/rmLJ0Fcz/background-photo.png");
-  background-size: cover;
-  background-position: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -17,25 +13,19 @@ ul {
   list-style: none;
 }
 
-.body-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(166.5deg, rgba(255, 255, 255, 0.41) 3.16%, rgba(255, 255, 255, 0.31) 95.71%);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  z-index: -1;
-}
-
-.top-nav {
+.homepage-background {
   padding: 20px;
 }
 
-.logo {
+.homepage-top-nav {
+  padding: 20px;
+}
+
+.homepage-logo {
   height: 70px;
 }
 
-.search-bar {
+.homepage-search-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,14 +34,14 @@ ul {
           justify-content: center;
 }
 
-.search-bar .search__title {
+.homepage-search-bar .homepage-search__title {
   font-size: 12px;
   font-weight: 900;
   text-align: center;
   color: #ff8b88;
 }
 
-.search-bar .search__input {
+.homepage-search-bar .homepage-search__input {
   width: 200px;
   padding: 7px 24px;
   background-color: transparent;
@@ -63,7 +53,7 @@ ul {
   line-height: 18px;
   color: #575756;
   background-color: transparent;
-  /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+  background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg);
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 18px 18px;
@@ -78,31 +68,31 @@ ul {
           transform-style: preserve-3d;
 }
 
-.search-bar .search__input::-webkit-input-placeholder {
+.homepage-search-bar .homepage-search__input::-webkit-input-placeholder {
   color: color(#575756 a(0.8));
   letter-spacing: 1.5px;
   font-family: Raleway, sans-serif;
 }
 
-.search-bar .search__input:-ms-input-placeholder {
+.homepage-search-bar .homepage-search__input:-ms-input-placeholder {
   color: color(#575756 a(0.8));
   letter-spacing: 1.5px;
   font-family: Raleway, sans-serif;
 }
 
-.search-bar .search__input::-ms-input-placeholder {
+.homepage-search-bar .homepage-search__input::-ms-input-placeholder {
   color: color(#575756 a(0.8));
   letter-spacing: 1.5px;
   font-family: Raleway, sans-serif;
 }
 
-.search-bar .search__input::placeholder {
+.homepage-search-bar .homepage-search__input::placeholder {
   color: color(#575756 a(0.8));
   letter-spacing: 1.5px;
   font-family: Raleway, sans-serif;
 }
 
-.search-bar .search__input:hover, .search-bar .search__input:focus {
+.homepage-search-bar .homepage-search__input:hover, .homepage-search-bar .homepage-search__input:focus {
   padding: 12px 0;
   outline: 0;
   border: 1px solid transparent;
@@ -111,7 +101,7 @@ ul {
   background-position: 100% center;
 }
 
-.top-menu {
+.homepage-top-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,20 +114,20 @@ ul {
   transition: all 0.2s ease-in-out;
 }
 
-.categories {
+.homepage-categories {
   font-family: Raleway, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   color: #949090;
 }
 
-.categories:hover {
+.homepage-categories:hover {
   color: #3c1b43;
 }
 
-.recipes {
+.homepage-recipes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,7 +143,7 @@ ul {
   gap: 20px;
 }
 
-.recipe-card {
+.homepage-recipe-card {
   width: 144px;
   height: 200px;
   left: 26px;
@@ -162,7 +152,7 @@ ul {
   border-radius: 130px 130px 10px 10px;
 }
 
-.recipe-image {
+.homepage-recipe-image {
   width: 145px;
   height: 147px;
   left: 26px;
@@ -174,7 +164,7 @@ ul {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.recipe-title {
+.homepage-recipe-title {
   font-family: Raleway, sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -186,7 +176,7 @@ ul {
   color: white;
 }
 
-.recipe-details {
+.homepage-recipe-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,19 +190,7 @@ ul {
   margin-right: 10px;
 }
 
-.add-to-favourite {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.recipe-favourite {
+.homepage-recipe-favourite {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,9 +210,10 @@ ul {
 
 .lni-heart-filled {
   color: #5ba750 !important;
+  font-size: 15px !important;
 }
 
-.add-to-favourites {
+.homepage-add-to-favourites {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,7 +225,7 @@ ul {
           transform: translateY(-85px);
 }
 
-.recipe-addtolist {
+.homepage-recipe-addtolist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,7 +243,7 @@ ul {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.add-to-list {
+.homepage-add-to-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,7 +260,7 @@ ul {
   font-weight: bolder !important;
 }
 
-#footer {
+#homepage-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -289,7 +268,7 @@ ul {
   background-color: white;
 }
 
-.footer-buttons {
+.homepage-footer-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,7 +279,7 @@ ul {
           align-items: center;
 }
 
-.addrecipe-button {
+.homepage-addrecipe-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,7 +311,7 @@ ul {
   font-size: 25px !important;
 }
 
-.nav {
+.homepage-nav {
   width: 100%;
   background-color: black;
   overflow: hidden;
@@ -340,30 +319,29 @@ ul {
   position: absolute;
 }
 
-.menu a {
+.homepage-menu a {
   display: block;
   padding: 30px;
   color: white;
 }
 
-.menu a:hover {
+.homepage-menu a:hover {
   background-color: grey;
 }
 
-.nav {
+.homepage-nav {
   max-height: 0;
   -webkit-transition: max-height .5s ease-out;
   transition: max-height .5s ease-out;
 }
 
-.hamb {
+.homepage-hamb {
   cursor: pointer;
   float: right;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
-/* Style label tag */
-.hamb-line {
+.homepage-hamb-line {
   background: black;
   display: block;
   height: 2px;
@@ -371,9 +349,8 @@ ul {
   width: 30px;
 }
 
-/* Style span tag */
-.hamb-line::before,
-.hamb-line::after {
+.homepage-hamb-line::before,
+.homepage-hamb-line::after {
   background: black;
   content: '';
   display: block;
@@ -384,33 +361,33 @@ ul {
   width: 100%;
 }
 
-.hamb-line::before {
+.homepage-hamb-line::before {
   top: 5px;
 }
 
-.hamb-line::after {
+.homepage-hamb-line::after {
   top: -5px;
 }
 
-.side-menu {
+.homepage-side-menu {
   display: none;
 }
 
-.side-menu:checked ~ nav {
+.homepage-side-menu:checked ~ nav {
   max-height: 100%;
 }
 
-.side-menu:checked ~ .hamb .hamb-line {
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line {
   background: transparent;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before {
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line::before {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   top: 0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after {
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line::after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   top: 0;
