@@ -1,5 +1,5 @@
 
-const RecipeStub = {
+const recipesStube = [{
   // scrapSource: {
   //   type: String,
   //   required: true
@@ -17,7 +17,7 @@ const RecipeStub = {
         unit: 'cup',
         nutrition: [
           {
-            calories: '100',
+            calories: '100k',
           },
           {
             fat: '10',
@@ -38,7 +38,7 @@ const RecipeStub = {
     ],
   image: 'https://picsum.photos/200/300',
   userImage: null
-}
+}]
 
-module.exports = RecipeStub
+module.exports = recipesStube
 
