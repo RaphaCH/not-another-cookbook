@@ -1,0 +1,282 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#listPreview-container {
+  margin: 20px;
+}
+
+.listPreview-topNav {
+  padding: 20px;
+}
+
+.listPreview-logo {
+  height: 70px;
+}
+
+.listPreview-nav {
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  opacity: 0.6;
+  position: absolute;
+}
+
+.listPreview-menu a {
+  display: block;
+  padding: 30px;
+  color: white;
+}
+
+.listPreview-menu a:hover {
+  background-color: grey;
+}
+
+.listPreview-nav {
+  max-height: 0;
+  -webkit-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
+}
+
+.listPreview-hamb {
+  cursor: pointer;
+  float: right;
+  padding: 30px 20px;
+}
+
+.listPreview-hamb-line {
+  background: black;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 30px;
+}
+
+.listPreview-hamb-line::before,
+.listPreview-hamb-line::after {
+  background: black;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.listPreview-hamb-line::before {
+  top: 5px;
+}
+
+.listPreview-hamb-line::after {
+  top: -5px;
+}
+
+.listPreview-side-menu {
+  display: none;
+}
+
+.listPreview-side-menu:checked ~ nav {
+  max-height: 100%;
+}
+
+.listPreview-side-menu:checked ~ .listPreview-hamb .listPreview-hamb-line {
+  background: transparent;
+}
+
+.listPreview-side-menu:checked
+~ .listPreview-hamb
+.listPreview-hamb-line::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+}
+
+.listPreview-side-menu:checked
+~ .listPreview-hamb
+.listPreview-hamb-line::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+}
+
+.listPreview-allList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.listPreview-recipeList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.listPreview-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px;
+  padding: 15px;
+}
+
+.lni-close {
+  font-weight: bold !important;
+}
+
+.listPreview-select select {
+  font-family: Quicksand, sans-serif;
+  border: 1px solid #5ba750;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.listPreview-recipeTitle {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+}
+
+.listPreview-accordion > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+.listPreview-accordion .listPreview-content {
+  overflow-y: hidden;
+  height: 0;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
+
+.listPreview-accordion > input[type="checkbox"]:checked ~ .listPreview-content {
+  height: auto;
+  overflow: visible;
+}
+
+.listPreview-accordion label {
+  display: block;
+}
+
+.listPreview-accordion {
+  margin-bottom: 1em;
+}
+
+.listPreview-accordion > input[type="checkbox"]:checked ~ .listPreview-content {
+  padding: 20px;
+  border-top: 0;
+  overflow-y: auto;
+  height: 100px;
+}
+
+.listPreview-accordion .listPreview-handle {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.2em;
+}
+
+.listPreview-accordion label {
+  color: black;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 15px;
+  background: transparent;
+}
+
+.listPreview-accordion label:hover,
+.listPreview-accordion label:focus {
+  background: transparent;
+}
+
+.listPreview-accordion .listPreview-handle label:before {
+  font-family: "fontawesome";
+  content: "\f054";
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.58em;
+  line-height: 1.556em;
+  vertical-align: middle;
+}
+
+.listPreview-accordion
+> input[type="checkbox"]:checked
+~ .listPreview-handle
+label:before {
+  content: "\f078";
+}
+
+.listPreview-accordiontitle {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+}
+
+.listPreview-ingredientscontent {
+  font-family: Quicksand, sans-serif;
+  font-size: 13px;
+}
+
+.listPreview-ingredientList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listPreview-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+}
+
+.listPreview-footer-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+}
+
+.lni-arrow-left {
+  font-weight: bold !important;
+  font-size: 25px !important;
+}
+
+.lni-reload {
+  font-weight: bold !important;
+  color: #5ba750 !important;
+  font-size: 25px !important;
+}
+
+.lni-checkmark {
+  font-weight: bold !important;
+  font-size: 25px !important;
+}
+/*# sourceMappingURL=listPreview.css.map */
