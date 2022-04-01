@@ -1,37 +1,38 @@
 <!-- <div class="background-image"> -->
 
- 
-  <div class="login-content-container">
 
-    <div class="login-logo-container">
-      <div class="login-logo"></div>
-    </div>
+<div class="login-content-container">
 
-    <div class="login-input-container">
-      
+  <div class="login-logo-container">
+    <div class="login-logo"></div>
+  </div>
+  <%- include ('./partials/messages') %>
+    <form action="/users/login" class="login-input-container" method="POST">
+
       <div class="login-separator">
-        <input class="login-input" type="text" name="email" placeholder="E-mail">
+        <input class="login-input" type="email" name="email" placeholder="Email">
         <div class="login-grey"></div>
       </div>
       <div class="login-separator">
-        <input class="login-input" type="text" name="password" placeholder="Password">
+        <input class="login-input" type="password" name="password" placeholder="Password">
         <div class="login-grey"></div>
       </div>
 
-
-      <div class="login-forgot-container">
-        <p class="login-forgot-text"><a class="login-nav-text" href="">Forgot your password?</a></p>
+      <div class="login-button-container">
+        <button class="login-button">Login</button>
       </div>
-    </div>
+    </form>
 
 
-    <div class="login-button-container">
-      <button class="login-button">Login</button>
+    <div class="login-forgot-container">
+      <p class="login-forgot-text"><a class="login-nav-text" href="">Forgot your password?</a></p>
     </div>
 
     <div class="login-nav-container">
-      <p class="login-text">Don't have an account yet? <a class="login-nav-text" href="">Register!</a></p>
+      <p class="login-text">Don't have an account yet? <a class="login-nav-text" href="/users/register">Register!</a>
+      </p>
     </div>
-  </div>
+</div>
+
 
 <!-- </div> -->
