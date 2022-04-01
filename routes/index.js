@@ -1,17 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth')
-const Profile = require("../models/profile").Profile;
+// const Profile = require("../models/profile").Profile;
+// const Profile = require("../models/profile2").Profile;
 const Post = require("../models/post").Post
+const randomFood = require('../models/stub');
 
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
-
-
     res.render('login2', { allposts: allPosts });
-
-
   })
 })
 //register page
@@ -34,16 +32,21 @@ const renderDashboardWithPosts = async function (req, res) {
   });
 }
 
-
-
 router.get('/home', ensureAuthenticated, (req, res) => {
   if (!req.user.profile) {
     res.render('homepage', {
-      user: req.user
+      user: req.user,
+      food: randomFood
     });
   } else {
-    renderDashboardWithPosts(req, res)
-
+    //renderDashboardWithPosts(req, res)
+    res.render('homepage', {
+      user: req.user,
+      food: randomFood
+    });
   }
 })
+
+
+
 module.exports = router;
