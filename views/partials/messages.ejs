@@ -1,24 +1,24 @@
 <% if(typeof errors!='undefined' ) { %>
   <% errors.forEach(function(error){ %>
-    <p>
+    <p class="flash-error">
       <%= error.msg %>
     </p>
     <% }) %>
       <% } %>
 
         <% if(success_msg!='' ) { %>
-          <p>
+          <p class="flash-success">
             <%=success_msg %>
           </p>
           <% } %>
 
             <% if(error_msg !='' ) { %>
-              <p>
+              <p class="flash-error">
                 <%= error_msg %>
               </p>
               <% } %>
                 <% if(error !='' ) { %>
-                  <p>
+                  <p class="flash-error">
                     <%= error %>
                   </p>
                   <% } %>
