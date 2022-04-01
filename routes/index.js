@@ -8,7 +8,11 @@ const Post = require("../models/post").Post
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
+
     res.render('homepage', { allposts: allPosts });
+
+    
+
 
   })
 })
