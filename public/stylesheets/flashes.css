@@ -1,13 +1,11 @@
-.flash-error{
-  color: #a94442;
+.flashes-error {
   background-color: #f2dede;
   border-color: #ebccd1;
-  border-radius: 5px;
+  color: #a94442;
 }
 
-.flash-success{
-  color: #3c763d;
+.flashes-success{
   background-color: #dff0d8;
   border-color: #d6e9c6;
-  border-radius: 5px;
+  color: #3c763d;
 }
