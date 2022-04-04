@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
 
-    res.render('homepage', { allposts: allPosts });
+    res.render('addManualRecipe', { allposts: allPosts });
 
     
 
