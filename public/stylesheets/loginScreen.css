@@ -5,17 +5,6 @@
     }
 
     
-    /* .background-image{
-      background-image: url("../assets/background_photo.png");
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    } */
     
     .login-content-container {
         display: flex;
@@ -51,9 +40,9 @@
         display: flex;
     }
     
-    .login-separator{
-        margin-top: 5px;
-        margin-bottom: 5px;
+    .login-separator {
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
     }
     
     
@@ -67,6 +56,7 @@
         margin-bottom: 10px;
         padding-left: 20px;
         margin-top: 10px;
+        width: 100%;
     }
     
     .login-grey {

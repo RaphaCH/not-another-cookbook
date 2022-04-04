@@ -13,7 +13,6 @@ router.post("/new", async (req, res) => {
     await newProfile.save()
     await User.findOneAndUpdate({ _id: req.user._id }, { profile: newProfile })
     res.redirect('/dashboard')
-
   } catch (err) {
     console.log(err)
     res.redirect('/dashboard')
