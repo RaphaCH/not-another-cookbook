@@ -1,38 +1,63 @@
 <!-- <div class="background-image"> -->
-
+  
   <div class="register-content-container">
 
     <div class="register-logo-container">
       <div class="register-logo"></div>
     </div>
-
-    <div class="register-input-container">
+    <%- include ('./partials/messages') %>
+    <!-- <div class="register-input-container"> -->
+      <form action="/users/register" class="register-input-container" method="POST">
       <div class="register-separator">
-        <input class="register-input" type="text" name="name" placeholder="Name">
+        <input 
+          class="register-input" 
+          type="text" 
+          name="name" 
+          placeholder="Name"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        >
         <div class="register-grey"></div>
       </div>
       <div class="register-separator">
-        <input class="register-input" type="text" name="email" placeholder="E-mail">
+        <input 
+          class="register-input" 
+          type="email" 
+          name="email" 
+          placeholder="Email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        >
         <div class="register-grey"></div>
       </div>
       <div class="register-separator">
-        <input class="register-input" type="text" name="password" placeholder="Password">
+        <input 
+          class="register-input" 
+          type="password" 
+          name="password" 
+          placeholder="Password"
+          value="<%= typeof password != 'undefined' ? password : '' %>"
+        >
         <div class="register-grey"></div>
       </div>
       <div class="register-separator">
-        <input class="register-input" type="text" name="password2" placeholder="Confirm Password">
+        <input 
+          class="register-input" 
+          type="password" 
+          name="password2" 
+          placeholder="Confirm Password"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+        >
         <div class="register-grey"></div>
       </div>
 
+      <div class="register-button-container">
+        <button class="register-button">Register</button>
+      </div>
+    </form>
+    <!-- </div> -->
 
-    </div>
-
-    <div class="register-button-container">
-      <button class="register-button">Register</button>
-    </div>
 
     <div class="register-nav-container">
-      <p class="register-text">Already have an accoun? <a class="register-nav-text" href="">Login!</a></p>
+      <p class="register-text">Already have an accoun? <a class="register-nav-text" href="/users/login">Login!</a></p>
     </div>
   </div>
 

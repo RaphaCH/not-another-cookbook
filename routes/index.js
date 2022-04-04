@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth')
-const Profile = require("../models/profile").Profile;
+// const Profile = require("../models/profile").Profile;
+// const Profile = require("../models/profile2").Profile;
 const Post = require("../models/post").Post
+const randomFood = require('../models/stub');
 
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
 
+
     res.render('addManualRecipe', { allposts: allPosts });
-
-    
-
 
   })
 })
 //register page
 router.get('/register', (req, res) => {
-  res.render('register');
+  res.render('register2');
 })
 
 
@@ -30,22 +30,27 @@ const getProfileAndPopulate = function (id) {
 const renderDashboardWithPosts = async function (req, res) {
   let posts = await getProfileAndPopulate(req.user.profile._id)
 
-  res.render('dashboard', {
+  res.render('homepage', {
     user: req.user,
     posts: posts
   });
 }
 
-
-
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
+router.get('/home', ensureAuthenticated, (req, res) => {
   if (!req.user.profile) {
-    res.render('dashboard', {
-      user: req.user
+    res.render('homepage', {
+      user: req.user,
+      food: randomFood
     });
   } else {
-    renderDashboardWithPosts(req, res)
-
+    //renderDashboardWithPosts(req, res)
+    res.render('homepage', {
+      user: req.user,
+      food: randomFood
+    });
   }
 })
+
+
+
 module.exports = router;
