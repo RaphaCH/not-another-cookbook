@@ -113,7 +113,7 @@ const scrapContent = async (urls) => {
   }
 }
 
-scrapUrls(baseUrl)
+//scrapUrls(baseUrl)
 
 
 
