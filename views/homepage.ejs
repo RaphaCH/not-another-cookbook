@@ -1,3 +1,9 @@
+<script>
+
+
+</script>
+
+
 <div class="homepage-background">
 
   <section class="homepage-top-nav">
@@ -28,52 +34,24 @@
     <a class="homepage-categories" href="#">This week</a>
   </section>
   <section class="homepage-recipes">
-
-    <% food.forEach((food)=> { %>
-      <div class="homepage-recipe-card">
-        <div style="background: url(<%=food.image%>),
+  
+    
+  
+    <!-- <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%> -->
+      <% food.forEach((food)=> { %>
+        <div class="homepage-recipe-card">
+          <div style="background: url(<%=food.image%>),
           #C4C4C4" class="homepage-recipe-image"></div>
-        <h1 class="homepage-recipe-title">
-          <%=food.title %>
-        </h1>
-        <div class="homepage-recipe-details">
-          <p class="homepage-recipe-duration">
-            <%=food.cookingTime %>
-          </p>
-          <p class="homepage-recipe-calories">
-            <%=food.ingredients[0].nutrition[0].calories %>
-          </p>
-        </div>
-        <div class="homepage-add-to-list">
-          <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-        </div>
-        <div class="homepage-add-to-favourites">
-          <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-        </div>
-      </div>
-      <% }); %>
-
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
+            <h1 class="homepage-recipe-title">          
+              <%= food.title %>
+            </h1>
           <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
-          </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-          </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-
-        </div>
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
+            <p class="homepage-recipe-duration">
+              <%=food.cookingTime %>
+            </p>
+            <p class="homepage-recipe-calories">
+              <%=food.ingredients[0].nutrition[0].calories %>
+            </p>
           </div>
           <div class="homepage-add-to-list">
             <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
@@ -82,51 +60,82 @@
             <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
           </div>
         </div>
+        <% }); %>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
-          </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-          </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-        </div>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image"></div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
           </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image"></div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-        </div>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image"></div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image"></div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image"></div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-        </div>
   </section>
 </div>
 
@@ -137,3 +146,4 @@
     <div class="homepage-list-button"><i class="lni lni-list"><a href="#"></a></i></div>
   </div>
 </div>
+
