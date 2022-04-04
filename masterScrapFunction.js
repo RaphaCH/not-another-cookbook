@@ -2,18 +2,23 @@ const fs = require("fs");
 
 
 const scrapUrls = require('./scrapping/raphaScrap');
+
 const baseUrl = 'https://www.bbcgoodfood.com/recipes/collection/easy-recipes'
 // const georgianaScrap = require('./scrapping/georgianaScrap')
+
 const recipes = JSON.parse(fs.readFileSync("recipeData.json", "utf-8"));
 const laurentScrap = require('./scrapping/laurentScrap')
 
 const scrapAll = async() =>{
+
     // await georgianaScrap(recipes.slice(0, 400));
     await laurentScrap();
     await scrapUrls(baseUrl);
+
  }
  
  scrapAll()
+
 
 /*
 category search loop

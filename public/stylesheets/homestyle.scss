@@ -1,0 +1,314 @@
+$titleFont: Raleway, sans-serif;
+$textFont: Quicksand, sans-serif;
+$colorButton: #5ba750;
+$accentColor:#3C1B43;
+$blurrOverlay: linear-gradient(
+  166.5deg,
+  rgba(255, 255, 255, 0.41) 3.16%,
+  rgba(255, 255, 255, 0.31) 95.71%
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+
+.homepage-background{
+  padding: 20px;
+}
+
+.homepage-top-nav {
+  padding: 20px;
+}
+
+.homepage-logo {
+  height: 70px;
+}
+
+.homepage-search-bar {
+  display: flex;
+  justify-content: center;
+
+  .homepage-search {
+    &__title {
+      font-size: 12px;
+      font-weight: 900;
+      text-align: center;
+      color: #ff8b88;
+    }
+
+    &__input {
+      width: 200px;
+      padding: 7px 24px;
+
+      background-color: transparent;
+      transition: transform 250ms ease-in-out;
+      font-size: 14px;
+      line-height: 18px;
+
+      color: #575756;
+      background-color: transparent;
+      background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); 
+
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      background-position: 95% center;
+      border-radius: 50px;
+      border: 1px solid #575756;
+      transition: all 250ms ease-in-out;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+
+      &::placeholder {
+        color: color(#575756 a(0.8));
+        letter-spacing: 1.5px;
+        font-family: $titleFont;
+      }
+
+      &:hover,
+      &:focus {
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #575756;
+        border-radius: 0;
+        background-position: 100% center;
+      }
+    }
+  }
+}
+
+.homepage-top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.homepage-categories {
+  font-family: $titleFont;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #949090;
+
+  &:hover {
+    color: #3c1b43;
+  }
+}
+.homepage-recipes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+}
+
+
+.homepage-recipe-card {
+  width: 144px;
+  height: 200px;
+  left: 26px;
+  top: 169px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 130px 130px 10px 10px;
+}
+
+.homepage-recipe-image{
+    width: 145px;
+    height: 147px;
+    left: 26px;
+    top: 169px;
+    border-radius: 50%;
+    
+    background: url("https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"), #C4C4C4;
+    background-size: contain;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+.homepage-recipe-title{
+    font-family: $titleFont;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 10px;
+    display: flex;
+    color: white;
+}
+
+.homepage-recipe-details{
+    display: flex;
+    justify-content: space-between;
+    font-family: $textFont;
+    font-size: 10px;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.homepage-recipe-favourite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.lni-heart-filled{
+    color: $colorButton !important;
+    font-size: 15px !important;
+    
+}
+
+.homepage-add-to-favourites{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    transform: translateY(-85px);
+}
+
+.homepage-recipe-addtolist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorButton;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.homepage-add-to-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lni-plus{
+    color: white !important;
+    font-weight: bolder !important;
+}
+
+#homepage-footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:60px; 
+    background-color:white;
+}
+.homepage-footer-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homepage-addrecipe-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $colorButton;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(-15px);     
+}
+
+.lni-shuffle{
+  color: $accentColor !important;
+  font-weight: bolder !important;
+  font-size: 25px !important;
+
+}
+
+.lni-list{
+  color: $accentColor !important;
+  font-weight: bolder !important;
+  font-size: 25px !important;
+}
+
+.homepage-nav{
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  opacity: 0.6;
+  position: absolute;
+
+}
+.homepage-menu a{
+  display: block;
+  padding: 30px;
+  color: white;
+}
+.homepage-menu a:hover{
+  background-color: grey;
+}
+.homepage-nav{
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+.homepage-hamb{
+  cursor: pointer;
+  float: right;
+  padding: 30px 20px;
+}
+
+.homepage-hamb-line {
+  background: black;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 30px;
+
+} 
+
+.homepage-hamb-line::before,
+.homepage-hamb-line::after{
+  background: black;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.homepage-hamb-line::before{
+  top: 5px;
+}
+.homepage-hamb-line::after{
+  top: -5px;
+}
+
+.homepage-side-menu {
+  display: none;
+} 
+.homepage-side-menu:checked ~ nav{
+  max-height: 100%;
+}
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line {
+  background: transparent;
+}
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line::before {
+  transform: rotate(-45deg);
+  top:0;
+}
+.homepage-side-menu:checked ~ .homepage-hamb .homepage-hamb-line::after {
+  transform: rotate(45deg);
+  top:0;
+}
+

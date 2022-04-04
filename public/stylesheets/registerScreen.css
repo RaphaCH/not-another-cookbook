@@ -1,0 +1,118 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+
+.register-content-container {
+	display: flex;
+	padding: 20px;
+	margin: 20px;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100vh;
+}
+
+.register-logo-container {
+	width: 200px;
+	margin: 20px;
+}
+
+.register-logo {
+	background-image: url("../assets/NACLogo.png");
+	background-size: cover;
+	background-position: center;
+	height: 200px;
+}
+
+.register-input-container {
+	flex-direction: column;
+	justify-content: space-between;
+	/* align-items: center; */
+	height: 300px;
+	width: 100%;
+	margin: 20px;
+	/* padding: 20px; */
+	/* margin-top: 50px; */
+	display: flex;
+}
+
+.register-separator{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+.register-input {
+	border: none;
+	box-shadow: none;
+	outline: 0;
+	background-color: transparent;
+	font-size: 1em;
+	font-family: quicksand, sans-serif;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.register-grey {
+	height: 1px;
+	width: 100%;
+	background-color: #5D737E;
+	transition: 0.4s;
+}
+
+.register-input:focus + .register-grey{
+  background-color: #A9ABA5;
+}
+
+
+.register-button-container {
+	margin: 20px;
+	padding: 20px;
+	/* margin-bottom: 30px; */
+}
+
+.register-button {
+	background-color: #5BA750;
+	color: white;
+	border: none;
+	border-radius: 75px;
+	cursor: pointer;
+	height: 50px;
+	width: 200px;
+	font-size: 1em;
+	font-family: quicksand, sans-serif;
+}
+
+.register-nav-container {
+	height: 20px;
+	width: 100%;
+	margin: 20px;
+	/* padding: 20px; */
+	/* background-color: white; */
+	border-radius: 75px;
+	/* opacity: 0.5; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.register-text {
+	font-size: 1em;
+	font-family: quicksand, sans-serif;
+	color: 3C1B43;
+	cursor: pointer;
+	align-self: center;
+	color: #1c2226;
+}
+.register-nav-text {
+	color: #3C1B43;
+	cursor: pointer;
+	text-decoration-line: underline;
+}
+
+
+
