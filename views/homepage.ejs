@@ -34,10 +34,11 @@
     <a class="homepage-categories" href="#">This week</a>
   </section>
   <section class="homepage-recipes">
+
   
     
   
-    <!-- <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%> -->
+    <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
       <% food.forEach((food)=> { %>
         <div class="homepage-recipe-card">
           <div style="background: url(<%=food.image%>),
@@ -142,7 +143,7 @@
 <div id="homepage-footer">
   <div class="homepage-footer-buttons">
     <div class="homepage-random-button"><i class="lni lni-shuffle"><a href="#"></a></i></div>
-    <div class="homepage-addrecipe-button"><i class="lni lni-plus"><a href="#"></a></i></div>
+    <div class="homepage-addrecipe-button"><a href="/recipes/addRecipe"><i class="lni lni-plus"></i></a></div>
     <div class="homepage-list-button"><i class="lni lni-list"><a href="#"></a></i></div>
   </div>
 </div>
