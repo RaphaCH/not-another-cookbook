@@ -9,7 +9,11 @@ const randomFood = require('../models/stub');
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
-    res.render('login2', { allposts: allPosts });
+
+
+
+    res.render('addManualRecipe', { allposts: allPosts });
+
   })
 })
 //register page

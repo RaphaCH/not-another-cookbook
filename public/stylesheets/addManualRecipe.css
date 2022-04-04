@@ -1,0 +1,380 @@
+#addManualRecipe-container {
+  margin: 20px;
+  height: auto;
+}
+
+.addManualRecipe-title {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addManualRecipe-servings-cooking {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.addManualRecipe-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.addManualRecipeform-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.addManualRecipeform-field {
+  font-family: Quicksand, sans-serif;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #1c2226;
+  outline: 0;
+  font-size: 13px;
+  color: #1c2226;
+  padding: 7px 0;
+  background: transparent;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.addManualRecipeform-field::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.addManualRecipeform-field:-ms-input-placeholder {
+  color: transparent;
+}
+
+.addManualRecipeform-field::-ms-input-placeholder {
+  color: transparent;
+}
+
+.addManualRecipeform-field::placeholder {
+  color: transparent;
+}
+
+.addManualRecipeform-field:placeholder-shown ~ .addManualRecipeform-label {
+  font-size: 13px;
+  cursor: text;
+  top: 20px;
+  font-family: Raleway, sans-serif;
+}
+
+.addManualRecipeform-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #1c2226;
+}
+
+.addManualRecipe-options,
+.addManualRecipe-categories {
+  font-family: Quicksand, sans-serif;
+}
+
+.addManualRecipeform-field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 1px;
+  border-color: #5ba750;
+  border-image-slice: 1;
+}
+
+.addManualRecipeform-field:focus ~ .addManualRecipeform-label {
+  position: absolute;
+  top: 0;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #5ba750;
+  font-weight: 500;
+}
+
+.addManualRecipeform-field:required, .addManualRecipeform-field:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+label.field {
+  border-radius: 2px;
+  color: #1c2226;
+  display: block;
+  max-width: 300px;
+  padding: 8px;
+  opacity: 0;
+  position: relative;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  z-index: 1;
+}
+
+label.field span {
+  color: inherit;
+  display: block;
+  font-size: 13px;
+  font-family: Raleway, sans-serif;
+  height: 20px;
+  line-height: 20px;
+  left: 2px;
+  pointer-events: none;
+  position: absolute;
+  top: 32px;
+  -webkit-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+  -webkit-transition-property: color, font-size, top;
+  transition-property: color, font-size, top;
+  z-index: 1;
+}
+
+label.field span.required::after {
+  color: inherit;
+  content: "*";
+  display: block;
+  height: 20px;
+  left: -20px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 20px;
+}
+
+.error label.field span {
+  color: #f02318;
+}
+
+label.field .psuedo_select {
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  border-color: #666;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  color: #666;
+  cursor: pointer;
+  font-size: 13px;
+  height: 24px;
+  line-height: 24px;
+  margin: 24px 32px 0 -7px;
+  min-width: 294px;
+  padding-top: 24px;
+  outline: 0;
+  z-index: 1;
+}
+
+label.field .psuedo_select::after {
+  background: url("data:image/svg+xml;utf8,<svg fill='#666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
+  content: "";
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+label.field .psuedo_select .selected {
+  height: 24px;
+  left: 1px;
+  line-height: 24px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(24px);
+          transform: translateY(24px);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  will-change: transform;
+}
+
+label.field .psuedo_select ul {
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  display: block;
+  height: 0;
+  list-style: none;
+  margin-top: 2px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1px;
+  pointer-events: none;
+  -webkit-transition-property: height, opacity;
+  transition-property: height, opacity;
+  width: 100%;
+  z-index: 2;
+}
+
+label.field .psuedo_select ul li {
+  height: 32px;
+  padding: 8px 4px;
+}
+
+label.field .deselect {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+label.field.focused {
+  color: #5ba750;
+}
+
+label.field.focused .psuedo_select {
+  border-color: #5ba750;
+}
+
+label.field.focused .psuedo_select::after {
+  background: url("data:image/svg+xml;utf8,<svg fill='#007BED' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
+}
+
+label.field.focused .psuedo_select ul {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.addManualRecipe-ingredients-title,
+.addManualRecipe-preparation {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.addManualRecipe-addingredients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.lni-plus {
+  color: #1c2226 !important;
+  -webkit-transform: translate(10px, 10px) !important;
+          transform: translate(10px, 10px) !important;
+}
+
+.addManualRecipe-preparationbox {
+  width: 80vw;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #1c2226;
+  margin-top: 20px;
+  overflow-y: auto;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.addManualRecipe-preparationtext {
+  font-family: Quicksand, sans-serif;
+  font-size: 13px;
+  color: #1c2226;
+}
+
+.addManualRecipe-done {
+  background-color: #5ba750;
+  color: white;
+  border: none;
+  border-radius: 75px;
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  font-size: 1em;
+  font-family: Raleway, sans-serif;
+  margin: 20px;
+}
+
+.addManualRecipe-donebutto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addManualRecipe-cooking {
+  max-width: 100px;
+  margin-left: 20px;
+}
+
+.addManualRecipe-image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#addManualRecipe-imageupload {
+  border: 1px solid #1c2226;
+  background-color: white;
+  opacity: 0.5;
+  width: 100%;
+  margin-top: 20px;
+  width: 300px;
+  height: 25px;
+  font-family: Quicksand, sans-serif;
+  font-size: 13px;
+}
+
+.addManualRecipe-uploadtext {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=addManualRecipe.css.map */
