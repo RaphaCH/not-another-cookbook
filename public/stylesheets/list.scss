@@ -1,4 +1,84 @@
-$logo: url('./download/NACLogo.png');
-@mixin expand {
+$logo: url('https://i.postimg.cc/bJVCWfkT/NACLogo.png');
+$green: #5BA750; 
+$purple: #3C1B43;
 
+@mixin center ($direction) {
+    justify-content: $direction;
+    align-items: center;
+}
+
+.list-flex {
+    display: flex;
+}
+
+.list-main {
+    flex-direction: column;
+}
+
+header {
+    width: 100vw;
+    height: 15vh;
+}
+
+.list-logo-container {
+    width: 50%;
+    @include center(flex-start);
+    .list-logo {
+    background-image: $logo;
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    }
+}
+  
+.list-burg-container {
+    width: 50%;
+    @include center(flex-end);
+    .list-burg {
+        padding-right: 5vw;
+        font-size: 30px;
+    }
+}
+
+.list-shopping-container {
+    flex-direction: column;
+}
+
+.list-section-container {
+    flex-direction: column;
+    background-color: #3C1B43;
+    width: 100vw;
+}
+
+.list-header-container {
+    background-color: #5BA750;
+    width: 100vw;
+    height: 7vh;
+    .list-food-img-container {
+        height: 100%;
+        width: 30%;
+        @include center(center);
+    }
+}
+
+.accordion > input[type="checkbox"] {
+    position: absolute;
+    left: -100vw;
+}
+  
+.accordion .content {
+    overflow-y: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+}
+  
+.accordion > input[type="checkbox"]:checked ~ .content {
+    height: auto;
+    overflow: visible;
+}
+  
+.accordion label {
+    display: flex;
+    width: 100%;
+    @include center(space-between);
 }

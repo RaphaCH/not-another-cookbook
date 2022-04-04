@@ -1,31 +1,43 @@
-<div class="list-main">
-    <header>
-        <div class="list-logo-container">
+<div class="list-main list-flex">
+    <header class="list-flex">
+        <div class="list-logo-container list-flex">
             <i class="list-logo"></i>
-            <p>logo</p>
         </div>
-        <div class="list-burg-container">
+        <div class="list-burg-container list-flex">
             <i class="list-burg fa-solid fa-bars"></i>
-            <p>burger</p>
         </div>
     </header>   
-    <div class="list-shopping-container">
-        <div class="list-section-container"></div>
-            <div class="list-header-container">
-                <i class="fa-solid fa-meat placeholder"></i>"
-                <p>vegetables</p>
-            </div>
-            <div class="list-ingredient-container">
-                <div class="list-ingredient-section">
-                    <div class="list-checkbox">
-                        <p>X</p>
-                    </div>
-                    <div class="list-ingredient">
-                            <p>salad</p>
-                    </div>
-                </div>
-            </div>
+    <section class="accordion">
+    <input type="checkbox" name="collapse" id="handle1" class="expand">
+    <div class="list-header-container list-flex">
+        <div class="list-food-img-container list-flex">
+            <i class="fa-solid fa-carrot"></i>
         </div>
+        <label for="handle1">
+            <h1 class="list-food-name">vegetable</h1>
+            <i id='list-expand-arrow'class="fa-solid fa-angle-right"></i>
+        </label>
     </div>
+        <div class="content">
+            <p><strong>Overall Impression:</strong> A pale, bitter, highly attenuated and well carbonated Trappist ale, showing a fruity-spicy Trappist yeast character, a spicy-floral hop profile, and a soft, supportive grainy-sweet malt palate.</p>
+            <p><strong>History:</strong> While Trappist breweries have a tradition of brewing a lower-strength beer as a monk’s daily ration, the bitter, pale beer this style describes is a relatively modern invention reflecting current tastes. Westvleteren first brewed theirs in 1999, but replaced older lower-gravity products.</p>
+        </div>
+    </section>
 </div>
 
+<script>
+    const expandCheckbox = document.querySelectorAll('input.expand')
+    const headerLabel = document.querySelectorAll('label')
+    const expandArrow = document.querySelectorAll('i#list-expand-arrow')
+
+    headerLabel.forEach((label) => {
+        label.addEventListener('click', () => {
+            if (expandCheckbox.checked) {
+                expandArrow.className = 'fa-solid fa-angle-down';
+            }
+            else {
+                expandArrow.className = 'fa-solid fa-angle-right';
+            }
+        })
+    })
+</script>
