@@ -74,6 +74,7 @@ app.use('/users', require('./routes/users'));
 app.use('/profiles', require('./routes/profiles'));
 app.use('/posts', require('./routes/posts'));
 app.use('/recipes', require('./routes/recipes'));
+app.use('/lists', require('./routes/lists'));
 
 
 

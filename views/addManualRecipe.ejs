@@ -100,7 +100,7 @@
           <label for="ingredientname" class="addManualRecipeform-label">Name</label>
         </div>
         <div class="addManualRecipe-addIngredient">
-          <i class="lni lni-plus"></i>
+          <i class="lni lni-circle-plus"></i>
         </div>
       </div>
       <div class="addManualRecipe-addingredients">
@@ -135,7 +135,7 @@
           <label for="ingredientname" class="addManualRecipeform-label">Name</label>
         </div>
         <div class="addManualRecipe-addIngredient">
-          <i class="lni lni-plus"></i>
+          <i class="lni lni-circle-plus"></i>
         </div>
       </div>
     </div>
@@ -475,7 +475,7 @@
     };
   window.onload = form.f.init.register;
 
-  let addIngredients = document.querySelectorAll(".lni-plus")
+  let addIngredients = document.querySelectorAll(".lni-circle-plus")
   addIngredients.forEach(addButton => {
     addButton.addEventListener("click", ()=> {
       let addIngredientsDiv = document.querySelector(".addManualRecipe-ingredients")
@@ -512,7 +512,7 @@
           <label for="ingredientname" class="addManualRecipeform-label">Name</label>
         </div>
         <div class="addManualRecipe-addIngredient">
-          <i class="lni lni-plus"></i>
+          <i class="lni lni-circle-plus"></i>
         </div>`)
         addIngredientsDiv.appendChild(newIngredient)
     })
