@@ -4,7 +4,7 @@ const { ensureAuthenticated } = require('../config/auth')
 // const Profile = require("../models/profile").Profile;
 // const Profile = require("../models/profile2").Profile;
 const Post = require("../models/post").Post
-const randomFood = require('../models/stub');
+const randomFood = require('../models/stub').arr;
 
 //login page
 router.get('/', (req, res) => {
@@ -12,8 +12,8 @@ router.get('/', (req, res) => {
 
 
 
-    res.render('login2', { allposts: allPosts });
 
+    res.render('login2', { allposts: allPosts });
   })
 })
 //register page
