@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 
 
-    res.render('addManualRecipe', { allposts: allPosts });
+    res.render('login2', { allposts: allPosts });
 
   })
 })

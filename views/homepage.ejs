@@ -137,6 +137,52 @@
             </div>
           </div>
   </section>
+    <div class="homepage-fullRecipeCard">
+      <div class="homepage-fullRecipeimage-flexalign">
+      <div class="homepage-fullRecipeimage"></div>
+      </div>
+      <h1 class="homepage-fullRecipetitle">A big salad</h1>
+     <div class="homepage-fullRecipeDetails">
+      <div class="homepage-fullRecipeDetails-flex">
+        <h2 class="homepage-fullRecipeduration">Duration</h2>
+       <p class="homepage-fullRecipeduration-time">10 min</p>
+     </div>
+     <div class="homepage-fullRecipeDetails-flex">
+       <h2 class="homepage-fullRecipeservings">Servings</h2>
+       <div class="homepage-fullRecipeservings-selectoptions" style="width:50px;">
+          <select class="homepage-fullRecipeservings-select">
+           <option value ="1 Pers">1 Pers</option>
+           <option value ="2 Pers">2 Pers</option>
+           <option value ="3 Pers">3 Pers</option>
+           <option value ="4 Pers">4 Pers</option>
+           <option value ="5 Pers">5 Pers</option>
+           <option value ="6 Pers">6 Pers</option>
+          </select>
+       </div>
+     </div>
+     </div>
+     <div class="homepage-fullRecipeIngredients">
+       <h2 class="homepage-fullRecipeIngredients-title">Ingredients</h2>
+       <ul>
+         <li class="homepage-fullRecipeIngredients-list">Ingredient 1</li>
+         <li class="homepage-fullRecipeIngredients-list">Ingredient 2</li>
+         <li class="homepage-fullRecipeIngredients-list">Ingredient 3</li>
+         <li class="homepage-fullRecipeIngredients-list">Ingredient 4</li>
+        </ul>
+      </div>
+     <div class="homepage-fullRecipepreparation">
+       <h2 class="homepage-fullRecipepreparation-title">Preparation</h2>
+       <p class="homepage-fullRecipepreparation-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus dolores, natus quod veniam magnam cupiditate consequatur quidem voluptatibus nostrum quasi numquam debitis excepturi quibusdam rem perspiciatis similique. Dicta, commodi nemo?</p>
+      </div>
+     <div class="homepage-fullRecipenutritionfacts">
+       <h2 class="homepage-fullRecipenutritionfacts-title">Nutrition facts</h2>
+       <p class="homepage-fullRecipenutritionfacts-details">303 calories; protein 25.9g; carbohydrates 16.4g; fat 14.2g; cholesterol 79mg; sodium 2141.8mg.</p>
+      </div>
+     <div class="homepage-fullRecipecard-close">
+      <button class="homepage-fullRecipecard-buttonclose">x Close</button>
+     </div>
+   </div>
+
 </div>
 
 <div id="homepage-footer">
@@ -146,4 +192,22 @@
     <div class="homepage-list-button"><i class="lni lni-list"><a href="#"></a></i></div>
   </div>
 </div>
+
+<script>
+  // Toggling the recipe card visible or hidden
+  let recipeCard = document.querySelector(".homepage-fullRecipeCard")
+
+  let recipeImages = document.querySelectorAll(".homepage-recipe-image")
+  recipeImages.forEach(card => {
+    card.addEventListener("click", ()=>{
+      recipeCard.style.display = "block"
+    })
+
+    let closeRecipeCard = document.querySelector(".homepage-fullRecipecard-buttonclose")
+    closeRecipeCard.addEventListener("click", ()=>{
+      recipeCard.style.display = "none"
+    })
+
+  })
+</script>
 
