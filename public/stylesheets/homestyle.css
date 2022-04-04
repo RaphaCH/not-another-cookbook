@@ -170,11 +170,22 @@ ul {
   font-size: 14px;
   line-height: 20px;
   margin-left: 10px;
+  width: 133px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: white;
+  overflow-x:scroll;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+
+.homepage-recipe-title::-webkit-scrollbar {
+  display: none;
+}
+
 
 .homepage-recipe-details {
   display: -webkit-box;

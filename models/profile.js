@@ -4,23 +4,29 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  favorite_animal: {
-    type: String,
-    required: true
-  },
-  popularity_level: {
-    type: Number,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  },
-  posts: [
+  favourites: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Post"
+      ref: "Collections"//-> typeFav -> a unique array
     }
+  ],
+  all: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Collections"
+    }
+  ],
+  thisWeek: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Collections"
+    }
+  ],
+  addIngredients : [
+    {}
+  ],
+  addRecipe: [
+    {}
   ]
 });
 const Profile = mongoose.model('Profile', ProfileSchema);
