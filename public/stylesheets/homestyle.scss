@@ -146,6 +146,11 @@ ul {
   margin-left: 10px;
   display: flex;
   color: white;
+  overflow-x:scroll;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 .homepage-recipe-details {
