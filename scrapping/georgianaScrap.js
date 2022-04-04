@@ -1,18 +1,21 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
+const { Console } = require("console");
 const recipes = JSON.parse(fs.readFileSync("recipeData.json", "utf-8"));
 
 //The category urls from which all the recipe urls are scraped
 
-const baseurls = [
-  "https://www.allrecipes.com/search/results/?search=pasta"
-];
-let finalURLs2 = [];
+let baseurls =["https://www.allrecipes.com/search/results/?search=ognion"]
+// [
+  // "https://www.allrecipes.com/search/results/?search=pasta"
+// ];
+
+
 
 let trackOfMyCategory = 0
 //This was the function to scrape all the urls from the baseurl and then save it in a JSON file (won't be called again as all the links have already been saved in a JSON)
 const scrapeURLsFromOnePage = async (url) => {
-
+  let finalURLs2 = [];
   const browser = await puppeteer.launch({
     headless: true,
     defaultViewport: false,
@@ -37,19 +40,19 @@ const scrapeURLsFromOnePage = async (url) => {
   //As the page contains both recipes and articles, I am filtering my array to remove the links that contain the word "gallery"(the articles)
   const finalURLS = urlArray.filter((arr) => !arr.match(/gallery/i));
   finalURLs2 = [...finalURLs2, ...finalURLS];
-  scrapContentFromUrls(finalURLs2, trackOfMyCategory)
+  console.log("finalURLS---------> "+finalURLs2)
+  await scrapContentFromUrls(finalURLs2, trackOfMyCategory)
 
   await browser.close();
 };
 
 //(the urls are saved aleady in a JSON file so this next function won't be called again)
-const loopThroughArray = async () => {
-  for (const link of baseurls) {
-    await scrapeURLsFromOnePage(link)
-  }
+// const loopThroughArray = async () => {
+    // await scrapeURLsFromOnePage(baseurls[0])
+  
   // fs.writeFileSync("recipeData.json", JSON.stringify(finalURLs2))  
   // -> Saving the urls in the JSON so I don't scrape them each time
-}
+// }
 
 //-->Delete baseUrls
 
@@ -108,13 +111,12 @@ const myCategory = (track) => {
   return category
 }
 
-let twoCategTypes = 0
-
+let recipeData = [];
 //Function to scrap the content from each recipe url
 const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
 
   console.log('First Stage, total time 30min scrapping or more...')
-  let recipeData = [];
+  
 
   const browser = await puppeteer.launch({
     headless: false,
@@ -126,7 +128,6 @@ const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
     let recipe = {};
     await page.goto(urls[i]);
     await page.waitForTimeout(1000);
-    //RecipeCAT
     recipe.scrapIdName = "allrecipes"
     recipe.category = myCategory(trackOfMyCategory)
     recipe.mainIngredient = null
@@ -185,7 +186,7 @@ const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
     } catch (error) { }
 
     recipeData.push(recipe);
-    console.clear()
+    // console.clear()
     console.log('recipe:' + recipe.title)
 
   }
@@ -196,24 +197,26 @@ const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
 };
 
 const loopThroughCat = async () => {
-  const arrayOfCategory = ['pastaRisotto', 'pasta bakes', 'salad', 'curry']//, 'vegetarian', 'vegan', 'soup',
-   // 'antipasti', 'roast', 'bbq', 'stew', 'pizza', 'saucesCondiments', 'meatballs', 'sandwichesWraps']
+  const arrayOfCategory = ['pastaRisotto', 'pasta & bakes', 'salad', 'curry', 'vegetarian', 'vegan', 'soup',
+    'antipasti', 'roast', 'bbq', 'stew', 'pizza', 'saucesCondiments', 'meatballs', 'sandwichesWraps']
   if (trackOfMyCategory < arrayOfCategory.length) {
     let mySelectedCat = arrayOfCategory[trackOfMyCategory].split(/(?=[A-Z])/)
+    console.log(mySelectedCat)
     if (mySelectedCat.length > 1) {
       baseurls[0] = `https://www.allrecipes.com/search/results/?search=${mySelectedCat[0]}`
-      await loopThroughArray(baseurls)
+      await scrapeURLsFromOnePage(baseurls[0])
+      console.log(baseurls)
       baseurls[0] = `https://www.allrecipes.com/search/results/?search=${mySelectedCat[1]}`
-      await loopThroughArray(baseurls)
+      await scrapeURLsFromOnePage(baseurls[0])
+      console.log(baseurls)
       trackOfMyCategory++
-      await loopThroughCat()
     } else {
       baseurls[0] = `https://www.allrecipes.com/search/results/?search=${arrayOfCategory[trackOfMyCategory]}`
-      await loopThroughArray(baseurls)
+      await scrapeURLsFromOnePage(baseurls[0])
       trackOfMyCategory++
-      await loopThroughCat()
     }
   }
+  await loopThroughCat()
 }
 
 //Calling the function to scrape 400 recipes (array has 472 items, but if it exceeds a certain amount of time, it crashes)
