@@ -32,6 +32,7 @@
     "mongoose": "^6.2.9",
     "multer": "^1.4.4",
     "multer-storage-cloudinary": "^4.0.0",
+    "parse-ingredient": "^0.4.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "puppeteer": "^13.5.1"
