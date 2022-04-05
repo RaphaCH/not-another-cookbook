@@ -45,7 +45,7 @@ const RecipeSchema = new mongoose.Schema({
   },
   nutrition: {
     type: String,
-    required: true
+    required: false
   },
   userImage: {
     data: Buffer,
