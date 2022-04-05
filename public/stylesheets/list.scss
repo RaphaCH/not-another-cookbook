@@ -30,6 +30,7 @@ header {
 
 .list-logo-container {
     width: 50%;
+    padding-left: 5vh;
     @include center(flex-start);
     .list-logo {
     background-image: $logo;
@@ -62,14 +63,14 @@ header {
     background-color: #5BA750;
     width: 100vw;
     height: 6vh;
+    border-bottom: 1px solid $purple;
     .list-food-img-container {
         height: 100%;
-        width: 30%;
-        @include center(center);
+        width: 35%;
+        @include center(flex-end);
         i {
             font-size: 30px;
             color: white;
-            padding-left: 10vh;
         }
     }
     label > h1 {
@@ -112,7 +113,13 @@ i.arrow {
 
 .list-empty {
     width: 100vw;
-    height: 50vh;
+    height: 55vh;
+}
+
+.doneList {
+    .list-ingredient {
+        display: none;
+    }
 }
 
 .accordion > input[type="checkbox"] {
@@ -136,3 +143,4 @@ i.arrow {
     width: 100%;
     @include center(space-between);
 }
+

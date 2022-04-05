@@ -26,6 +26,7 @@ header {
 
 .list-logo-container {
   width: 50%;
+  padding-left: 5vh;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -76,14 +77,15 @@ header {
   background-color: #5BA750;
   width: 100vw;
   height: 6vh;
+  border-bottom: 1px solid #3C1B43;
 }
 
 .list-header-container .list-food-img-container {
   height: 100%;
-  width: 30%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 35%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -92,7 +94,6 @@ header {
 .list-header-container .list-food-img-container i {
   font-size: 30px;
   color: white;
-  padding-left: 10vh;
 }
 
 .list-header-container label > h1 {
@@ -137,7 +138,11 @@ i.arrow {
 
 .list-empty {
   width: 100vw;
-  height: 50vh;
+  height: 55vh;
+}
+
+.doneList .list-ingredient {
+  display: none;
 }
 
 .accordion > input[type="checkbox"] {

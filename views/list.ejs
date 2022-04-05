@@ -1,23 +1,47 @@
 <div class="list-main list-flex">
-    <header class="list-flex">
-        <div class="list-logo-container list-flex">
-            <i class="list-logo"></i>
+    <header>
+        <section class="homepage-top-nav">
+            <a href="#" class="homepage">
+            <img class="homepage-logo" src="static/assets/NACLogo.png"
+                alt="Chef logo vector created by freepik - www.freepik.com" />
+            </a>
+            <input class="homepage-side-menu" type="checkbox" id="side-menu" />
+            <label class="homepage-hamb" for="side-menu"><span class="homepage-hamb-line"></span></label>
+            <nav class="homepage-nav">
+            <ul class="homepage-menu">
+        
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Blog</a> </li>
+                <li><a href="#">About</a></li>
+            </ul>
+            </nav>
+        </section>
+    </header>
+
+    <section class="accordion list-ingredient-done">
+        <input type="checkbox" name="collapse" id="handle99" class="expand">
+        <div class="list-header-container list-flex">
+            <div class="list-food-img-container list-flex">
+                <i class="fa-solid fa-check list-align"></i>
+            </div>
+            <label for="handle99" class="done">
+                <h1 class="list-food-name list-align">Done</h1>
+                <i id='list-expand-arrow-done'class="fa-solid fa-angle-right arrow"></i>
+            </label>
         </div>
-        <div class="list-burg-container list-flex">
-            <i class="list-burg fa-solid fa-bars"></i>
+        <div class="content list-ingredients-container list-flex doneList">
         </div>
-    </header>   
+    </section>
                             
-<section class="listPreview-footer">
-    <div class="listPreview-footer-buttons">
-        <div class="listPreview-back-button"><i class="list-arrow lni lni-arrow-left"></i><a href="#"></a></i></div>
-        <div class="listPreview-reset-button"><i class="fa-solid fa-house"></i><a href="#"></a></i></div>
-        <div class="listPreview-list-button"><i class=" list-hidden fa-solid fa-house"></i><a href="#"></a></i></div>
-    </div>
-</section>
+    <section class="listPreview-footer">
+        <div class="listPreview-footer-buttons">
+            <div class="listPreview-back-button"><i class="list-arrow lni lni-arrow-left"></i><a href="#"></a></i></div>
+            <div class="listPreview-reset-button"><i class="fa-solid fa-house"></i><a href="#"></a></i></div>
+            <div class="listPreview-list-button"><i class=" list-hidden fa-solid fa-house"></i><a href="#"></a></i></div>
+        </div>
+    </section>
 
-<div class="list-empty"></div>
-
+    <div class="list-empty"></div>
 </div>
 
 
