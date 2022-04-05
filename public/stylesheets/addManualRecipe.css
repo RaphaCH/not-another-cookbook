@@ -286,7 +286,7 @@ label.field.focused .psuedo_select ul {
   gap: 5px;
 }
 
-.lni-plus {
+.lni-circle-plus {
   color: #1c2226 !important;
   -webkit-transform: translate(10px, 10px) !important;
           transform: translate(10px, 10px) !important;
