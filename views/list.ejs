@@ -7,37 +7,17 @@
             <i class="list-burg fa-solid fa-bars"></i>
         </div>
     </header>   
-    <section class="accordion">
-    <input type="checkbox" name="collapse" id="handle1" class="expand">
-    <div class="list-header-container list-flex">
-        <div class="list-food-img-container list-flex">
-            <i class="fa-solid fa-carrot"></i>
-        </div>
-        <label for="handle1">
-            <h1 class="list-food-name">vegetable</h1>
-            <i id='list-expand-arrow'class="fa-solid fa-angle-right"></i>
-        </label>
+                            
+<section class="listPreview-footer">
+    <div class="listPreview-footer-buttons">
+        <div class="listPreview-back-button"><i class="list-arrow lni lni-arrow-left"></i><a href="#"></a></i></div>
+        <div class="listPreview-reset-button"><i class="fa-solid fa-house"></i><a href="#"></a></i></div>
+        <div class="listPreview-list-button"><i class=" list-hidden fa-solid fa-house"></i><a href="#"></a></i></div>
     </div>
-        <div class="content">
-            <p><strong>Overall Impression:</strong> A pale, bitter, highly attenuated and well carbonated Trappist ale, showing a fruity-spicy Trappist yeast character, a spicy-floral hop profile, and a soft, supportive grainy-sweet malt palate.</p>
-            <p><strong>History:</strong> While Trappist breweries have a tradition of brewing a lower-strength beer as a monk’s daily ration, the bitter, pale beer this style describes is a relatively modern invention reflecting current tastes. Westvleteren first brewed theirs in 1999, but replaced older lower-gravity products.</p>
-        </div>
-    </section>
+</section>
+
+<div class="list-empty"></div>
+
 </div>
 
-<script>
-    const expandCheckbox = document.querySelectorAll('input.expand')
-    const headerLabel = document.querySelectorAll('label')
-    const expandArrow = document.querySelectorAll('i#list-expand-arrow')
 
-    headerLabel.forEach((label) => {
-        label.addEventListener('click', () => {
-            if (expandCheckbox.checked) {
-                expandArrow.className = 'fa-solid fa-angle-down';
-            }
-            else {
-                expandArrow.className = 'fa-solid fa-angle-right';
-            }
-        })
-    })
-</script>

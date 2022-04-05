@@ -1,3 +1,11 @@
+h1 {
+  font-family: Raleway, sans-serif;
+}
+
+p {
+  font-family: Quicksand, sans-serif;
+}
+
 .list-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,7 +38,7 @@ header {
   background-image: url("https://i.postimg.cc/bJVCWfkT/NACLogo.png");
   background-size: cover;
   height: 70px;
-  width: 70px;
+  width: 100px;
 }
 
 .list-burg-container {
@@ -44,7 +52,7 @@ header {
 }
 
 .list-burg-container .list-burg {
-  padding-right: 5vw;
+  padding-right: 5vh;
   font-size: 30px;
 }
 
@@ -67,7 +75,7 @@ header {
 .list-header-container {
   background-color: #5BA750;
   width: 100vw;
-  height: 7vh;
+  height: 6vh;
 }
 
 .list-header-container .list-food-img-container {
@@ -79,6 +87,57 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.list-header-container .list-food-img-container i {
+  font-size: 30px;
+  color: white;
+  padding-left: 10vh;
+}
+
+.list-header-container label > h1 {
+  color: white;
+  padding-left: 5vh;
+}
+
+i.arrow {
+  padding-right: 5vh;
+  font-size: 20px;
+  color: #3C1B43;
+}
+
+.fa-house {
+  font-weight: bold !important;
+  font-size: 25px !important;
+  color: #5BA750;
+}
+
+.list-ingredients-container {
+  width: 80vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 10vh;
+}
+
+.list-ingredients-container .list-ingredient {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+
+.list-ingredients-container p {
+  padding-left: 5vh;
+  font-weight: 500;
+}
+
+.list-hidden {
+  visibility: hidden;
+}
+
+.list-empty {
+  width: 100vw;
+  height: 50vh;
 }
 
 .accordion > input[type="checkbox"] {
