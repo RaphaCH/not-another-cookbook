@@ -61,11 +61,7 @@ const postRecipe = (dataObject) => {
         },
         body: JSON.stringify(dataObject),
     })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
 
-        })
 };
 
 
