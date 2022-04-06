@@ -4,8 +4,11 @@ const { ensureAuthenticated } = require('../config/auth')
 // const Profile = require("../models/profile").Profile;
 // const Profile = require("../models/profile2").Profile;
 const Post = require("../models/post").Post
-const randomFood = require('../models/stub').arr;
+const randomFood = require("../scrapping/feed")
 
+
+
+// console.log('myFood ='+ myFood)
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
@@ -36,17 +39,19 @@ const renderDashboardWithPosts = async function (req, res) {
   });
 }
 
-router.get('/home', ensureAuthenticated, (req, res) => {
+router.get('/home', ensureAuthenticated, async(req, res) => {
+  let myFood = await randomFood.getMyRecipes
+  // console.log(myFood)
   if (!req.user.profile) {
     res.render('homepage', {
       user: req.user,
-      food: randomFood
+      food: myFood
     });
   } else {
     //renderDashboardWithPosts(req, res)
     res.render('homepage', {
       user: req.user,
-      food: randomFood
+      food: myFood
     });
   }
 })
