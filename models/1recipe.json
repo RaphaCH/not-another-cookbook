@@ -1,0 +1,41 @@
+[
+    {
+        "scrapSource": "allrecipes",
+        "category": "sandwichesWraps",
+        "mainIngredient": null,
+        "title": "Sesame Chicken Wraps",
+        "servingAmount": "6",
+        "cookingTime": "10 mins",
+        "ingredients": [
+            "1 tablespoon cooking oil",
+            "¾ pound skinless, boneless chicken breast, cut into strips",
+            "2 tablespoons sesame seeds",
+            "½ teaspoon garlic salt",
+            "¼ teaspoon ground black pepper",
+            "3 cups chopped broccoli",
+            "1 medium red onion, thinly sliced",
+            "1 teaspoon grated fresh ginger",
+            "¼ cup white sugar",
+            "¼ cup creamy peanut butter",
+            "3 tablespoons soy sauce",
+            "3 tablespoons water",
+            "2 teaspoons minced garlic",
+            "1 ½ cups warm cooked rice",
+            "6 (10 inch) flour tortillas, warmed"
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Heat oil in a large skillet over medium-high heat. Toss in chicken, sesame seeds, garlic salt, and pepper; cook and stir in hot oil until no longer pink, 3 to 4 minutes. Add broccoli, onion, and ginger. Cook until vegetables are tender and chicken is no longer pink in the center and the juices run clear, about 5 minutes.",
+            "",
+            "Step 2",
+            "",
+            "Meanwhile, combine sugar, peanut butter, soy sauce, water, and garlic in a small saucepan over medium-low heat. Cook sauce, stirring frequently, until sugar is dissolved, about 3 minutes.",
+            "",
+            "Step 3",
+            "",
+            "Assemble the wraps using the tortillas, chicken-broccoli mixture, cooked rice, and peanut sauce."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9377542.jpg",
+        "nutrition": "494 calories; protein 23.9g; carbohydrates 63.9g; fat 16.3g; cholesterol 32.3mg; sodium 1141.1mg. Full Nutrition"
+    }]

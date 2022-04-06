@@ -1,6 +1,7 @@
-const fs = require("fs");
-var parseIngredient = require("parse-ingredient")
-let recipes = JSON.parse(fs.readFileSync("5recipes.json", "utf-8"));
+import fetch from 'node-fetch';
+import fs from "fs";
+import parseIngredient from "parse-ingredient"
+let recipes = JSON.parse(fs.readFileSync("400recipes.json", "utf-8"));
 
 let myFilter = "1 ("
 let ingredients
@@ -19,7 +20,7 @@ recipes.forEach((recipe) => {
 
     // console.log(ingredients.length)
     let ingrList = []
-    for (i = 0; i < ingredients.length; i++) {
+    for (let i = 0; i < ingredients.length; i++) {
         // console.log('do the parse')
         let str = recipe.ingredients[i]
         if (str.includes(myFilter)) {
@@ -29,30 +30,30 @@ recipes.forEach((recipe) => {
         //push the parse in an array
         let myParse = parseIngredient(str)
         // console.log(myParse)
-        finalIng = {} 
+        let finalIng = {} 
 
         if(myParse[0] && myParse[0].description){
             finalIng.name = myParse[0].description
         }else{
-            finalIng.name = "/"
+            finalIng.name = "_"
         }
 
-        finalIng.category = "/"
+        finalIng.category = "_"
 
         if(myParse[0] && myParse[0].quantity){
             finalIng.quantity = myParse[0].quantity
         }else{
-            finalIng.quantity = "/"  
+            finalIng.quantity = "_"  
         }
         
         if(myParse[0] && myParse[0].unitOfMeasure){
             finalIng.unit = myParse[0].unitOfMeasure
         }else{
-            finalIng.unit = "/"
+            finalIng.unit = "_"
         }
         //call to API
-        finalIng.nutrition = "/"
-        console.log(finalIng)
+        finalIng.nutrition = "_"
+        // console.log(finalIng)
         ingrList.push(finalIng)
     }
     recipe.ingredients =  ingrList 
@@ -62,4 +63,10 @@ recipes.forEach((recipe) => {
 // })
 
 
-fs.writeFileSync("../models/5recipesCorr.json", JSON.stringify(myUpdatedRecipes))
+
+// exports.myUpdatedRecipes = myUpdatedRecipes
+
+export {myUpdatedRecipes}
+
+fs.writeFileSync("../models/400recipesCorr.json", JSON.stringify(myUpdatedRecipes))
+
