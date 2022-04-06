@@ -1,8 +1,8 @@
 [
     {
-        "scrapIdName": "allrecipes",
+        "scrapSource": "allrecipes",
         "category": "pastaRisotto",
-        "mainIngredient": null,
+        "mainIngredient": "_",
         "title": "Eggplant Pasta",
         "servingAmount": "8",
         "cookingTime": "40 mins",
@@ -60,9 +60,9 @@
         "nutrition": "295 calories; protein 8.9g; carbohydrates 48.8g; fat 8.3g; sodium 144.7mg. Full Nutrition"
     },
     {
-        "scrapIdName": "allrecipes",
+        "scrapSource": "allrecipes",
         "category": "pastaRisotto",
-        "mainIngredient": null,
+        "mainIngredient": "_",
         "title": "Reheating Pasta",
         "servingAmount": "4",
         "cookingTime": "10 mins",
@@ -91,9 +91,9 @@
         "nutrition": "302 calories; protein 8.1g; carbohydrates 39.2g; fat 12.6g; cholesterol 67.2mg; sodium 14.8mg. Full Nutrition"
     },
     {
-        "scrapIdName": "allrecipes",
+        "scrapSource": "allrecipes",
         "category": "pastaRisotto",
-        "mainIngredient": null,
+        "mainIngredient": "_",
         "title": "Homemade Pasta without a Pasta Machine",
         "servingAmount": "4",
         "cookingTime": "8 mins",
@@ -156,9 +156,9 @@
         "nutrition": "324 calories; protein 13.7g; carbohydrates 54.7g; fat 5g; cholesterol 139.5mg; sodium 92.9mg. Full Nutrition"
     },
     {
-        "scrapIdName": "allrecipes",
+        "scrapSource": "allrecipes",
         "category": "pastaRisotto",
-        "mainIngredient": null,
+        "mainIngredient": "_",
         "title": "Pasta Carcione",
         "servingAmount": "5",
         "cookingTime": "15 mins",
@@ -227,9 +227,9 @@
         "nutrition": "610 calories; protein 23.9g; carbohydrates 71.9g; fat 26.9g; cholesterol 35.8mg; sodium 289.4mg. Full Nutrition"
     },
     {
-        "scrapIdName": "allrecipes",
+        "scrapSource": "allrecipes",
         "category": "pastaRisotto",
-        "mainIngredient": null,
+        "mainIngredient": "_",
         "title": "Shrimp Scampi with Pasta",
         "servingAmount": "6",
         "cookingTime": "20 mins",
