@@ -40,7 +40,8 @@ const recipesStube = [{
   userImage: null
 }]
 
+exports.arr = recipesStube;
 
+//module.exports = recipesStube
 
-module.exports = recipesStube
 
