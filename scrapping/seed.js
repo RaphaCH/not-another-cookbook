@@ -1,5 +1,5 @@
-const data = require("./5recipesCorr.json")
-console.log(data[0])
+const data = require("./400recipesCorr.json")
+// console.log(data[0])
 
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -14,8 +14,10 @@ dotenv.config();
 const addRecipeToDb = async () => {
     console.log("adding to db")
     try {
-        const newRecipe = new Recipe(data[1])
-        await newRecipe.save()
+        for (let i=0; i<data.length; i++){
+            const newRecipe = new Recipe(data[i])
+            await newRecipe.save()
+        }
     } catch (error) {
         console.log(error)
         mongoose.connection.close()

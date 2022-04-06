@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema({
@@ -29,36 +28,3 @@ const IngredientsSchema = new mongoose.Schema({
 const Ingredients = mongoose.model('Ingredients', IngredientsSchema);
 
 module.exports = { Ingredients, IngredientsSchema };
-
-=======
-const mongoose = require('mongoose');
-
-const IngredientsSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  quantity: {
-    type: String,
-    required: true
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  unit: {
-    type: String,
-    required: true
-  },
-  nutrition: {
-    calories: {type: Number},
-    fats: {type: Number},
-    carbs: {type: Number},
-    protein: {type: Number},
-  }
-})
-
-const Ingredients = mongoose.model('Ingredients', IngredientsSchema);
-
-module.exports = { Ingredients, IngredientsSchema };
->>>>>>> 2915c5fafe2ba09c0c917b31e7ed05f78711ec06

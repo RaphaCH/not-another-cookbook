@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import fs from "fs";
 import parseIngredient from "parse-ingredient"
-let recipes = JSON.parse(fs.readFileSync("5recipes.json", "utf-8"));
+let recipes = JSON.parse(fs.readFileSync("400recipes.json", "utf-8"));
 
 let myFilter = "1 ("
 let ingredients
@@ -68,5 +68,5 @@ recipes.forEach((recipe) => {
 
 export {myUpdatedRecipes}
 
-fs.writeFileSync("../models/5recipesCorr.json", JSON.stringify(myUpdatedRecipes))
+fs.writeFileSync("../models/400recipesCorr.json", JSON.stringify(myUpdatedRecipes))
 
