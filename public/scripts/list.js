@@ -1,9 +1,9 @@
-    const header = document.querySelector('header')
+    const listHeader = document.querySelector('header')
     const categories = [{img: ['fa-solid fa-carrot'], cat: 'Vegetables', list: ['carrot', 'apple']}, {img: ['fa-solid fa-bacon'], cat: 'Meat', list: ['Steak', 'Chicken', 'Sausage']}, {img: ['fa-solid fa-cow'], cat: 'Dairy', list: ['Milk', 'Butter']}]
     const doneList = document.querySelector(".doneList")
 
     categories.forEach((category, index) => {
-        header.insertAdjacentHTML('afterend', 
+        listHeader.insertAdjacentHTML('afterend', 
     `<section class="accordion list-ingredient-category">
         <input type="checkbox" name="collapse" id="handle${index}" class="expand">
         <div class="list-header-container list-flex">

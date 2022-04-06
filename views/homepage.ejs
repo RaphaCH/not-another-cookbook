@@ -1,3 +1,9 @@
+<script>
+
+
+</script>
+
+
 <div class="homepage-background">
 
   <section class="homepage-top-nav">
@@ -29,51 +35,26 @@
   </section>
   <section class="homepage-recipes">
 
-    <% food.forEach((food)=> { %>
-      <div class="homepage-recipe-card">
-        <div style="background: url(<%=food.image%>),
-          #C4C4C4" class="homepage-recipe-image"></div>
-        <h1 class="homepage-recipe-title">
-          <%=food.title %>
-        </h1>
-        <div class="homepage-recipe-details">
-          <p class="homepage-recipe-duration">
-            <%=food.cookingTime %>
-          </p>
-          <p class="homepage-recipe-calories">
-            <%=food.ingredients[0].nutrition[0].calories %>
-          </p>
-        </div>
-        <div class="homepage-add-to-list">
-          <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-        </div>
-        <div class="homepage-add-to-favourites">
-          <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-        </div>
-      </div>
-      <% }); %>
-
+  
+    
+  
+    <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
+      <% food.forEach((food)=> { %>
         <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
+          <div class="homepage-recipe-image-flexalign">
+          <div style="background: url(<%=food.image%>),
+          #C4C4C4; background-size: cover" class="homepage-recipe-image"></div>
+          </div>
+            <h1 class="homepage-recipe-title">          
+              <%= food.title %>
+            </h1>
           <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
-          </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-          </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-
-        </div>
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
+            <p class="homepage-recipe-duration">
+              <%=food.cookingTime %>
+            </p>
+            <p class="homepage-recipe-calories">
+              <%=food.ingredients[0].nutrition[0].calories %>
+            </p>
           </div>
           <div class="homepage-add-to-list">
             <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
@@ -82,58 +63,221 @@
             <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
           </div>
         </div>
+        <div class="homepage-fullRecipeCard">
+          <div class="homepage-fullRecipeimage-flexalign">
+          <div style="background: url(<%=food.image%>),
+            #C4C4C4; background-size: cover" class="homepage-fullRecipeimage"></div>
+          </div>
+          <h1 class="homepage-fullRecipetitle"><%= food.title %></h1>
+         <div class="homepage-fullRecipeDetails">
+          <div class="homepage-fullRecipeDetails-flex">
+            <h2 class="homepage-fullRecipeduration">Duration</h2>
+           <p class="homepage-fullRecipeduration-time"><%=food.cookingTime %></p>
+         </div>
+         <div class="homepage-fullRecipeDetails-flex">
+           <h2 class="homepage-fullRecipeservings">Servings</h2>
+           <div class="homepage-fullRecipeservings-selectoptions" style="width:50px;">
+              <select class="homepage-fullRecipeservings-select" onchange="showSelected()">
+               <option value="<%= food.servingAmount %> Pers" selected="selected"><%= food.servingAmount %> Pers (original recipe)</option>
+               <option value ="1 Pers">1 Pers</option>
+               <option value ="2 Pers">2 Pers</option>
+               <option value ="3 Pers">3 Pers</option>
+               <option value ="4 Pers">4 Pers</option>
+               <option value ="5 Pers">5 Pers</option>
+               <option value ="6 Pers">6 Pers</option>
+              </select>
+           </div>
+         </div>
+         </div>
+         <div class="homepage-fullRecipeIngredients">
+           <h2 class="homepage-fullRecipeIngredients-title">Ingredients</h2>
+           <ul>
+            <% for (i=0; i<food.ingredients.length; i++) { %>
+             <li class="homepage-fullRecipeIngredients-list"> <%=food.ingredients[i].quantity %> <%=food.ingredients[i].unit %> <%=food.ingredients[i].name %> </li>
+             <% } %>
+            </ul>
+          </div>
+         <div class="homepage-fullRecipepreparation">
+           <h2 class="homepage-fullRecipepreparation-title">Preparation</h2>
+           <p class="homepage-fullRecipepreparation-details"> <%=food.instructions %></p>
+          </div>
+         <div class="homepage-fullRecipenutritionfacts">
+           <h2 class="homepage-fullRecipenutritionfacts-title">Nutrition facts</h2>
+           <p class="homepage-fullRecipenutritionfacts-details">303 calories; protein 25.9g; carbohydrates 16.4g; fat 14.2g; cholesterol 79mg; sodium 2141.8mg.</p>
+          </div>
+         <div class="homepage-fullRecipecard-close">
+          <button class="homepage-fullRecipecard-buttonclose">x Close</button>
+         </div>
+       </div>
+        <% }); %>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
-          </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-          </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-        </div>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+              <div class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
           </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+            <div class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-          </div>
-        </div>
 
-        <div class="homepage-recipe-card">
-          <div class="homepage-recipe-image"></div>
-          <h1 class="homepage-recipe-title">A big salad</h1>
-          <div class="homepage-recipe-details">
-            <p class="homepage-recipe-duration">10min</p>
-            <p class="homepage-recipe-calories">200kcal</p>
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+             <div class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-list">
-            <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+              <div class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-          <div class="homepage-add-to-favourites">
-            <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+             <div class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">A big salad</h1>
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">10min</p>
+              <p class="homepage-recipe-calories">200kcal</p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
           </div>
-        </div>
   </section>
+
 </div>
 
 <div id="homepage-footer">
   <div class="homepage-footer-buttons">
     <div class="homepage-random-button"><i class="lni lni-shuffle"><a href="#"></a></i></div>
-    <div class="homepage-addrecipe-button"><i class="lni lni-plus"><a href="#"></a></i></div>
-    <div class="homepage-list-button"><i class="lni lni-list"><a href="#"></a></i></div>
+    <div class="homepage-addrecipe-button"><a href="/recipes/addRecipe"><i class="lni lni-plus"></i></a></div>
+    <div class="homepage-list-button"><a href="/lists/listPreview"><i class="lni lni-list"></i></a></div>
   </div>
 </div>
+
+<script>
+  // Toggling the recipe card visible or hidden
+  let recipeCard = document.querySelector(".homepage-fullRecipeCard")
+
+  let recipeImages = document.querySelectorAll(".homepage-recipe-image")
+  recipeImages.forEach(card => {
+    card.addEventListener("click", ()=>{
+      recipeCard.style.display = "block"
+    })
+
+    let closeRecipeCard = document.querySelector(".homepage-fullRecipecard-buttonclose")
+    closeRecipeCard.addEventListener("click", ()=>{
+      recipeCard.style.display = "none"
+    })
+
+  })
+
+  // Extracting the integers from the nutrition facts and display them depending on the selected portions
+
+  //Extracting integers and floats from the string
+  let regex = /[+-]?\d+(\.\d+)?/g;
+  let nutritionFacts = document.querySelector(".homepage-fullRecipenutritionfacts-details").innerHTML
+  let nutritionFactsNumbers = nutritionFacts.match(regex).map(function(v) { return parseFloat(v); });
+  let nutritionFactsNumbersArr = Array.from(nutritionFactsNumbers)
+  console.log(nutritionFactsNumbersArr)
+
+    
+  
+
+  //Multiplying the numbers by the selected portions
+  
+  const showSelected = () => {
+    let selectValue = document.querySelector(".homepage-fullRecipeservings-select").value
+    let selectValueNumber = selectValue.match(regex).map(n => parseInt(n))
+
+    for (let i = 0; i < nutritionFactsNumbersArr.length; i++) {
+          
+      if(selectValueNumber == 1){
+      console.log("one")
+    } if (selectValueNumber == 2){
+      nutritionFactsNumbersArr[i] = Math.ceil(nutritionFactsNumbersArr[i] * selectValueNumber);
+      
+       
+    } if (selectValueNumber == 3){
+      nutritionFactsNumbersArr[i] = Math.ceil(nutritionFactsNumbersArr[i] * selectValueNumber);
+      
+     
+    } if (selectValueNumber == 4){
+      nutritionFactsNumbersArr[i] = Math.ceil(nutritionFactsNumbersArr[i] * selectValueNumber);
+     
+      
+    } if (selectValueNumber == 5){
+      nutritionFactsNumbersArr[i] = Math.ceil(nutritionFactsNumbersArr[i] * selectValueNumber);
+      
+      
+    } if (selectValueNumber == 6){
+      nutritionFactsNumbersArr[i] = Math.ceil(nutritionFactsNumbersArr[i] * selectValueNumber);
+      
+      
+  }
+}
+console.log(nutritionFactsNumbersArr)
+
+  }
+  // Separating the string to push back the changed numbers
+
+  let separatedStrings = nutritionFacts.match(/[a-zA-Z]+|[+-]?\d+(\.\d+)?/g)
+  console.log(separatedStrings)
+  
+  
+  
+  
+</script>
+
