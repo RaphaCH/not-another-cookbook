@@ -6,6 +6,7 @@ dotenv.config();
 //let ingredient = '2 cups cooked pulled pork';
 //let ingredient = '1,5 pounds bone-in, skin-on chicken thighs';
 // let ingredient = '0.25 cup Louisiana-style hot sauce';
+
 // let chicken = ''
 
 const getIngredientInfo = async (ingredient) => {
@@ -17,6 +18,7 @@ const getIngredientInfo = async (ingredient) => {
     // console.log('hey' + data.calories, data.totalNutrients.FAT.quantity, data.totalNutrients.CHOCDF.quantity, data.totalNutrients.PROCNT.quantity);
     return [data.calories, data.totalNutrients.FAT.quantity, data.totalNutrients.CHOCDF.quantity, data.totalNutrients.PROCNT.quantity];
   }
+
 
 }
 

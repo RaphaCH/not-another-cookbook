@@ -8,16 +8,15 @@ let myRecipesArr = []
 
 
 const getRecipesFromDb = async () => {
-    console.log("get from db")
+    //console.log("get from db")
     try {
         myRecipesArr = await Recipe.find({ 'mainIngredient': '_' }).limit(10);
-        console.log(myRecipesArr)
+        //console.log(myRecipesArr)
     } catch (error) {
         console.log(error)
     } finally {
     }
     return myRecipesArr
-
 }
 
-module.exports = { getMyRecipes: getRecipesFromDb() }
+module.exports = { getMyRecipes: getRecipesFromDb }

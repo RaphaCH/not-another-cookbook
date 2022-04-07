@@ -27,10 +27,10 @@ const RecipeSchema = new mongoose.Schema({
   },
   ingredients:
     [
-      {
-        type: mongoose.Schema.Types.Array,
-        ref: "Ingredients"
-      }
+     {
+       type: mongoose.Schema.Types.ObjectId,
+       ref: "ingredientsPerRecipe"
+     }
     ],
   instructions:
     [
