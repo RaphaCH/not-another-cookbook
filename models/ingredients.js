@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema({
@@ -11,20 +12,30 @@ const IngredientsSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true,
+    required: false,
   },
   unit: {
     type: String,
     required: true
   },
   nutrition: {
-    calories: {type: Number},
-    fats: {type: Number},
-    carbs: {type: Number},
-    protein: {type: Number},
-  }
+    calories: { type: Number },
+    fats: { type: Number },
+    carbs: { type: Number },
+    protein: { type: Number },
+    // quantity: {
+    //   type: String,
+    //   required: true
+    // },
+  },
+  // slug: {
+  //   type: String,
+  //   required: true,
+  //   index: { unique: true }
+  // }
 })
 
 const Ingredients = mongoose.model('Ingredients', IngredientsSchema);
 
 module.exports = { Ingredients, IngredientsSchema };
+

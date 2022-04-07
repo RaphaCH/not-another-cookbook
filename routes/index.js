@@ -10,10 +10,6 @@ const randomFood = require("../scrapping/feed")
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
-
-
-
-
     res.render('login2', { allposts: allPosts });
   })
 })
