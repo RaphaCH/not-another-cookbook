@@ -13,7 +13,26 @@ const recipesStube = [{
     [
       {
         name: 'pasta',
-        quantity: '1 cup',
+        quantity: '1',
+        unit: 'cup',
+        nutrition: [
+          {
+            calories: '100k',
+          },
+          {
+            fat: '10',
+          },
+          {
+            carbs: '20',
+          },
+          {
+            protein: '30',
+          }
+        ]
+      },
+      {
+        name: 'pasta',
+        quantity: '2',
         unit: 'cup',
         nutrition: [
           {
@@ -43,4 +62,5 @@ const recipesStube = [{
 exports.arr = recipesStube;
 
 //module.exports = recipesStube
+
 

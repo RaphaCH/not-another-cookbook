@@ -1,0 +1,352 @@
+[
+    {
+        "scrapIdName": "allrecipes",
+        "category": "pastaRisotto",
+        "mainIngredient": null,
+        "title": "Eggplant Pasta",
+        "servingAmount": "8",
+        "cookingTime": "40 mins",
+        "ingredients": [
+            {
+                "name": "olive oil",
+                "category": "_",
+                "quantity": 0.25,
+                "unit": "cup",
+                "nutrition": "_"
+            },
+            {
+                "name": "cloves garlic, minced",
+                "category": "_",
+                "quantity": 2,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "eggplant, peeled and cut into 1/2-inch cubes",
+                "category": "_",
+                "quantity": 1,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "can plum tomatoes with juice, chopped",
+                "category": "_",
+                "quantity": 28,
+                "unit": "ounce",
+                "nutrition": "_"
+            },
+            {
+                "name": "_",
+                "category": "_",
+                "quantity": "_",
+                "unit": "_",
+                "nutrition": "_"
+            }
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Heat olive oil in a large skillet over medium heat; cook and stir garlic until fragrant, 1 to 2 minutes. Add eggplant; cook, stirring constantly, until eggplant is softened, about 5 minutes. Add tomatoes and juice; cook until sauce is slightly reduced, about 20 minutes.",
+            "",
+            "Step 2",
+            "",
+            "Bring a large pot of lightly salted water to a boil. Cook rigatoni in the boiling water, stirring occasionally until cooked through but firm to the bite, about 13 minutes. Drain and transfer to a serving bowl.",
+            "",
+            "Step 3",
+            "",
+            "Pour sauce over pasta."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F2165690.jpg",
+        "nutrition": "295 calories; protein 8.9g; carbohydrates 48.8g; fat 8.3g; sodium 144.7mg. Full Nutrition"
+    },
+    {
+        "scrapIdName": "allrecipes",
+        "category": "pastaRisotto",
+        "mainIngredient": null,
+        "title": "Reheating Pasta",
+        "servingAmount": "4",
+        "cookingTime": "10 mins",
+        "ingredients": [
+            {
+                "name": "dry pasta",
+                "category": "_",
+                "quantity": 8,
+                "unit": "ounces",
+                "nutrition": "_"
+            },
+            {
+                "name": "olive oil",
+                "category": "_",
+                "quantity": 3,
+                "unit": "tablespoons",
+                "nutrition": "_"
+            }
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Bring a large pot of lightly salted water to a boil. Add pasta and cook for 5 to 7 minutes or until still slightly less than al dente; drain. Rinse with cold water. Toss with olive oil. Cover and refrigerate until ready to use. To reheat, bring a large pot of water to a boil, add pasta and cook until hot, 1 to 2 minutes."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F227824.jpg",
+        "nutrition": "302 calories; protein 8.1g; carbohydrates 39.2g; fat 12.6g; cholesterol 67.2mg; sodium 14.8mg. Full Nutrition"
+    },
+    {
+        "scrapIdName": "allrecipes",
+        "category": "pastaRisotto",
+        "mainIngredient": null,
+        "title": "Homemade Pasta without a Pasta Machine",
+        "servingAmount": "4",
+        "cookingTime": "8 mins",
+        "ingredients": [
+            {
+                "name": "Italian-style tipo 00 flour, plus additional for dusting",
+                "category": "_",
+                "quantity": 2.5,
+                "unit": "cups",
+                "nutrition": "_"
+            },
+            {
+                "name": "large eggs",
+                "category": "_",
+                "quantity": 3,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "salt",
+                "category": "_",
+                "quantity": 1,
+                "unit": "pinch",
+                "nutrition": "_"
+            },
+            {
+                "name": "water, or as needed",
+                "category": "_",
+                "quantity": 1,
+                "unit": "tablespoon",
+                "nutrition": "_"
+            }
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Place flour on a marble or wooden work surface. Make a well in the center and crack in the eggs; add the salt. Gently beat eggs with a fork, incorporating the surrounding flour, until batter is runny. Bring remaining flour into the batter using a bench scraper until dough forms a ball. Mix in water, 1 tablespoon at a time, if dough feels too stiff.",
+            "",
+            "Step 2",
+            "",
+            "Knead dough with your hands by flattening the ball, stretching it and folding the top towards the center. Turn 45 degrees and repeat until dough is soft and smooth, about 10 minutes.",
+            "",
+            "Step 3",
+            "",
+            "Shape dough into a ball. Place in a bowl and cover with plastic wrap. Refrigerate until firm, 30 minutes to 1 hour.",
+            "",
+            "Step 4",
+            "",
+            "Dust work surface with flour. Divide dough into 3 equal portions. Flatten 1 piece a little and roll out 5 to 6 times with a rolling pin. Turn dough 45 degrees and roll 5 to 6 times. Continue rolling and turning until dough is 1/16-inch thick.",
+            "",
+            "Step 5",
+            "",
+            "Cut dough into a sheet. Dust generously with flour and roll into a cylinder. Slice cylinder into 1/4-inch thick strips. Unroll strips and toss generously in flour. Let tagliatelle air-dry, about 30 minutes.",
+            "",
+            "Step 6",
+            "",
+            "Bring a large pan of salted water to a boil. Drop in tagliatelle and cook until tender yet still firm to the bite, 3 to 5 minutes. Drain."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F3825482.jpg",
+        "nutrition": "324 calories; protein 13.7g; carbohydrates 54.7g; fat 5g; cholesterol 139.5mg; sodium 92.9mg. Full Nutrition"
+    },
+    {
+        "scrapIdName": "allrecipes",
+        "category": "pastaRisotto",
+        "mainIngredient": null,
+        "title": "Pasta Carcione",
+        "servingAmount": "5",
+        "cookingTime": "15 mins",
+        "ingredients": [
+            {
+                "name": "spinach, rinsed",
+                "category": "_",
+                "quantity": 10,
+                "unit": "ounces",
+                "nutrition": "_"
+            },
+            {
+                "name": "_",
+                "category": "_",
+                "quantity": "_",
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "olive oil",
+                "category": "_",
+                "quantity": 0.25,
+                "unit": "cup",
+                "nutrition": "_"
+            },
+            {
+                "name": "salt and pepper to taste",
+                "category": "_",
+                "quantity": "_",
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "cherry tomatoes, quartered",
+                "category": "_",
+                "quantity": 2.5,
+                "unit": "cups",
+                "nutrition": "_"
+            },
+            {
+                "name": "crumbled goat cheese",
+                "category": "_",
+                "quantity": 8,
+                "unit": "ounces",
+                "nutrition": "_"
+            }
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Remove stems from spinach and stack leaves together; chop thin longer strips instead of square chops and set aside.",
+            "",
+            "Step 2",
+            "",
+            "Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain and place in a large bowl.",
+            "",
+            "Step 3",
+            "",
+            "Drizzle olive oil over pasta and add salt and pepper to taste, spinach and tomatoes; gently toss.",
+            "",
+            "Step 4",
+            "",
+            "Add goat cheese and serve warm or room temperature."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F508581.jpg",
+        "nutrition": "610 calories; protein 23.9g; carbohydrates 71.9g; fat 26.9g; cholesterol 35.8mg; sodium 289.4mg. Full Nutrition"
+    },
+    {
+        "scrapIdName": "allrecipes",
+        "category": "pastaRisotto",
+        "mainIngredient": null,
+        "title": "Shrimp Scampi with Pasta",
+        "servingAmount": "6",
+        "cookingTime": "20 mins",
+        "ingredients": [
+            {
+                "name": "_",
+                "category": "_",
+                "quantity": "_",
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "butter",
+                "category": "_",
+                "quantity": 2,
+                "unit": "tablespoons",
+                "nutrition": "_"
+            },
+            {
+                "name": "extra-virgin olive oil",
+                "category": "_",
+                "quantity": 2,
+                "unit": "tablespoons",
+                "nutrition": "_"
+            },
+            {
+                "name": "shallots, finely diced",
+                "category": "_",
+                "quantity": 2,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "cloves garlic, minced",
+                "category": "_",
+                "quantity": 2,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "red pepper flakes (Optional)",
+                "category": "_",
+                "quantity": 1,
+                "unit": "pinch",
+                "nutrition": "_"
+            },
+            {
+                "name": "shrimp, peeled and deveined",
+                "category": "_",
+                "quantity": 1,
+                "unit": "pound",
+                "nutrition": "_"
+            },
+            {
+                "name": "kosher salt and freshly ground pepper",
+                "category": "_",
+                "quantity": 1,
+                "unit": "pinch",
+                "nutrition": "_"
+            },
+            {
+                "name": "dry white wine",
+                "category": "_",
+                "quantity": 0.5,
+                "unit": "cup",
+                "nutrition": "_"
+            },
+            {
+                "name": "lemon, juiced",
+                "category": "_",
+                "quantity": 1,
+                "unit": "_",
+                "nutrition": "_"
+            },
+            {
+                "name": "butter",
+                "category": "_",
+                "quantity": 2,
+                "unit": "tablespoons",
+                "nutrition": "_"
+            },
+            {
+                "name": "extra-virgin olive oil",
+                "category": "_",
+                "quantity": 2,
+                "unit": "tablespoons",
+                "nutrition": "_"
+            },
+            {
+                "name": "finely chopped fresh parsley leaves",
+                "category": "_",
+                "quantity": 0.25,
+                "unit": "cup",
+                "nutrition": "_"
+            },
+            {
+                "name": "extra-virgin olive oil, or to taste",
+                "category": "_",
+                "quantity": 1,
+                "unit": "teaspoon",
+                "nutrition": "_"
+            }
+        ],
+        "instructions": [
+            "Step 1",
+            "",
+            "Bring a large pot of salted water to a boil; cook linguine in boiling water until nearly tender, 6 to 8 minutes. Drain.",
+            "",
+            "Step 2",
+            "",
+            "Melt 2 tablespoons butter with 2 tablespoons olive oil in a large skillet over medium heat. Cook and stir shallots, garlic, and red pepper flakes in the hot butter and oil until shallots are translucent, 3 to 4 minutes. Season shrimp with kosher salt and black pepper; add to the skillet and cook until pink, stirring occasionally, 2 to 3 minutes. Remove shrimp from skillet and keep warm.",
+            "",
+            "Step 3",
+            "",
+            "Pour white wine and lemon juice into skillet and bring to a boil while scraping the browned bits of food off of the bottom of the skillet with a wooden spoon. Melt 2 tablespoons butter in skillet, stir 2 tablespoons olive oil into butter mixture, and bring to a simmer. Toss linguine, shrimp, and parsley in the butter mixture until coated; season with salt and black pepper. Drizzle with 1 teaspoon olive oil to serve."
+        ],
+        "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F03%2F20%2F229960-Shrimp-Scampi-with-Pasta-mfs-050.jpg",
+        "nutrition": "511 calories; protein 21.9g; carbohydrates 57.5g; fat 19.4g; cholesterol 135.4mg; sodium 260mg. Full Nutrition"
+    }
+]
