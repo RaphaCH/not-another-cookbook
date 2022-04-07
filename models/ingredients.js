@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema({
@@ -37,3 +38,4 @@ const IngredientsSchema = new mongoose.Schema({
 const Ingredients = mongoose.model('Ingredients', IngredientsSchema);
 
 module.exports = { Ingredients, IngredientsSchema };
+

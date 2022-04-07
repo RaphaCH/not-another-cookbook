@@ -10,7 +10,9 @@ const getIngredientInfo = require('../APIS/apiIngredient');
 
 
 
+
 router.get('/addRecipe', (req, res) => {
+
     res.render('addManualRecipe');
 })
 
@@ -113,6 +115,20 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
         res.redirect('/home');
     }
 })
+
+router.get('/random', function (req, res) {
+    let posts = Recipe.find({}, function(err, recipes){
+        if(err){
+            console.log(err);
+        }
+        else {
+            res.json(recipes);
+            console.log(res)
+        }
+    });
+});
+
+
 
 
 

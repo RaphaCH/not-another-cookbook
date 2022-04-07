@@ -128,13 +128,13 @@ const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
     let recipe = {};
     await page.goto(urls[i]);
     await page.waitForTimeout(1000);
-    recipe.scrapIdName = "allrecipes"
+    recipe.scrapSource = "allrecipes"
     recipe.category = myCategory(trackOfMyCategory)
-    recipe.mainIngredient = null
+    recipe.mainIngredient = "_"
     try {
       recipe.title = await page.evaluate(() =>
         document.querySelector(".headline").innerText.trim()
-      );
+      );c
     } catch (error) { }
 
     try {
@@ -170,7 +170,7 @@ const scrapContentFromUrls = async (urls, trackOfMyCategory) => {
     } catch (error) { }
 
     try {
-      recipe.image = await page.evaluate(
+      recipe.imageLink = await page.evaluate(
         () => document.querySelector(".icon.icon-image-zoom").dataset.image
       );
     } catch (error) { }

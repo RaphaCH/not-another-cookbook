@@ -6,4 +6,8 @@ router.get('/listPreview', (req,res) => {
     res.render('listPreview');
 })
 
+router.get('/list', (req,res) => {
+    res.render('list');
+})
+
 module.exports = router;
