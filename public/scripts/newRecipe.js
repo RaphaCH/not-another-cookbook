@@ -14,6 +14,7 @@ doneBtn.addEventListener('click', () => {
     alert('yo')
     let data = {}
     let ingredients = []
+
   
 
     document.querySelectorAll('.addManualRecipe-addingredients').forEach(element => {
@@ -21,10 +22,11 @@ doneBtn.addEventListener('click', () => {
             name: element.querySelector('[name="ingredientname"]').value,
             quantity: element.querySelector('[name="quantity"]').value,
             unit: element.querySelector('[name="unit"]').value,
-            
+
         }
         ingredients.push(ingredient);
     })
+
 
     data.cookingTime = cookingTime.value
     data.title = title.value
@@ -47,11 +49,11 @@ const postRecipe = (dataObject) => {
         },
         body: JSON.stringify(dataObject),
     })
+
     .then(response => window.location.href='/home')
-    
+
 
 };
-
 
 
 

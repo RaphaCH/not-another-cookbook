@@ -25,7 +25,7 @@ const RecipeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  ingredients: //"ingredients":["¼ cup olive oil","2 cloves garlic, minced","1 eggplant, peeled and cut into 1/2-inch cubes","1 (28 ounce) can plum tomatoes with juice, chopped","1 (16 ounce) package rigatoni pasta"]
+  ingredients:
     [
      {
        type: mongoose.Schema.Types.ObjectId,

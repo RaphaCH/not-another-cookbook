@@ -3,17 +3,21 @@ const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 const Recipe = require("../models/recipe").Recipe;
 const manualRecipe = require("../models/manualRecipe").manualRecipe;
+
 const ingredientPerRecipe = require('../models/ingredientsPerRecipe').ingredientsPerRecipe;
 const Ingredients = require('../models/ingredients').Ingredients;
+
 const Collection = require('../models/collections').Collection;
 const axios = require('axios');
 const getIngredientInfo = require('../APIS/apiIngredient');
+
 
 
 router.get('/addRecipe', (req, res) => {
 
     res.render('addManualRecipe');
 })
+
 
 
 
@@ -35,6 +39,7 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
                     let ingredientInfo = await getIngredientInfo(ingredient.name)
                     let newIngredient = new Ingredients({
                         name: ingredient.name,
+
                         nutrition: {
                             calories: ingredientInfo[0],
                             fats: ingredientInfo[1],
@@ -43,6 +48,7 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
                         }
                     })
                     await newIngredient.save()
+
                     nameReferente = newIngredient._id;
                     console.log('creating new one ' + newIngredient._id);
                 }
@@ -77,6 +83,7 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
         }
         console.log('time to go home');
         res.json({status: 200});
+
     } catch (error) {
         console.log(error);
         res.redirect('/home');
