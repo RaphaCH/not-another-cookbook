@@ -11,7 +11,7 @@ const cloudinary = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const fileupload = require('express-fileupload')
 const dotenv = require('dotenv');
-const { myUpdatedRecipes } = require('./models/5recipes.mjs');
+// const { myUpdatedRecipes } = require('./models/5recipes.mjs');
 dotenv.config();
 
 
@@ -76,7 +76,9 @@ app.use('/users', require('./routes/users'));
 app.use('/profiles', require('./routes/profiles'));
 app.use('/posts', require('./routes/posts'));
 app.use('/recipes', require('./routes/recipes'));
+// app.use('/5recipesTests', require('./routes/5recipesTests'));
 app.use('/lists', require('./routes/lists'));
+
 
 
 

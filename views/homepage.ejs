@@ -39,7 +39,9 @@
     
   
     <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
-      <% food.forEach((food)=> { %>
+      
+    <% const myCalories =(food) => { let mySplitarr = food.nutrition.split(";"); return mySplitarr[0] }  %>
+    <% food.forEach((food)=> { %>
         <div class="homepage-recipe-card">
           <div class="homepage-recipe-image-flexalign">
           <div style="background: url(<%=food.imageLink%>),
@@ -53,7 +55,8 @@
               <%=food.cookingTime %>
             </p>
             <p class="homepage-recipe-calories">
-              <%=food.nutrition %>
+              
+              <%=myCalories(food)%>
             </p>
           </div>
           <div class="homepage-add-to-list">

@@ -38,7 +38,7 @@ const renderDashboardWithPosts = async function (req, res) {
 }
 
 router.get('/home', ensureAuthenticated, async(req, res) => {
-  let myFood = await randomFood.getMyRecipes
+  let myFood = await randomFood.getMyRecipes()
   // console.log(myFood)
   if (!req.user.profile) {
     res.render('homepage', {

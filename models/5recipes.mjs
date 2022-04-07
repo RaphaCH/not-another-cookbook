@@ -1,4 +1,5 @@
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+import fetch from "node-fetch";
 import fs from "fs";
 import parseIngredient from "parse-ingredient"
 let recipes = JSON.parse(fs.readFileSync("400recipes.json", "utf-8"));
