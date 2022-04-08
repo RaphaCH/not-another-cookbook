@@ -16,7 +16,7 @@ const getRecipesFromDb = async () => {
   //console.log("get from db")
   try {
     myRecipesArr = await manualRecipe.find().populate({ path: 'ingredients', model: ingredientsPerRecipe, populate: { path: 'ingredient', model: ingredients } });
-    console.log(myRecipesArr)
+    // console.log(myRecipesArr)
   } catch (error) {
     console.log(error)
   } finally {

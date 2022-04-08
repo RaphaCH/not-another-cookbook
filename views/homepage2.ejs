@@ -53,7 +53,9 @@
 
             <div class="homepage-recipe-details">
               <p class="homepage-recipe-duration">
-                <%=food.cookingTime %>
+                <!-- <%=food.cookingTime %> -->
+                <%=food._id %>
+
               </p>
               <p class="homepage-recipe-calories">
                 <% food.ingredients.forEach(element=> { %>
@@ -62,7 +64,7 @@
               </p>
             </div>
             <div class="homepage-add-to-list">
-              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
+              <div class="homepage-recipe-addtolist" data-recipeId="<%=food._id %>"><i class="lni lni-plus"></i></div>
             </div>
             <div class="homepage-add-to-favourites">
               <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
@@ -111,6 +113,7 @@
                     <%=food.ingredients[i].quantity %>
                       <%=food.ingredients[i].unit %>
                         <%=food.ingredients[i].ingredient.name %>
+                        <%=food.ingredients[i]._id %>
                   </li>
                   <% } %>
               </ul>

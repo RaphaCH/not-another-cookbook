@@ -15,26 +15,30 @@
             </ul>   
 </section>
 <section class="listPreview-allList">
+    <!-- <h1><%= list.title %></h1> -->
+    <% list.title.forEach((listTitle)=> { %>
  <div class="listPreview-recipeList">
-        <div class="listPreview-accordion">
+        <div class="listPreview-accordion">     
             <input type="checkbox" name="collapse" id="handle1" checked="checked">
             <h2 class="listPreview-handle">
-            <label class="listPreview-accordiontitle" for="handle1">Recipe Title</label>
+            <label class="listPreview-accordiontitle" for="handle1"><%= listTitle%></label>
             </h2>
         <div class="listPreview-content"> 
             <div class="listPreview-dropdown"> 
+                <% list.ingredients.forEach((listIngredient)=> { %>
                 <div class="listPreview-ingredientList">  
                     <input type="checkbox" class="listPreview-ingredients" name="ingredient1" value="ingredient1">
-                    <label class="listPreview-ingredientscontent" for="ingredient1"> Ingredient 1</label><br>
+                    <label class="listPreview-ingredientscontent" for="ingredient1"> <%= listIngredient.quantity %><%= listIngredient.unit %> <%= listIngredient.ingredient.name %></label><br>
                 </div> 
-                <div class="listPreview-ingredientList">    
+                <!-- <div class="listPreview-ingredientList">    
                     <input type="checkbox" class="listPreview-ingredients" name="ingredient2" value="ingredient2">
                     <label class="listPreview-ingredientscontent" for="ingredient2"> Ingredient 2</label><br>
                 </div> 
                 <div class="listPreview-ingredientList">  
                     <input type="checkbox" class="listPreview-ingredients" name="ingredient3" value="ingredient3">
                     <label class="listPreview-ingredientscontent" for="ingredient3"> Ingredient 3</label><br>
-                </div> 
+                </div>  -->
+                <% }); %>
             </div>
         </div>
     </div>
@@ -51,9 +55,12 @@
         </div>
                <div class="listPreview-recipeDelete"><i class="lni lni-close"></i></div>
      </div>
- </div>
 
- <div class="listPreview-recipeList">
+ </div>
+ 
+ <% }); %>
+
+ <!-- <div class="listPreview-recipeList">
     <div class="listPreview-accordion">
         <input type="checkbox" name="collapse" id="handle2" checked="checked">
         <h2 class="listPreview-handle">
@@ -162,8 +169,8 @@
            </select>
     </div>
            <div class="listPreview-recipeDelete"><i class="lni lni-close"></i></div>
- </div>
-</div>
+ </div> -->
+<!-- </div> -->
 </section>
 
 </div>
