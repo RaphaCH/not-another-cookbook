@@ -15,8 +15,12 @@ let myRecipesArr = []
 const getRecipesFromDb = async () => {
     //console.log("get from db")
     try {
-        myRecipesArr = await manualRecipe.find().populate({ path: 'ingredients', model: ingredientsPerRecipe, populate: { path: 'ingredient', model: ingredients } });
+
+
+        myRecipesArr = await Recipe.find({ 'mainIngredient': '_' }).limit(50);
         console.log(myRecipesArr)
+
+
     } catch (error) {
         console.log(error)
     } finally {
