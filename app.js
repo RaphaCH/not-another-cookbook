@@ -11,7 +11,6 @@ const cloudinary = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const fileupload = require('express-fileupload')
 const dotenv = require('dotenv');
-const fetch = require('fetch');
 
 // const { myUpdatedRecipes } = require('./models/5recipes.mjs');
 dotenv.config();

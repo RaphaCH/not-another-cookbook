@@ -47,64 +47,64 @@ const ingredient = async () => {
                 console.log("categories---[ " + catArr)
                 rl.question('category --> ', (category) => {
                     if (!isNaN(category) && category < 12 && category >= 0) {
-                        switch(category){
+                        switch (category) {
                             case "0":
                                 category = 'Dairy'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "1":
                                 category = 'Fats & oils'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "2":
                                 category = 'Fruits & Vegetables'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "3":
                                 category = 'Pasta'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "4":
                                 category = 'Rice & Pulses'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "5":
                                 category = 'Grain products & Nuts'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "6":
                                 category = 'Herbs & Spices'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "7":
                                 category = 'Meat & Seafood'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "8":
                                 category = 'Drinks'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "9":
                                 category = 'Alcohol'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "10":
                                 category = 'Sauces'
                                 newData[i].category = category
-                            break;
+                                break;
                             case "11":
                                 category = 'No Category Found'
                                 newData[i].category = category
-                            break;
-                            default :
-                            category = 'No Category Found'
-                            newData[i].category = category
+                                break;
+                            default:
+                                category = 'No Category Found'
+                                newData[i].category = category
                         }
-    
-                       
+
+
                     }
                     resolve()
-                   
+
 
                     console.log(newData[i])
 
@@ -115,9 +115,9 @@ const ingredient = async () => {
                     if (question === "n") {
                         newData.pop()
                         i--
-                    }else{
-                    fs.appendFile("ingredientCorr_1.json", JSON.stringify(newData[i]) +",",function(err){
-                        if(err) throw err;
+                    } else {
+                        fs.appendFile("ingredientCorr_1.json", JSON.stringify(newData[i]) + ",", function (err) {
+                            if (err) throw err;
                         });
                     }
                     resolve()
