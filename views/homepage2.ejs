@@ -57,7 +57,7 @@
               </p>
               <p class="homepage-recipe-calories">
                 <% food.ingredients.forEach(element=> { %>
-                  <%=element.ingredient.name%>
+                  <%=element.ingredient.nutrition.calories %>
                     <% }); %>
               </p>
             </div>
@@ -110,7 +110,7 @@
                   <li class="homepage-fullRecipeIngredients-list">
                     <%=food.ingredients[i].quantity %>
                       <%=food.ingredients[i].unit %>
-                        <%=food.ingredients[i].name %>
+                        <%=food.ingredients[i].ingredient.name %>
                   </li>
                   <% } %>
               </ul>
