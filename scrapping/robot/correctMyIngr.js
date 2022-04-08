@@ -5,7 +5,8 @@ let catArr = ["0 Dairy", "1 Fats & oils", "2 Fruits & Vegetables", "3 Pasta", "4
 
 let rawdata = fs.readFileSync('recipeIngr.json');
 newData = []
-let myJsonData = JSON.parse(rawdata);
+let recipes = JSON.parse(rawdata);
+let myRecipe = []
 let myData = []
 
 
@@ -13,7 +14,8 @@ const feedArr = (ingr) => {
     myData.push(ingr)
 }
 
-myJsonData.forEach(element => {
+recipes.forEach(element => {
+    myRecipe.push(element)
     element.ingredients.forEach(ingr => {
         feedArr(ingr.name)
 
@@ -28,103 +30,110 @@ const rl = readline.createInterface({
 
 const ingredient = async () => {
     rl.question('Ready to sort? ', async () => {
-        for (let i = 0; i < myData.length; i++) {
-            // Wait for a question to be answered. 
-            console.log('')
-            console.log('')
-            console.log(myData[i] + " ? ")
+        //recipes
+        for (let p = 0; p < recipes.length; p++) {
+            //recipe
+            for (let k = 0; k < recipes[p].ingredients.length; k++) {
+                let myIngredient = recipes[p].ingredients[k]
 
-            await new Promise((resolve) => {
-                rl.question('ingredient --> ', (ingred) => {
+                console.log('')
+                console.log('')
+                console.log(myIngredient.name + " ? ")
 
-                    newData.push({ name: myData[i], ingred: ingred })
-                    console.log(newData[i])
-                    resolve()
+                await new Promise((resolve) => {
+                    rl.question('ingredient --> ', (ingred) => {
+                        myIngredient.name = ingred
+                        // return console.log(recipes[0])
+                        resolve()
 
+                    })
                 })
-            })
-            await new Promise((resolve) => {
-                console.log("categories---[ " + catArr)
-                rl.question('category --> ', (category) => {
-                    if (!isNaN(category) && category < 12 && category >= 0) {
-                        switch(category){
-                            case "0":
-                                category = 'Dairy'
-                                newData[i].category = category
-                            break;
-                            case "1":
-                                category = 'Fats & oils'
-                                newData[i].category = category
-                            break;
-                            case "2":
-                                category = 'Fruits & Vegetables'
-                                newData[i].category = category
-                            break;
-                            case "3":
-                                category = 'Pasta'
-                                newData[i].category = category
-                            break;
-                            case "4":
-                                category = 'Rice & Pulses'
-                                newData[i].category = category
-                            break;
-                            case "5":
-                                category = 'Grain products & Nuts'
-                                newData[i].category = category
-                            break;
-                            case "6":
-                                category = 'Herbs & Spices'
-                                newData[i].category = category
-                            break;
-                            case "7":
-                                category = 'Meat & Seafood'
-                                newData[i].category = category
-                            break;
-                            case "8":
-                                category = 'Drinks'
-                                newData[i].category = category
-                            break;
-                            case "9":
-                                category = 'Alcohol'
-                                newData[i].category = category
-                            break;
-                            case "10":
-                                category = 'Sauces'
-                                newData[i].category = category
-                            break;
-                            case "11":
-                                category = 'No Category Found'
-                                newData[i].category = category
-                            break;
-                            default :
-                            category = 'No Category Found'
-                            newData[i].category = category
+                await new Promise((resolve) => {
+                    console.log("categories---[ " + catArr)
+                    rl.question('category --> ', (category) => {
+                        if (!isNaN(category) && category < 12 && category >= 0) {
+                            switch (category) {
+                                case "0":
+                                    category = 'Dairy'
+                                    myIngredient.category = category
+                                    break;
+                                case "1":
+                                    category = 'Fats & oils'
+                                    myIngredient.category = category
+                                    break;
+                                case "2":
+                                    category = 'Fruits & Vegetables'
+                                    myIngredient.category = category
+                                    break;
+                                case "3":
+                                    category = 'Pasta'
+                                    myIngredient.category = category
+                                    break;
+                                case "4":
+                                    category = 'Rice & Pulses'
+                                    myIngredient.category = category
+                                    break;
+                                case "5":
+                                    category = 'Grain products & Nuts'
+                                    myIngredient.category = category
+                                    break;
+                                case "6":
+                                    category = 'Herbs & Spices'
+                                    myIngredient.category = category
+                                    break;
+                                case "7":
+                                    category = 'Meat & Seafood'
+                                    myIngredient.category = category
+                                    break;
+                                case "8":
+                                    category = 'Drinks'
+                                    myIngredient.category = category
+                                    break;
+                                case "9":
+                                    category = 'Alcohol'
+                                    myIngredient.category = category
+                                    break;
+                                case "10":
+                                    category = 'Sauces'
+                                    myIngredient.category = category
+                                    break;
+                                case "11":
+                                    category = 'No Category Found'
+                                    myIngredient.category = category
+                                    break;
+                                default:
+                                    category = 'No Category Found'
+                                    myIngredient.category = category
+                            }
+
+
                         }
-    
-                       
-                    }
-                    resolve()
-                   
+                        resolve()
 
-                    console.log(newData[i])
 
+                        console.log(myIngredient)
+
+                    })
                 })
-            })
-            await new Promise((resolve) => {
-                rl.question('info ok? y/n: ', (question) => {
-                    if (question === "n") {
-                        newData.pop()
-                        i--
-                    }else{
-                    fs.appendFile("ingredientCorr_1.json", JSON.stringify(newData[i]) +",",function(err){
-                        if(err) throw err;
-                        });
-                    }
-                    resolve()
+                await new Promise((resolve) => {
+                    rl.question('info ok? y/n: ', (question) => {
+                        if (question === "n") {
+                            k--
+                        } else {
+                            console.log()
+
+                            // fs.writeFileSync("correctedList", )
+
+                            resolve()
+                        }
+                    })
                 })
-            })
+            }
+            fs.appendFile("ingredientCorr_1.json", JSON.stringify(recipes[p]) + ",", function (err) {
+                if (err) throw err;
+            });
         }
-    });
+    }) 
 }
-
 ingredient()
+
