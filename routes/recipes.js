@@ -22,18 +22,18 @@ router.get('/addRecipe', (req, res) => {
 
 
 router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
         let ingredientReference = []
 
         for (const ingredient of req.body.ingredients) {
-            console.log('inside de loop');
+            // console.log('inside de loop');
             let nameReferente
             if (ingredient.name) {
                 let ingredientExists = await Ingredients.exists({ name: ingredient.name })
                 if (ingredientExists) {
                     nameReferente = ingredientExists._id;
-                    console.log('ingredient exists ' + ingredientExists._id);
+                    // console.log('ingredient exists ' + ingredientExists._id);
                 } else {
 
                     let ingredientInfo = await getIngredientInfo(ingredient.name)
@@ -50,7 +50,7 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
                     await newIngredient.save()
 
                     nameReferente = newIngredient._id;
-                    console.log('creating new one ' + newIngredient._id);
+                    // console.log('creating new one ' + newIngredient._id);
                 }
                 //at this point, we either have the ingredient or we created a new table with it.
             }
@@ -62,7 +62,7 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
             })
             await newIngredientsPerRecipe.save()
             ingredientReference.push(newIngredientsPerRecipe._id)
-            console.log('new created table was ' + newIngredientsPerRecipe._id);
+            // console.log('new created table was ' + newIngredientsPerRecipe._id);
 
 
         };
@@ -78,10 +78,10 @@ router.post('/newRecipe', ensureAuthenticated, async (req, res) => {
         })
         await newRecipe.save()
         for (let ingredientRef of ingredientReference) {
-            console.log('updating new recipe with first reference ' + ingredientRef);
+            // console.log('updating new recipe with first reference ' + ingredientRef);
             await manualRecipe.findOneAndUpdate({ _id: newRecipe._id }, { $push: { ingredients: [ ingredientRef ] } })
         }
-        console.log('time to go home');
+        // console.log('time to go home');
         res.json({status: 200});
 
     } catch (error) {

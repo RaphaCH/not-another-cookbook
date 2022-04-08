@@ -20,7 +20,11 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  profile: ProfileSchema
+  profile: ProfileSchema,
+  previewList: {
+    type:  mongoose.Schema.Types.ObjectId, ref: "previewList"
+  }
+
 
 });
 const User = mongoose.model('User', UserSchema);
