@@ -34,14 +34,15 @@
     <a class="homepage-categories" href="#">This week</a>
   </section>
   <section class="homepage-recipes">
-
-  
+    
     
   
     <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
+
       
     <% const myCalories =(food) => { let mySplitarr = food.nutrition.split(";"); return mySplitarr[0] }  %>
     <% food.forEach((food)=> { %>
+
         <div class="homepage-recipe-card">
           <div class="homepage-recipe-image-flexalign">
           <div style="background: url(<%=food.imageLink%>),
@@ -66,12 +67,15 @@
             <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
           </div>
         </div>
+        <!-- Recipe full card -->
         <div class="homepage-fullRecipeCard">
           <div class="homepage-fullRecipeimage-flexalign">
           <div style="background: url(<%=food.imageLink%>),
             #C4C4C4; background-size: cover" class="homepage-fullRecipeimage"></div>
           </div>
-          <h1 class="homepage-fullRecipetitle"><%= food.title %></h1>
+          <h1 class="homepage-fullRecipetitle">
+            <%= food.title %>
+          </h1>
          <div class="homepage-fullRecipeDetails">
           <div class="homepage-fullRecipeDetails-flex">
             <h2 class="homepage-fullRecipeduration">Duration</h2>
@@ -94,63 +98,31 @@
          </div>
          <div class="homepage-fullRecipeIngredients">
            <h2 class="homepage-fullRecipeIngredients-title">Ingredients</h2>
-           <ul>
-           
 
+           <ul>    
             <% for ( i=0; i<food.ingredients.length; i++) { %>
-             <li class="homepage-fullRecipeIngredients-list"> <%=food.ingredients[i].quantity %> <%=food.ingredients[i].unit %> <%=food.ingredients[i].name %> </li>
+             <li class="homepage-fullRecipeIngredients-list"> <%=food.ingredients[i][0].quantity %> <%=food.ingredients[i][0].unit %> <%=food.ingredients[i][0].name %> </li>
              <% } %>
             </ul>
           </div>
          <div class="homepage-fullRecipepreparation">
            <h2 class="homepage-fullRecipepreparation-title">Preparation</h2>
-           <p class="homepage-fullRecipepreparation-details"> <%=food.instructions %></p>
+           <% for ( i=0; i<food.instructions.length; i++) { %>
+           <p class="homepage-fullRecipepreparation-details"> <%=food.instructions[i][0] %></p>
+           <% } %>
           </div>
          <div class="homepage-fullRecipenutritionfacts">
            <h2 class="homepage-fullRecipenutritionfacts-title">Nutrition facts</h2>
-           <p class="homepage-fullRecipenutritionfacts-details">303 calories; protein 25.9g; carbohydrates 16.4g; fat 14.2g; cholesterol 79mg; sodium 2141.8mg.</p>
+           <p class="homepage-fullRecipenutritionfacts-details"> <%=food.nutrition %></p>
           </div>
          <div class="homepage-fullRecipecard-close">
-          <button class="homepage-fullRecipecard-buttonclose">x Close</button>
+          <button onClick="window.location.reload();" class="homepage-fullRecipecard-buttonclose">x Close</button>
          </div>
        </div>
+      </div>
       <% }); %>
+
      
-
-          <div class="homepage-recipe-card">
-            <div class="homepage-recipe-image-flexalign">
-              <div class="homepage-recipe-image"></div>
-            </div>
-            <h1 class="homepage-recipe-title">A big salad</h1>
-            <div class="homepage-recipe-details">
-              <p class="homepage-recipe-duration">10min</p>
-              <p class="homepage-recipe-calories">200kcal</p>
-            </div>
-            <div class="homepage-add-to-list">
-              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-            </div>
-            <div class="homepage-add-to-favourites">
-              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-            </div>
-
-          </div>
-          <div class="homepage-recipe-card">
-            <div class="homepage-recipe-image-flexalign">
-              <div class="homepage-recipe-image"></div>
-            </div>
-            <h1 class="homepage-recipe-title">A big salad</h1>
-            <div class="homepage-recipe-details">
-              <p class="homepage-recipe-duration">10min</p>
-              <p class="homepage-recipe-calories">200kcal</p>
-            </div>
-            <div class="homepage-add-to-list">
-              <div class="homepage-recipe-addtolist"><i class="lni lni-plus"></i></div>
-            </div>
-            <div class="homepage-add-to-favourites">
-              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
-            </div>
-
-          </div>
   </section>
 
 </div>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const RecipeSchema = new mongoose.Schema({
+const manualRecipeSchema = new mongoose.Schema({
   scrapSource: {
     type: String,
     required: true
@@ -25,23 +25,25 @@ const RecipeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  ingredients:
+  ingredients: //"ingredients":["¼ cup olive oil","2 cloves garlic, minced","1 eggplant, peeled and cut into 1/2-inch cubes","1 (28 ounce) can plum tomatoes with juice, chopped","1 (16 ounce) package rigatoni pasta"]
     [
-     {
-       type: mongoose.Schema.Types.ObjectId,
-       ref: "ingredientsPerRecipe"
-     }
+      {
+
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ingredientsPerRecipe"
+
+      }
     ],
   instructions:
     [
       {
-        type: Array,
+        type: String,
         required: true
       }
     ],
   imageLink: {
     type: String,
-    required: false
+    required: true
   },
   nutrition: {
     type: String,
@@ -54,6 +56,6 @@ const RecipeSchema = new mongoose.Schema({
   },
 });
 
-const Recipe = mongoose.model('Recipe', RecipeSchema);
+const manualRecipe = mongoose.model('manualRecipe', manualRecipeSchema);
 
-module.exports = { Recipe, RecipeSchema };
+module.exports = { manualRecipe, manualRecipeSchema };

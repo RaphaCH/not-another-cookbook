@@ -99,6 +99,7 @@ header {
 .list-header-container label > h1 {
   color: white;
   padding-left: 5vh;
+  font-size: 18px;
 }
 
 i.arrow {
