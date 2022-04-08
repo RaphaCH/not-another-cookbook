@@ -34,8 +34,7 @@
     <a class="homepage-categories" href="#">This week</a>
   </section>
   <section class="homepage-recipes">
-
-  
+    
     
   
     <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
@@ -95,6 +94,7 @@
          </div>
          <div class="homepage-fullRecipeIngredients">
            <h2 class="homepage-fullRecipeIngredients-title">Ingredients</h2>
+
            <ul>    
             <% for ( i=0; i<food.ingredients.length; i++) { %>
              <li class="homepage-fullRecipeIngredients-list"> <%=food.ingredients[i][0].quantity %> <%=food.ingredients[i][0].unit %> <%=food.ingredients[i][0].name %> </li>
@@ -117,6 +117,7 @@
        </div>
       </div>
       <% }); %>
+
      
   </section>
 
