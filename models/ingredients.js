@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema({
@@ -5,17 +6,9 @@ const IngredientsSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  quantity: {
-    type: String,
-    required: true
-  },
   category: {
     type: String,
-    required: true,
-  },
-  unit: {
-    type: String,
-    required: true
+    required: false,
   },
   nutrition: {
     calories: {type: Number},
@@ -28,3 +21,4 @@ const IngredientsSchema = new mongoose.Schema({
 const Ingredients = mongoose.model('Ingredients', IngredientsSchema);
 
 module.exports = { Ingredients, IngredientsSchema };
+

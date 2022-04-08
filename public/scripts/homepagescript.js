@@ -1,23 +1,32 @@
 //Global Variables
 
-let recipeCard = document.querySelector(".homepage-fullRecipeCard");
+let fullRecipeDiv = document.querySelectorAll(".homepage-full-recipe-div");
+let recipeImages = document.querySelectorAll(".homepage-recipe-image-flexalign");
 let regex = /[+-]?\d+(\.\d+)?/g;
 let nutritionFactsDiv = document.querySelector(".homepage-fullRecipenutritionfacts-details");
 let nutritionFacts = document.querySelector(".homepage-fullRecipenutritionfacts-details").innerHTML;
-let recipeImages = document.querySelectorAll(".homepage-recipe-image");
+let closeCard = document.querySelectorAll(".homepage-fullRecipecard-buttonclose");
 
-//Toggling the modal visible/hidden
 
-recipeImages.forEach((card) => {
-  card.addEventListener("click", () => {
-    recipeCard.style.display = "block";
-  });
+//Toggling the modal visible
 
-  let closeRecipeCard = document.querySelector(".homepage-fullRecipecard-buttonclose");
-  closeRecipeCard.addEventListener("click", () => {
-    recipeCard.style.display = "none";
-  });
-});
+recipeImages.forEach(image =>{
+  image.addEventListener('click', ()=>{
+    let fullRecipe = image && image.closest(".homepage-recipe-card").nextElementSibling
+    
+    fullRecipe.classList.toggle("homepage-full-recipe-div-visible")  
+    let toggleVisible = document.querySelector(".homepage-full-recipe-div-visible")
+    toggleVisible.style.display = "block";
+
+    let closeBtn = fullRecipe.lastChild.previousSibling.firstChild.nextSibling
+    closeBtn.classList.toggle("homepage-full-recipe-div-close")
+    closeBtn.addEventListener('click', ()=>{
+      toggleVisible.style.display = "none";
+    })
+})
+})
+
+//The function below needs to be refactored as some elements/data on the page have changed and currently it does not work anymore
 
 //Extracting only the integers and floats from the nutrition facts 
 

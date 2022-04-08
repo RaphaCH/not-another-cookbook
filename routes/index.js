@@ -11,9 +11,6 @@ const randomFood = require("../scrapping/feed")
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
 
-
-
-
     res.render('login2', { allposts: allPosts });
   })
 })
@@ -38,7 +35,7 @@ const renderDashboardWithPosts = async function (req, res) {
 }
 
 router.get('/home', ensureAuthenticated, async(req, res) => {
-  let myFood = await randomFood.getMyRecipes
+  let myFood = await randomFood.getMyRecipes()
   // console.log(myFood)
   if (!req.user.profile) {
     res.render('homepage', {
