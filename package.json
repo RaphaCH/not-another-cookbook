@@ -1,6 +1,7 @@
 {
   "name": "not-another-cookbook",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "dev of the app with the same name(at least for now)",
   "main": "app.js",
   "scripts": {
