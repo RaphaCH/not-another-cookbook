@@ -20,4 +20,4 @@ const getRecipesFromDb = async () => {
 
 }
 
-module.exports = { getMyRecipes: getRecipesFromDb() }
+module.exports = { getMyRecipes: getRecipesFromDb }
