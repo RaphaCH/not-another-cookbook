@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth')
 const Post = require("../models/post").Post
-const randomFood = require("../scrapping/feed")
+const randomFood = require("../scrapping/manualFeed")
 
 
 
@@ -10,9 +10,6 @@ const randomFood = require("../scrapping/feed")
 //login page
 router.get('/', (req, res) => {
   Post.find({}, (err, allPosts) => {
-
-
-
 
     res.render('login2', { allposts: allPosts });
   })
@@ -31,23 +28,23 @@ const getProfileAndPopulate = function (id) {
 const renderDashboardWithPosts = async function (req, res) {
   let posts = await getProfileAndPopulate(req.user.profile._id)
 
-  res.render('homepage', {
+  res.render('homepage2', {
     user: req.user,
     posts: posts
   });
 }
 
-router.get('/home', ensureAuthenticated, async(req, res) => {
+router.get('/home', ensureAuthenticated, async (req, res) => {
   let myFood = await randomFood.getMyRecipes()
   // console.log(myFood)
   if (!req.user.profile) {
-    res.render('homepage', {
+    res.render('homepage2', {
       user: req.user,
       food: myFood
     });
   } else {
     //renderDashboardWithPosts(req, res)
-    res.render('homepage', {
+    res.render('homepage2', {
       user: req.user,
       food: myFood
     });

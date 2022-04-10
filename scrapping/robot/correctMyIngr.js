@@ -110,7 +110,6 @@ const ingredient = async () => {
                         }
                         resolve()
 
-
                         console.log(myIngredient)
 
                     })

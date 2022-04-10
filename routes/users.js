@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const previewList = require("../models/shoppingListPreview").previewList
+
 //login handle
 router.get('/login', (req, res) => {
   res.render('login2');
@@ -51,10 +53,15 @@ router.post('/register', (req, res) => {
         errors.push({ msg: 'email already registered' });
         res.render('register2', { errors, name, email, password, password2 })
       } else {
+        const newPreviewList = new previewList({
+
+        })
+        newPreviewList.save()
         const newUser = new User({
           name: name,
           email: email,
-          password: password
+          password: password,
+          previewList: newPreviewList._id
         });
 
         //hash password

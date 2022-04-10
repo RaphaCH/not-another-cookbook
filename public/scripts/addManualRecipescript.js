@@ -82,7 +82,7 @@ var util = {
     f: {
       init: {
         register: function () {
-          console.clear();
+          // console.clear();
           var child,
             children = document.getElementsByClassName("field"),
             i;

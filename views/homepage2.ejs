@@ -1,0 +1,151 @@
+<script>
+
+
+</script>
+
+
+<div class="homepage-background">
+
+  <section class="homepage-top-nav">
+    <a href="#" class="homepage">
+      <img class="homepage-logo" src="static/assets/NACLogo.png"
+        alt="Chef logo vector created by freepik - www.freepik.com" />
+    </a>
+    <input class="homepage-side-menu" type="checkbox" id="side-menu" />
+    <label class="homepage-hamb" for="side-menu"><span class="homepage-hamb-line"></span></label>
+    <nav class="homepage-nav">
+      <ul class="homepage-menu">
+
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Blog</a> </li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="homepage-search-bar">
+    <div class="homepage-search__container">
+      <input class="homepage-search__input" type="text" placeholder="Search">
+    </div>
+  </section>
+  <section class="homepage-top-menu">
+    <a class="homepage-categories" href="#">All recipes</a>
+    <a class="homepage-categories" href="#">Favourites</a>
+    <a class="homepage-categories" href="#">This week</a>
+  </section>
+  <section class="homepage-recipes">
+
+
+
+    <% const recipeTitle=(food)=>{let str = food.title; if (str.length>17){str = str.slice(0,17)} return str};%>
+
+      <% food.forEach((food)=> { %>
+        <div class="homepage-full-recipe-div">
+          <div class="homepage-recipe-card">
+            <div class="homepage-recipe-image-flexalign">
+              <div style="background: url(<%=food.imageLink%>),
+
+          #C4C4C4; background-size: cover" class="homepage-recipe-image"></div>
+            </div>
+            <h1 class="homepage-recipe-title">
+              <%= food.title %>
+            </h1>
+
+            <div class="homepage-recipe-details">
+              <p class="homepage-recipe-duration">
+                <%=food.cookingTime %>
+              </p>
+              <p class="homepage-recipe-calories">
+                <% food.ingredients.forEach(element=> { %>
+                  <%=element.ingredient.nutrition.calories %>
+                    <% }); %>
+              </p>
+            </div>
+            <div class="homepage-add-to-list">
+              <div class="homepage-recipe-addtolist" data-recipeId="<%=food._id %>"><i class="lni lni-plus"></i></div>
+            </div>
+            <div class="homepage-add-to-favourites">
+              <div class="homepage-recipe-favourite"><i class="lni lni-heart-filled"></i></div>
+            </div>
+
+          </div>
+          <!-- Recipe full card -->
+          <div class="homepage-fullRecipeCard">
+            <div class="homepage-fullRecipeimage-flexalign">
+              <div style="background: url(<%=food.imageLink%>),
+            #C4C4C4; background-size: cover" class="homepage-fullRecipeimage"></div>
+            </div>
+            <h1 class="homepage-fullRecipetitle">
+              <%= food.title %>
+            </h1>
+            <div class="homepage-fullRecipeDetails">
+              <div class="homepage-fullRecipeDetails-flex">
+                <h2 class="homepage-fullRecipeduration">Duration</h2>
+                <p class="homepage-fullRecipeduration-time">
+                  <%=food.cookingTime %>
+                </p>
+              </div>
+              <div class="homepage-fullRecipeDetails-flex">
+                <h2 class="homepage-fullRecipeservings">Servings</h2>
+                <div class="homepage-fullRecipeservings-selectoptions" style="width:50px;">
+                  <select class="homepage-fullRecipeservings-select" onchange="showSelected()">
+                    <option value="<%= food.servingAmount %> Pers" selected="selected">
+                      <%= food.servingAmount %> Pers (original recipe)
+                    </option>
+                    <option value="1 Pers">1 Pers</option>
+                    <option value="2 Pers">2 Pers</option>
+                    <option value="3 Pers">3 Pers</option>
+                    <option value="4 Pers">4 Pers</option>
+                    <option value="5 Pers">5 Pers</option>
+                    <option value="6 Pers">6 Pers</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="homepage-fullRecipeIngredients">
+              <h2 class="homepage-fullRecipeIngredients-title">Ingredients</h2>
+
+              <ul>
+                <% for ( i=0; i<food.ingredients.length; i++) { %>
+                  <li class="homepage-fullRecipeIngredients-list">
+                    <%=food.ingredients[i].quantity %>
+                      <%=food.ingredients[i].unit %>
+                        <%=food.ingredients[i].ingredient.name %>
+                        <%=food.ingredients[i]._id %>
+                  </li>
+                  <% } %>
+              </ul>
+            </div>
+            <div class="homepage-fullRecipepreparation">
+              <h2 class="homepage-fullRecipepreparation-title">Preparation</h2>
+              <% for ( i=0; i<food.instructions.length; i++) { %>
+                <p class="homepage-fullRecipepreparation-details">
+                  <%=food.instructions[i] %>
+                </p>
+                <% } %>
+            </div>
+            <div class="homepage-fullRecipenutritionfacts">
+              <h2 class="homepage-fullRecipenutritionfacts-title">Nutrition facts</h2>
+              <p class="homepage-fullRecipenutritionfacts-details">
+                <%=food.nutrition %>
+              </p>
+            </div>
+            <div class="homepage-fullRecipecard-close">
+              <button onClick="window.location.reload();" class="homepage-fullRecipecard-buttonclose">x Close</button>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+
+
+  </section>
+
+</div>
+
+<div id="homepage-footer">
+  <div class="homepage-footer-buttons">
+    <div class="homepage-random-button"><i class="lni lni-shuffle"><a href="#"></a></i></div>
+    <div class="homepage-addrecipe-button"><a href="/recipes/addRecipe"><i class="lni lni-plus"></i></a></div>
+    <div class="homepage-list-button"><a href="/lists/listPreview"><i class="lni lni-list"></i></a></div>
+  </div>
+</div>
