@@ -118,16 +118,18 @@ const ingredient = async () => {
                     rl.question('info ok? y/n: ', (question) => {
                         if (question === "n") {
                             k--
-                        } else {
-                            console.log()
-
-                            // fs.writeFileSync("correctedList", )
-
-                            resolve()
-                        }
+                        } 
+                        resolve()
                     })
                 })
             }
+            console.log('\n')
+            console.log('\n')
+            console.log("\x1b[34m*************************************\x1b[0m")
+            console.log("\x1b[32mrecipesAdded = \x1b[0m" + (p+1) )
+            console.log('\x1b[34m*************************************\x1b[0m')
+            console.log('')
+
             fs.appendFile("ingredientCorr_1.json", JSON.stringify(recipes[p]) + ",", function (err) {
                 if (err) throw err;
             });
