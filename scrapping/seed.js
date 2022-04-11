@@ -65,6 +65,14 @@ const addRecipeToDb = async () => {
 
 
         };
+        let myTextObj = data.instructions.toString()
+     
+
+        const myInstrucitonsArr = []
+        
+        myInstrucitonsArr.push(myTextObj)
+        console.log('myArrInstruction')
+        console.log(myInstrucitonsArr)
         const newRecipe = new scrapRecipe({
             scrapSource: data.scrapSource,
             category: data.category,
@@ -72,7 +80,7 @@ const addRecipeToDb = async () => {
             title: data.title,
             servingAmount: data.servingAmount,
             cookingTime: data.cookingTime,
-            instructions: data.instructions,
+            instructions: myInstrucitonsArr,
             imageLink: data.imageLink,
         })
         await newRecipe.save()
