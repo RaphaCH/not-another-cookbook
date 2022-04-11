@@ -28,20 +28,6 @@ const getPreviewListAndPopulate = function (id) {
       list: previewList
     });
   }
-
-
- 
-const renderPreviewListWithIngredients = async function (req, res) {
-  // let posts = await getProfileAndPopulate(req.user.profile._id)
-  let previewList = await getPreviewListAndPopulate(req.user.previewList._id);
-
-  res.render("listPreview", {
-    user: req.user,
-    list: previewList,
-  });
-};
-
-
 router.get('/listPreview', (req,res) => {
     // res.render('listPreview');
     renderPreviewListWithIngredients(req, res)
@@ -79,10 +65,7 @@ router.post('/addItemToPreview', async (req, res) =>{
     }
     await previewList.findByIdAndUpdate( req.user.previewList,{ $pull: { recipes: recipe._id} })
     res.redirect("/lists/listPreview");
-  } catch (error) {
-    
-  }
-
+  
 
 })
 
