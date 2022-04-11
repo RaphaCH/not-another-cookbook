@@ -24,6 +24,11 @@
   gap: 5px;
 }
 
+.addManualRecipe-exit #exit {
+  font-size: 25px;
+  color: #1c2226;
+}
+
 .addManualRecipe-inputs {
   display: -webkit-box;
   display: -ms-flexbox;
