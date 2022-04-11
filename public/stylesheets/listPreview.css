@@ -283,6 +283,7 @@ label:before {
 }
 
 .listPreview-accordion {
+  background-color: transparent;
   color: #444;
   cursor: pointer;
   padding: 18px;

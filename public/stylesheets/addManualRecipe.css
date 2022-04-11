@@ -3,13 +3,6 @@
   height: auto;
 }
 
-.addManualRecipe-header-container{
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
-}
-
 .addManualRecipe-title {
   font-family: Raleway, sans-serif;
   font-size: 15px;
@@ -34,7 +27,6 @@
 .addManualRecipe-exit #exit {
   font-size: 25px;
   color: #1c2226;
-  margin-left: 20px;
 }
 
 .addManualRecipe-inputs {
