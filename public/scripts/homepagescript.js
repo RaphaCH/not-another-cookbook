@@ -6,7 +6,22 @@ let regex = /[+-]?\d+(\.\d+)?/g;
 let nutritionFactsDiv = document.querySelector(".homepage-fullRecipenutritionfacts-details");
 let nutritionFacts = document.querySelector(".homepage-fullRecipenutritionfacts-details").innerHTML;
 let closeCard = document.querySelectorAll(".homepage-fullRecipecard-buttonclose");
+let myParentCalories = document.querySelectorAll(".homepage-recipe-calories")
 
+for(let i = 0; i<myParentCalories.length; i++){
+	let myTotal = 0
+	let ingrCalories = myParentCalories[i]
+    // console.log(ingrCalories.innerHTML.split(''))
+    let re = 's/[^0-9]//g'
+    let myReg = ingrCalories.innerText.replace(re)
+    // console.log(myReg)
+	  let allmyCal=myReg.split(' ')
+    // console.log(allmyCal[0])
+	let id = allmyCal.map(x =>parseInt(x))
+    console.log(id)
+	id.map(x => myTotal += x)
+	myParentCalories[i].innerText = "Cal: " +myTotal
+}
 
 //Toggling the modal visible
 
