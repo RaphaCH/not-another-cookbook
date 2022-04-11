@@ -1,14 +1,16 @@
 <div id="addManualRecipe-container">
-  <h1 class="addManualRecipe-title">Add a New Recipe</h1>
+  <div class="addManualRecipe-header-container">
+    <div class="addManualRecipe-exit">
+      <a href="/home"><i id="exit" class="lni lni-arrow-left"></i></a>
+    </div>
+    <h1 class="addManualRecipe-title">Add a New Recipe</h1>
+  </div>
 
   <!-- The classes are shared for styling purposes. To manipulate and save data, id's are to be used. -->
 
 <!-- <form method="POST" action="/recipes/newRecipe"> -->
 
   <div class="addManualRecipe-cooking">
-    <div class="addManualRecipe-exit">
-      <a href="/home"><i id="exit" class="fa-solid fa-xmark"></i></a>
-    </div>
     <div class="addManualRecipeform-group field">
       <input type="input" class="addManualRecipeform-field" placeholder="Cooking time" name="cookingtime"
         id="addManualRecipe-cookingtime" required />
