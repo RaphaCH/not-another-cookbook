@@ -1,4 +1,6 @@
-// const { default: fetch } = require("node-fetch")
+
+
+// Adding recipe to preview list 
 
 let addToPreviewListButton = document.querySelectorAll(".homepage-recipe-addtolist")
 
