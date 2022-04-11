@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Recipe = require("../models/recipe").Recipe;
 const manualRecipe = require("../models/manualRecipe").manualRecipe;
+const { ensureAuthenticated } = require('../config/auth')
 
 const ingredientPerRecipe = require('../models/ingredientsPerRecipe').ingredientsPerRecipe;
 const Ingredients = require('../models/ingredients').Ingredients;
@@ -17,7 +18,7 @@ const getPreviewListAndPopulate = function (id) {
   const renderPreviewListWithIngredients = async function (req, res) {
     // let posts = await getProfileAndPopulate(req.user.profile._id)
     let previewList = await getPreviewListAndPopulate(req.user.previewList._id)
-  
+    console.log(previewList);
     res.render('listPreview', {
       user: req.user,
       list: previewList
@@ -27,14 +28,18 @@ const getPreviewListAndPopulate = function (id) {
 
 
 router.get('/listPreview', (req,res) => {
-    
-
     // res.render('listPreview');
     renderPreviewListWithIngredients(req, res)
 })
 
-router.get('/list', (req,res) => {
+router.get('/list', ensureAuthenticated, (req,res) => {
     res.render('list');
+})
+
+router.get('/getFinalList', async (req,res) => {
+  let previewList = await getPreviewListAndPopulate(req.user.previewList._id)
+  console.log(previewList.ingredients[0].ingredient.name);
+  res.send({recipes: previewList.ingredients})
 })
 
 router.post('/addItemToPreview', async (req, res) =>{
