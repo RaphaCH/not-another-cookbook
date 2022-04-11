@@ -3,7 +3,7 @@ const fs = require('fs');
 let catArr = ["0 Dairy", "1 Fats & oils", "2 Fruits & Vegetables", "3 Pasta", "4 Rice & Pulses", "5 Grain products & Nuts",
     "6 Herbs & Spices", "7 Meat & Seafood", "8 Drinks", "9 Alcohol", "10 Sauces", "11 No Category Found ]"]
 
-let rawdata = fs.readFileSync('recipeIngr.json');
+let rawdata = fs.readFileSync('400recipesCorr.json');
 newData = []
 let recipes = JSON.parse(rawdata);
 let myRecipe = []
