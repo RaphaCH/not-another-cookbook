@@ -1,8 +1,42 @@
-
-
 // Dairy, Fats & oils, Fruits & Vegetables, Pasta, Rice & Pulses, Grain products & Nuts, Herbs & Spices, Meat & Seafood, Drinks, Alcohol, Sauces, No Category Found.
 
-const dummyIngredients = ['lemon','sausage','sugar','yoghurt','ham','ketchup','lentils','jam','butter']
+ const shoppingIngredients = [
+    {
+        name: "chicken",
+        quantity: "200",
+        unit: "grams"
+    },
+    {
+        name: "yoghurt",
+        quantity: "2",
+        unit: "12"
+    },
+    {
+        name: "Bread",
+        quantity: "2",
+        unit: "4kg"
+    },
+    {
+        name: "chicken",
+        quantity: "2",
+        unit: "kg"
+    },
+    {
+        name: "steak",
+        quantity: "2",
+        unit: "lb"
+    },
+    {
+        name: "lamb",
+        quantity: "10",
+        unit: "ounces"
+    },
+    {
+        name: "carrot",
+        quantity: "5",
+        unit: "kg"
+    }
+]
 
 const noCategoryFound = []
 const AlcoholArr = []
@@ -36,6 +70,8 @@ const GrainNuts = [
     'bake',
     'baked',
     'sugar',
+    'cake',
+    'batter',
     'flour',
     'grain',
     'cereal',
@@ -109,77 +145,98 @@ const Sauces = [
 ]
 
 const LoopIngredientArray = async () => {
-    // dummyIngredients.forEach((ingredient) => {
-    //     let ingredientArray = ingredient.split(' ')
-    //     // console.log('test ' + ingredientArray[0])
-    //     FetchDefinition(ingredientArray[0])
+    // shoppingIngredients.forEach( async (ingredient) => {
+    // await FetchDefinition(ingredient.name, ingredient.quantity, ingredient.unit)  
+    // return {noCategoryFound: noCategoryFound, AlcoholArr: AlcoholArr, DairyArr: DairyArr, FruitsVegetablesArr: FruitsVegetablesArr, GrainNutsArr: GrainNutsArr, DrinksArr: DrinksArr, PastaRicePulsesArr: PastaRicePulsesArr, FatsOilsArr: FatsOilsArr, HerbsSpicesArr: HerbsSpicesArr, MeatSeafoodArr: MeatSeafoodArr, SaucesArr: SaucesArr}  
+
     // })
-        for (let i = 0; i < dummyIngredients.length; i++) {
-            let ingredientArray = dummyIngredients[i].split(' ')
-            // console.log('test ' + ingredientArray[0])
-            await FetchDefinition(ingredientArray[0])
-        } 
+
+
+    for (let i = 0; i <  shoppingIngredients.length; i++) {
+        let ingredient = shoppingIngredients[i]
+        await FetchDefinition(ingredient.name, ingredient.quantity, ingredient.unit)  
+    }
 
     return {noCategoryFound: noCategoryFound, AlcoholArr: AlcoholArr, DairyArr: DairyArr, FruitsVegetablesArr: FruitsVegetablesArr, GrainNutsArr: GrainNutsArr, DrinksArr: DrinksArr, PastaRicePulsesArr: PastaRicePulsesArr, FatsOilsArr: FatsOilsArr, HerbsSpicesArr: HerbsSpicesArr, MeatSeafoodArr: MeatSeafoodArr, SaucesArr: SaucesArr}
+
+    // return {FruitsVegetablesArr: {name: "gffds"}}
+    // for (let i = 0; i >= ingredient.length; i++) {
+        //return {noCategoryFound: noCategoryFound, AlcoholArr: AlcoholArr, DairyArr: DairyArr, FruitsVegetablesArr: FruitsVegetablesArr, GrainNutsArr: GrainNutsArr, DrinksArr: DrinksArr, PastaRicePulsesArr: PastaRicePulsesArr, FatsOilsArr: FatsOilsArr, HerbsSpicesArr: HerbsSpicesArr, MeatSeafoodArr: MeatSeafoodArr, SaucesArr: SaucesArr}
+    //   }
     }
 
-const FetchDefinition = async (ingredient) => {
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${ingredient}`)
-    const jsonResponse = await response.json()
 
-    let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
-    let definition2 = jsonResponse[0].meanings[0].definitions[0].definition
-    checkForCategory(definition1, definition2, ingredient)
+
+const FetchDefinition = async (name, quantity, unit) => {
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${name}`)
+    const jsonResponse = await response.json()
+    
+    // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${name}`)
+    // .then(response => response.json())
+	// .then(jsonResponse => {
+        let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
+        let definition2 = jsonResponse[0].meanings[0].definitions[1].definition
+        checkForCategory(definition1, definition2, name, quantity, unit)
+	// })
 }
 
-const checkForCategory = (definition1, definition2, ingredient) => {
+const checkForCategory = (definition1, definition2, name, quantity, unit) => {
     let found = false
-    if (definition1.includes('sauce') || definition2.includes('sauce')) {
+    if ((definition1.includes('sauce') || definition2.includes('sauce')) && found == false) {
+        let newArr = {name: name, quantity: quantity, unit: unit}
+        SaucesArr.push(newArr)
         // console.log('Sauce')
-        // console.log(ingredient)
+        found = true
+        return
     }
+
     else {
         Alcohol.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                AlcoholArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                AlcoholArr.push(newArr)
                 // console.log('Alcohol')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         Dairy.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                DairyArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                DairyArr.push(newArr)
                 // console.log('Dairy')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         FruitsVegetables.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                FruitsVegetablesArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                FruitsVegetablesArr.push(newArr)
                 // console.log('Fruits & Vegetables')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         GrainNuts.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                GrainNutsArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                GrainNutsArr.push(newArr)
                 // console.log('Grain products & Nuts')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         Drinks.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                DrinksArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                DrinksArr.push(newArr)
                 // console.log('Drinks')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
@@ -187,60 +244,63 @@ const checkForCategory = (definition1, definition2, ingredient) => {
 
         PastaRicePulses.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                PastaRicePulsesArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                PastaRicePulsesArr.push(newArr)
                 // console.log('Pasta, Rice & Pulses')
-                // console.log(ingredient)
-                found = true
-                return
-            }
-        })
-        FatsOils.forEach((item) => {
-            if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                FatsOilsArr.push(ingredient)
-                // console.log('Fats & Oil')
-                // console.log(ingredient)
-                found = true
-                return
-            }
-        })
-        HerbsSpices.forEach((item) => {
-            if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                HerbsSpicesArr.push(ingredient)
-                // console.log('Herbs & Spices')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         MeatSeafood.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                MeatSeafoodArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                MeatSeafoodArr.push(newArr)
                 // console.log('Meat & Seafood')
-                // console.log(ingredient)
+                // console.log(name)
+                found = true
+                return
+            }
+        })
+        FatsOils.forEach((item) => {
+            if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                FatsOilsArr.push(newArr)
+                // console.log('Fats & Oil')
+                // console.log(name)
+                found = true
+                return
+            }
+        })
+        HerbsSpices.forEach((item) => {
+            if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                HerbsSpicesArr.push(newArr)
+                // console.log('Herbs & Spices')
+                // console.log(name)
                 found = true
                 return
             }
         })
         Sauces.forEach((item) => {
             if ((definition1.includes(item) || definition2.includes(item)) && found === false) {
-                SaucesArr.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                SaucesArr.push(newArr)
                 // console.log('Sauce')
-                // console.log(ingredient)
+                // console.log(name)
                 found = true
                 return
             }
         })
         keyWords.forEach((item) => {
             if ((definition1.includes(item) === false && definition2.includes(item) === false ) && found === false) {
-                noCategoryFound.push(ingredient)
+                let newArr = {name: name, quantity: quantity, unit: unit}
+                noCategoryFound.push(newArr)
                 // console.log(noCategoryFound)
                 found = true
                 return
             }
-        })
-        
+        })   
     }
 }
-
-
 export default LoopIngredientArray
