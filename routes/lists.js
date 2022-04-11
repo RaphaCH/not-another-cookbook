@@ -2,33 +2,26 @@ const express = require("express");
 const router = express.Router();
 const Recipe = require("../models/recipe").Recipe;
 const manualRecipe = require("../models/manualRecipe").manualRecipe;
-
 const { ensureAuthenticated } = require('../config/auth');
-
 
 const ingredientPerRecipe =
   require("../models/ingredientsPerRecipe").ingredientsPerRecipe;
 const Ingredients = require("../models/ingredients").Ingredients;
 const previewList = require("../models/shoppingListPreview").previewList;
+const scrapRecipe = require("../models/scrapRecipeModel").scrapRecipe;
+
 
 const getPreviewListAndPopulate = function (id) {
-
-    // return previewList.findById(id).populate("ingredients")
-    return previewList.findById(id).populate({ path: 'ingredients', model: ingredientPerRecipe, populate: { path: 'ingredient', model: Ingredients } })
-  }
-  
-
-  
-  const renderPreviewListWithIngredients = async function (req, res) {
-    // let posts = await getProfileAndPopulate(req.user.profile._id)
-    let previewList = await getPreviewListAndPopulate(req.user.previewList._id)
-    console.log(previewList);
-    res.render('listPreview', {
-      user: req.user,
-      list: previewList
-    });
-  }
-
+  // return previewList.findById(id).populate("ingredients")
+  return previewList
+    .findById(id)
+    .populate({
+      path: "ingredients",
+      model: ingredientPerRecipe,
+      populate: { path: "ingredient", model: Ingredients},
+    })
+    .populate("recipes")
+};
 
  
 const renderPreviewListWithIngredients = async function (req, res) {
@@ -41,12 +34,20 @@ const renderPreviewListWithIngredients = async function (req, res) {
   });
 };
 
+router.get("/listPreview", ensureAuthenticated, (req, res) => {
+  // res.render('listPreview');
+  renderPreviewListWithIngredients(req, res);
+});
+
+router.get("/list", (req, res) => {
+  res.render("list");
+});
 
 router.post("/addItemToPreview", async (req, res) => {
   // console.log(req.body)
   // console.log(req.user.previewList)
   try {
-    let foundRecipe = await manualRecipe.findById(req.body.recipeId);
+    let foundRecipe = await scrapRecipe.findById(req.body.recipeId);
     // console.log(foundRecipe)
     // console.log(foundRecipe.title);
     await previewList.findByIdAndUpdate(
@@ -64,28 +65,17 @@ router.post("/addItemToPreview", async (req, res) => {
   } catch (error) {}
 });
 
-
-router.get('/listPreview', (req,res) => {
-    // res.render('listPreview');
-    renderPreviewListWithIngredients(req, res)
-})
-
-router.get('/list', ensureAuthenticated, (req,res) => {
-    res.render('list');
-})
-
 router.get('/getFinalList', async (req,res) => {
   let previewList = await getPreviewListAndPopulate(req.user.previewList._id)
   console.log(previewList.ingredients[0].ingredient.name);
   res.send({recipes: previewList.ingredients})
 })
 
-
-  router.post("/removeItemFromPreview", async (req, res) =>{
+router.post("/removeItemFromPreview", async (req, res) =>{
   console.log(req.body)
   console.log(req.user.previewList)
   try {
-    let recipe = await manualRecipe.findById(req.body.recipe)
+    let recipe = await scrapRecipe.findById(req.body.recipe)
     let userPreviewList = await previewList.findById(req.user.previewList)
     console.log(userPreviewList.ingredients)
     for (let i= 0; i < recipe.ingredients.length; i++) {
@@ -96,7 +86,8 @@ router.get('/getFinalList', async (req,res) => {
           console.log("deleting")
          await previewList.findByIdAndUpdate( req.user.previewList,{ $pull: { ingredients:ingredient} }) 
        } 
-      } 
+      }  
+    }
     await previewList.findByIdAndUpdate( req.user.previewList,{ $pull: { recipes: recipe._id} })
     res.redirect("/lists/listPreview");
   } catch (error) {

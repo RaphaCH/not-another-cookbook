@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const previewListSchema = new mongoose.Schema({
 
   recipes: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "manualRecipe" }
+    { type: mongoose.Schema.Types.ObjectId, ref: "scrapRecipe" }
   ],  
   ingredients: //"ingredients":["¼ cup olive oil","2 cloves garlic, minced","1 eggplant, peeled and cut into 1/2-inch cubes","1 (28 ounce) can plum tomatoes with juice, chopped","1 (16 ounce) package rigatoni pasta"]
     [
