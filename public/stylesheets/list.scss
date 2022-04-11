@@ -67,7 +67,7 @@ header {
     .list-food-img-container {
         height: 100%;
         width: 35%;
-        @include center(flex-end);
+        @include center(center);
         i {
             font-size: 30px;
             color: white;
