@@ -9,6 +9,8 @@ dotenv.config();
 
 // let chicken = ''
 
+let ingredient = "olive oil"
+
 const getIngredientInfo = async (ingredient) => {
   // console.log(`https://api.edamam.com/api/nutrition-data?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEYS}&nutrition-type=cooking&ingr=100g ${ingredient}`);
   const { data } = await axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEYS}&nutrition-type=cooking&ingr=100g ${ingredient}`);
@@ -21,6 +23,8 @@ const getIngredientInfo = async (ingredient) => {
 
 
 }
+
+getIngredientInfo(ingredient)
 
 module.exports = getIngredientInfo;
 

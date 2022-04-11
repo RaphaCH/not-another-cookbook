@@ -1,23 +1,86 @@
-const data = require("./400recipesCorr.json")
+const myRecipe = require("./robot/ingredientCorr_1.json")
 // console.log(data[0])
 
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Recipe = require("../models/recipe").Recipe
-// const Ingredients = require("../models/ingredient").Ingredients
+const scrapRecipe = require("../models/scrapRecipeModel").scrapRecipe
+const Ingredients = require("../models/ingredients").Ingredients
+const ingredientPerRecipe = require("../models/ingredientsPerRecipe").ingredientsPerRecipe
+const getIngredientInfo = require('../APIS/apiIngredient')
+
 
 dotenv.config();
 
 
-
+let data = myRecipe[0]
 
 const addRecipeToDb = async () => {
     console.log("adding to db")
     try {
-        for (let i=0; i<data.length; i++){
-            const newRecipe = new Recipe(data[i])
-            await newRecipe.save()
+        let ingredientReference = []
+
+        for (const ingredient of data.ingredients) {
+            // console.log('inside de loop');
+            let nameReferente
+            if (ingredient.name && ingredient.name != "_") {
+                let ingredientExists = await Ingredients.exists({ name: ingredient.name })
+                if (ingredientExists) {
+                    nameReferente = ingredientExists._id;
+                    // console.log('ingredient exists ' + ingredientExists._id);
+                } else {
+
+                    let ingredientInfo = await getIngredientInfo(ingredient.name)
+                    let newIngredient = new Ingredients({
+                        name: ingredient.name,
+                        category: ingredient.category,
+                        nutrition: {
+                            calories: ingredientInfo[0],
+                            fats: ingredientInfo[1],
+                            carbs: ingredientInfo[2],
+                            protein: ingredientInfo[3]
+                        }
+                    })
+                    await newIngredient.save()
+
+                    nameReferente = newIngredient._id;
+                    // console.log('creating new one ' + newIngredient._id);
+                }
+                //at this point, we either have the ingredient or we created a new table with it.
+            }
+            console.log('create ingredients per recipe table');
+            if (ingredient.quantity != "_" && ingredient.name != "_"){
+                if(ingredient.unit === "_"){
+                    ingredient.unit = "piece(s)"
+                }
+                const newIngredientsPerRecipe = new ingredientPerRecipe({
+                    quantity: ingredient.quantity,
+                    unit: ingredient.unit,
+                    ingredient: nameReferente
+                })
+                await newIngredientsPerRecipe.save()
+                ingredientReference.push(newIngredientsPerRecipe._id)
+            }
+           
+            // console.log('new created table was ' + newIngredientsPerRecipe._id);
+
+
+        };
+        const newRecipe = new scrapRecipe({
+            scrapSource: data.scrapSource,
+            category: data.category,
+            mainIngredient: data.mainIngredient,
+            title: data.title,
+            servingAmount: data.servingAmount,
+            cookingTime: data.cookingTime,
+            instructions: data.instructions,
+            imageLink: data.imageLink,
+        })
+        await newRecipe.save()
+        for (let ingredientRef of ingredientReference) {
+            // console.log('updating new recipe with first reference ' + ingredientRef);
+            await scrapRecipe.findOneAndUpdate({ _id: newRecipe._id }, { $push: { ingredients: [ ingredientRef ] } })
         }
+        // console.log('time to go home');
     } catch (error) {
         console.log(error)
         mongoose.connection.close()

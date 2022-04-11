@@ -1,4 +1,4 @@
-    {
+    [{
         "scrapSource": "allrecipes",
         "category": "pastaRisotto",
         "mainIngredient": "_",
@@ -899,7 +899,7 @@
                 "nutrition": "_"
             },
             {
-                "name": "_3",
+                "name": "_",
                 "category": "No Category Found",
                 "quantity": "_",
                 "unit": "_",
@@ -1761,7 +1761,7 @@
             },
             {
                 "name": "red bell pepper",
-                "category": "_",
+                "category": "Fruits & Vegetables",
                 "quantity": 0.5,
                 "unit": "cup",
                 "nutrition": "_"
@@ -1827,4 +1827,4 @@
         ],
         "imageLink": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F882695.jpg",
         "nutrition": "246 calories; protein 8.8g; carbohydrates 41g; fat 5.5g; cholesterol 5.4mg; sodium 651.4mg. Full Nutrition"
-    },
+    }]
