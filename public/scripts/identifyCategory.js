@@ -1,42 +1,8 @@
 // Dairy, Fats & oils, Fruits & Vegetables, Pasta, Rice & Pulses, Grain products & Nuts, Herbs & Spices, Meat & Seafood, Drinks, Alcohol, Sauces, No Category Found.
 
- const shoppingIngredients = [
-    {
-        name: "chicken",
-        quantity: "200",
-        unit: "grams"
-    },
-    {
-        name: "yoghurt",
-        quantity: "2",
-        unit: "12"
-    },
-    {
-        name: "Bread",
-        quantity: "2",
-        unit: "4kg"
-    },
-    {
-        name: "chicken",
-        quantity: "2",
-        unit: "kg"
-    },
-    {
-        name: "steak",
-        quantity: "2",
-        unit: "lb"
-    },
-    {
-        name: "lamb",
-        quantity: "10",
-        unit: "ounces"
-    },
-    {
-        name: "carrot",
-        quantity: "5",
-        unit: "kg"
-    }
-]
+
+
+const shoppingIngredients = []
 
 const noCategoryFound = []
 const AlcoholArr = []
@@ -144,7 +110,8 @@ const Sauces = [
     'condiment'
 ]
 
-const LoopIngredientArray = async () => {
+const LoopIngredientArray = async (iArr) => {
+    console.log("look here", iArr)
     // shoppingIngredients.forEach( async (ingredient) => {
     // await FetchDefinition(ingredient.name, ingredient.quantity, ingredient.unit)  
     // return {noCategoryFound: noCategoryFound, AlcoholArr: AlcoholArr, DairyArr: DairyArr, FruitsVegetablesArr: FruitsVegetablesArr, GrainNutsArr: GrainNutsArr, DrinksArr: DrinksArr, PastaRicePulsesArr: PastaRicePulsesArr, FatsOilsArr: FatsOilsArr, HerbsSpicesArr: HerbsSpicesArr, MeatSeafoodArr: MeatSeafoodArr, SaucesArr: SaucesArr}  
@@ -152,9 +119,9 @@ const LoopIngredientArray = async () => {
     // })
 
 
-    for (let i = 0; i <  shoppingIngredients.length; i++) {
-        let ingredient = shoppingIngredients[i]
-        await FetchDefinition(ingredient.name, ingredient.quantity, ingredient.unit)  
+    for (let i = 0; i <  iArr.length; i++) {
+        let ingredient = iArr[i]
+        await FetchDefinition(ingredient.ingredient.name, ingredient.quantity, ingredient.unit)  
     }
 
     return {noCategoryFound: noCategoryFound, AlcoholArr: AlcoholArr, DairyArr: DairyArr, FruitsVegetablesArr: FruitsVegetablesArr, GrainNutsArr: GrainNutsArr, DrinksArr: DrinksArr, PastaRicePulsesArr: PastaRicePulsesArr, FatsOilsArr: FatsOilsArr, HerbsSpicesArr: HerbsSpicesArr, MeatSeafoodArr: MeatSeafoodArr, SaucesArr: SaucesArr}
@@ -174,9 +141,17 @@ const FetchDefinition = async (name, quantity, unit) => {
     // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${name}`)
     // .then(response => response.json())
 	// .then(jsonResponse => {
-        let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
-        let definition2 = jsonResponse[0].meanings[0].definitions[1].definition
-        checkForCategory(definition1, definition2, name, quantity, unit)
+       if(jsonResponse[0]){
+            let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
+            let definition2 = jsonResponse[0].meanings[0].definitions[1].definition
+            checkForCategory(definition1, definition2, name, quantity, unit)
+       }else{
+        let newArr = {name: name, quantity: quantity, unit: unit}
+        noCategoryFound.push(newArr)
+       }
+            
+  
+        
 	// })
 }
 

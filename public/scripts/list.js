@@ -1,21 +1,12 @@
 import LoopIngredientArray from "./identifyCategory.js"
 // (async () => await LoopIngredientArray())();
 
-const content = await LoopIngredientArray();
 
-    const categories = [
-        {img: 'fa-solid fa-carrot', cat: 'Fruits & Vegetables', ingredients: content.FruitsVegetablesArr},
-        {img: 'fa-solid fa-cow', cat: 'Dairy', ingredients: content.DairyArr}, 
-        {img: 'fa-solid fa-bacon', cat: 'Meat & Seafood', ingredients: content.MeatSeafoodArr},
-        {img: 'fa-solid fa-bread-slice', cat: 'Grain products & Nuts', ingredients: content.GrainNutsArr},
-        {img: 'fa-solid fa-bowl-rice', cat: 'Pasta, Rice & Pulses', ingredients: content.PastaRicePulsesArr},
-        {img: 'fa-solid fa-bowl-oil-can', cat: 'Fats & Oils', ingredients: content.FatsOilsArr},
-        {img: 'fa-solid fa-bowl-pepper-hot', cat: 'Herbs & Spices', ingredients: content.HerbsSpicesArr},
-        {img: "", cat: 'Sauce', ingredients: content.SaucesArr},
-        {img: 'fa-solid fa-bottle-water', cat: 'Drinks', ingredients: content.DrinksArr},
-        {img: 'fa-solid fa-wine-bottle', cat: 'Alcohol', ingredients: content.AlcoholArr},
-        {img: 'fa-solid fa-question', cat: 'No Category Found', ingredients: content.noCategoryFound}
-    ]
+
+
+
+
+    
 
 const header = document.querySelector('header')
 const doneList = document.querySelector(".doneList")
@@ -65,7 +56,7 @@ const generateHeaders = (categories) => {
     })
 }
 
-generateHeaders(categories)
+
 
 const checkBoxEvent = () => {
     const ingredientDiv = Array.from(document.querySelectorAll('div.list-checkbox'))
@@ -99,6 +90,7 @@ const checkBoxEvent = () => {
 }
 
 const headerLabel = Array.from(document.querySelectorAll('label:not(.done, .homepage-hamb)'))
+
 const expandArrow = Array.from(document.querySelectorAll('i#list-expand-arrow'))
 
 const arrowEvent = () => {
@@ -134,11 +126,41 @@ const arrowDoneEvent = () => {
     })
 }
 
-arrowEvent()
-arrowDoneEvent()
-checkBoxEvent()
 
 
 
 
 
+const createallthestuff = async (data) => {
+    console.log(data)
+    const content = await LoopIngredientArray(data.recipes);
+    const categories = [
+        {img: 'fa-solid fa-carrot', cat: 'Fruits & Vegetables', ingredients: content.FruitsVegetablesArr},
+        {img: 'fa-solid fa-cow', cat: 'Dairy', ingredients: content.DairyArr}, 
+        {img: 'fa-solid fa-bacon', cat: 'Meat & Seafood', ingredients: content.MeatSeafoodArr},
+        {img: 'fa-solid fa-bread-slice', cat: 'Grain products & Nuts', ingredients: content.GrainNutsArr},
+        {img: 'fa-solid fa-bowl-rice', cat: 'Pasta, Rice & Pulses', ingredients: content.PastaRicePulsesArr},
+        {img: 'fa-solid fa-bowl-oil-can', cat: 'Fats & Oils', ingredients: content.FatsOilsArr},
+        {img: 'fa-solid fa-bowl-pepper-hot', cat: 'Herbs & Spices', ingredients: content.HerbsSpicesArr},
+        {img: "", cat: 'Sauce', ingredients: content.SaucesArr},
+        {img: 'fa-solid fa-bottle-water', cat: 'Drinks', ingredients: content.DrinksArr},
+        {img: 'fa-solid fa-wine-bottle', cat: 'Alcohol', ingredients: content.AlcoholArr},
+        {img: 'fa-solid fa-question', cat: 'No Category Found', ingredients: content.noCategoryFound}
+    ]
+    await generateHeaders(categories)
+    await arrowEvent()
+    await arrowDoneEvent()
+    await checkBoxEvent()
+}
+
+const getFinalListFromBack = async () => {
+    fetch("/lists/getFinalList") 
+    .then(response => response.json())
+    .then((data) => {
+        console.log(data)
+        createallthestuff(data)
+        
+    })
+}
+
+getFinalListFromBack()
