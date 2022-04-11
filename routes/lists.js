@@ -47,7 +47,7 @@ router.post("/addItemToPreview", async (req, res) => {
   try {
     let foundRecipe = await manualRecipe.findById(req.body.recipeId);
     // console.log(foundRecipe)
-    console.log(foundRecipe.title);
+    // console.log(foundRecipe.title);
     await previewList.findByIdAndUpdate(
       { _id: req.user.previewList },
       { $push: { recipes: foundRecipe._id } }
@@ -60,7 +60,6 @@ router.post("/addItemToPreview", async (req, res) => {
       );
     }
     // await manualRecipe.findById(req.body.recipeId)
-    console.log("hello");
   } catch (error) {}
 });
 

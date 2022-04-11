@@ -15,10 +15,10 @@
             </ul>   
 </section>
 <section class="listPreview-allList">
- <% list.recipes.forEach((listTitle)=> { %>
+ <!-- <% list.recipes.forEach((listTitle)=> { %>
  <div class="listPreview-recipeList">
         <div class="listPreview-accordion">     
-            <input type="checkbox" name="collapse" id="handle1" checked="checked">
+            <input type="checkbox" name="collapse" id="handle1" class="handle1" checked="checked">
             <h2 class="listPreview-handle">
             <label class="listPreview-accordiontitle" for="handle1"><%= listTitle.title %></label>
             </h2>
@@ -49,7 +49,37 @@
 
  </div>
  
- <% }); %>
+ <% }); %> -->
+
+ <% list.recipes.forEach((listTitle)=> { %>
+<div class="listPreview-x">
+<div class="listPreview-recipeDelete" data-recipeid="<%= listTitle._id %>"><i class="lni lni-close"></i></div>
+<div class="listPreview-recipeList-flex">
+
+    <div class="listPreview-recipeList-content">
+
+<button class="listPreview-accordion"><%= listTitle.title %></button>
+<div class="listPreview-panel">
+    <div class="listPreview-select">
+                <select name="portions" id="listPreview-portions">
+                <option value="1 pers">1 pers</option>
+                <option value="2 pers">2 pers</option>
+                <option value="3 pers">3 pers</option>
+                <option value="4 pers">4 pers</option>
+                <option value="5 pers">5 pers</option>
+                <option value="6 pers">6 pers</option>
+               </select>
+  </div>
+  <ul class="listPreview-ingredients">
+    <% list.ingredients.forEach((listIngredient)=> { %>
+    <li><i class="fa-solid fa-xmark"></i>  <%= listIngredient.quantity %> <%= listIngredient.unit %> <%= listIngredient.ingredient.name %></li>
+    <% }); %>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<% }); %>
 </section>
 
 </div>

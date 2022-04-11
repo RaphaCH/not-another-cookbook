@@ -281,4 +281,86 @@ label:before {
   font-size: 25px !important;
   color: #3C1B43 !important;
 }
+
+.listPreview-accordion {
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.listPreview-panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+.listPreview-ingredients {
+  list-style-type: none;
+}
+
+.listPreview-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 5px;
+}
+
+.listPreview-recipeList-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.listPreview-recipeList-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.listPreview-x {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.listPreview-recipeDelete {
+  -webkit-transform: translateY(18px);
+          transform: translateY(18px);
+}
+
+.listPreview-ingredients {
+  font-family: Quicksand, sans-serif;
+  font-size: 13px;
+}
+
+.listPreview-accordion {
+  font-family: Raleway, sans-serif;
+  font-size: 15px;
+}
 /*# sourceMappingURL=listPreview.css.map */
