@@ -534,4 +534,10 @@ ul {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.lni-save {
+  color: white !important;
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
 /*# sourceMappingURL=homestyle.css.map */

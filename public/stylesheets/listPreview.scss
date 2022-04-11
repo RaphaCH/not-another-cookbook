@@ -12,6 +12,7 @@ $blurrOverlay: linear-gradient(
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  // font-family: $titleFont;
 }
 
 #listPreview-container {
@@ -248,3 +249,63 @@ $blurrOverlay: linear-gradient(
   color: #3C1B43 !important;
 }
 
+.listPreview-accordion {
+  // background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+
+
+.listPreview-panel {
+  padding: 0 18px;
+  // background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.listPreview-ingredients{
+  list-style-type: none;  
+}
+
+.listPreview-select{
+  display:flex;
+  align-items: flex-start;
+  margin: 5px;
+}
+
+.listPreview-recipeList-flex{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listPreview-recipeList-content{
+  display:flex;
+  flex-direction: column;
+}
+
+.listPreview-x{
+  display: flex;
+  align-items: flex-start;
+}
+.listPreview-recipeDelete{
+  transform: translateY(18px);
+}
+
+.listPreview-ingredients{
+  font-family: $textFont;
+  font-size: 13px;
+}
+
+.listPreview-accordion{
+  font-family: $titleFont;
+  font-size: 15px;
+}
