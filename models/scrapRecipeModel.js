@@ -32,7 +32,7 @@ const scrapRecipeSchema = new mongoose.Schema({
   instructions:
     [
       {
-        type: String,
+        type:String,
         required: true
       }
     ],
