@@ -12,7 +12,7 @@ addToPreviewListButton.forEach(button=>{
         data.recipeId = dataset
         addToPreview(data)
         //change add button in savedFloppy --> need to be a toggle and connected to the previewList
-        e.target.parentElement.innerHTML = `<i class="lni lni-save"></i>`
+        e.target.parentElement.innerHTML = `<i class="lni lni-save" style="color: white;"></i>`
         // .then(response => window.location.href='/home')
     
 
