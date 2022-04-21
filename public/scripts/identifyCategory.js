@@ -142,9 +142,16 @@ const FetchDefinition = async (name, quantity, unit) => {
     // .then(response => response.json())
 	// .then(jsonResponse => {
        if(jsonResponse[0]){
-            let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
+        if (jsonResponse[0].meanings[0].definitions[1]) {
             let definition2 = jsonResponse[0].meanings[0].definitions[1].definition
+            let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
             checkForCategory(definition1, definition2, name, quantity, unit)
+        } else {
+            let definition2 = ''
+            let definition1 = jsonResponse[0].meanings[0].definitions[0].definition
+            checkForCategory(definition1, definition2, name, quantity, unit)
+        }
+
        }else{
         let newArr = {name: name, quantity: quantity, unit: unit}
         noCategoryFound.push(newArr)

@@ -48,7 +48,7 @@ router.post("/addItemToPreview", async (req, res) => {
   // console.log(req.user.previewList)
   try {
     let foundRecipe = await scrapRecipe.findById(req.body.recipeId);
-    // console.log(foundRecipe)
+    console.log(foundRecipe)
     // console.log(foundRecipe.title);
     await previewList.findByIdAndUpdate(
       { _id: req.user.previewList },
