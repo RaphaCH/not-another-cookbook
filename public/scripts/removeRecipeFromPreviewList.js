@@ -14,6 +14,8 @@ removeFromPreviewListButton.forEach(removeButton =>{
 })
 
 const removeFromPreview = (removeRecipe) => {
+    console.log("deleting")
+    console.log(removeRecipe);
     fetch('/lists/removeItemFromPreview', {
         method: 'POST',
         headers: {
@@ -24,3 +26,5 @@ const removeFromPreview = (removeRecipe) => {
         location.reload()
     })
     }
+
+    export default removeFromPreview
