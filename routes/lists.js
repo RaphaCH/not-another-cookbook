@@ -4,7 +4,7 @@ const Recipe = require("../models/recipe").Recipe;
 const manualRecipe = require("../models/manualRecipe").manualRecipe;
 const { ensureAuthenticated } = require('../config/auth');
 
-const ingredientPerRecipe =
+const ingredientsPerRecipe =
   require("../models/ingredientsPerRecipe").ingredientsPerRecipe;
 const Ingredients = require("../models/ingredients").Ingredients;
 const previewList = require("../models/shoppingListPreview").previewList;
@@ -17,17 +17,24 @@ const getPreviewListAndPopulate = function (id) {
     .findById(id)
     .populate({
       path: "ingredients",
-      model: ingredientPerRecipe,
+      model: ingredientsPerRecipe,
       populate: { path: "ingredient", model: Ingredients},
     })
-    .populate("recipes")
+    .populate({
+      path: "recipes",
+      model: scrapRecipe,
+      populate: {
+        path: "ingredients",
+        model: ingredientsPerRecipe,
+        populate: {path: "ingredient", model: Ingredients}
+      }
+    })
 };
 
  
 const renderPreviewListWithIngredients = async function (req, res) {
   // let posts = await getProfileAndPopulate(req.user.profile._id)
   let previewList = await getPreviewListAndPopulate(req.user.previewList._id);
-
   res.render("listPreview", {
     user: req.user,
     list: previewList,

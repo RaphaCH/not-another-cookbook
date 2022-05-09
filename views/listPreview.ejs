@@ -1,56 +1,68 @@
 <div id="listPreview-container">
 
-<section class="listPreview-topNav">
-    <a href="/home" class="listPreview">
-        <img class="homepage-logo" src="/static/assets/NACLogo.png"
-        alt="Chef logo vector created by freepik - www.freepik.com" />
-    </a>
-    <input class="listPreview-side-menu" type="checkbox" id="side-menu"/>
+    <section class="listPreview-topNav">
+        <a href="/home" class="listPreview">
+            <img class="homepage-logo" src="/static/assets/NACLogo.png"
+                alt="Chef logo vector created by freepik - www.freepik.com" />
+        </a>
+        <input class="listPreview-side-menu" type="checkbox" id="side-menu" />
         <label class="listPreview-hamb" for="side-menu"><span class="listPreview-hamb-line"></span></label>
         <nav class="listPreview-nav">
             <ul class="listPreview-menu">
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Blog</a> </li>
                 <li><a href="#">About</a></li>
-            </ul>   
-</section>
-<section class="listPreview-allList">
- <% list.recipes.forEach((listTitle)=> { %>
-<div class="listPreview-x">
-<div class="listPreview-recipeDelete" data-recipeid="<%= listTitle._id %>"><i class="lni lni-close"></i></div>
-<div class="listPreview-recipeList-flex">
+            </ul>
+    </section>
+    <section class="listPreview-allList">
+            <% for (let i = 0; i < list.recipes.length; i++) { %>
+                
+                
+   
+            <div class="listPreview-x">
+                <div class="listPreview-recipeDelete" data-recipeid="<%= list.recipes[i]._id %>"><i class="lni lni-close"></i>
+                </div>
+                <div class="listPreview-recipeList-flex">
 
-    <div class="listPreview-recipeList-content">
+                    <div class="listPreview-recipeList-content">
 
-<button class="listPreview-accordion"><%= listTitle.title %></button>
-<div class="listPreview-panel">
-    <div class="listPreview-select">
-                <select name="portions" id="listPreview-portions">
-                <option value="1 pers">1 pers</option>
-                <option value="2 pers">2 pers</option>
-                <option value="3 pers">3 pers</option>
-                <option value="4 pers">4 pers</option>
-                <option value="5 pers">5 pers</option>
-                <option value="6 pers">6 pers</option>
-               </select>
-  </div>
-  <ul class="listPreview-ingredients">
-    <% list.ingredients.forEach((listIngredient)=> { %>
-    <li><i class="fa-solid fa-xmark"></i>  <%= listIngredient.quantity %> <%= listIngredient.unit %> <%= listIngredient.ingredient.name %></li>
-    <% }); %>
-  </ul>
-</div>
-</div>
-</div>
-</div>
-<% }); %>
-</section>
+                        <button class="listPreview-accordion">
+                            <%= list.recipes[i].title %>
+                        </button>
+                        <div class="listPreview-panel">
+                            <div class="listPreview-select">
+                                <select name="portions" id="listPreview-portions">
+                                    <option value="1 pers">1 pers</option>
+                                    <option value="2 pers">2 pers</option>
+                                    <option value="3 pers">3 pers</option>
+                                    <option value="4 pers">4 pers</option>
+                                    <option value="5 pers">5 pers</option>
+                                    <option value="6 pers">6 pers</option>
+                                </select>
+                            </div>
+                            <ul class="listPreview-ingredients">
+                                    <% for (let x = 0; x < list.recipes[i].ingredients.length; x++) { %>
+                                        
+                                  
+                                    <li><i class="fa-solid fa-xmark"></i>
+                                        <%= list.recipes[i].ingredients[x].quantity %>
+                                        <%= list.recipes[i].ingredients[x].unit %>
+                                        <%= list.recipes[i].ingredients[x].ingredient.name %>
+                                    </li>
+                                    <%  } %>    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </section>
 
 </div>
 <section class="listPreview-footer">
     <div class="listPreview-footer-buttons">
-      <div class="listPreview-back-button"><a href="/home"><i class="lni lni-arrow-left"></i></a></div>
-      <div class="listPreview-reset-button"><i class="lni lni-reload"></i><a href="#"></a></i></div>
-      <div class="listPreview-list-button"></i><a href="/lists/list"><i class="lni lni-checkmark"></i></i></a></div>
+        <div class="listPreview-back-button"><a href="/home"><i class="lni lni-arrow-left"></i></a></div>
+        <div class="listPreview-reset-button"><i class="lni lni-reload"></i><a href="#"></a></i></div>
+        <div class="listPreview-list-button"></i><a href="/lists/list"><i class="lni lni-checkmark"></i></i></a></div>
     </div>
 </section>

@@ -37,7 +37,6 @@ doneBtn.addEventListener('click', () => {
     data.image = image.value
 
     data.ingredients = ingredients
-    console.log(data);
     postRecipe(data);
 });
 
