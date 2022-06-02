@@ -22,21 +22,21 @@ NotAnotherCookBook is an application made to solve the question "What are we eat
   ## Preview
 
   ### Login / Signup page
-![Register form](public/assets/NAC-Register.png)
+![Register form](public/assets/NAC-Register.png =200x369)
 
-![Login form](public/assets/NAC-Login.png)
+![Login form](public/assets/NAC-Login.png =200x369)
 
   ### Homepage
-![Homepage](public/assets/NAC-Homepage.png)
+![Homepage](public/assets/NAC-Homepage.png =200x369)
 
   ### Add your own recipe form
-![Add own recipe](public/assets/NAC-Add%20recipe.png)
+![Add own recipe](public/assets/NAC-Add%20recipe.png =200x369)
 
  ### List preview page
- ![List preview](public/assets/NAC-List%20preview.png)
+ ![List preview](public/assets/NAC-List%20preview.png =200x369)
 
  ### Final list with category sorting
- ![Final list](public/assets/NAC-Final%20list.png)
+ ![Final list](public/assets/NAC-Final%20list.png =200x369)
 
 # The team
 
