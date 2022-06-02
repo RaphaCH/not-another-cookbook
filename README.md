@@ -19,24 +19,24 @@ NotAnotherCookBook is an application made to solve the question "What are we eat
 
   > Check it on [https://not-another-cookbook.herokuapp.com/](https://not-another-cookbook.herokuapp.com/) *The application is intended for mobile-only
 
-  ## Preview
+## Preview
 
-  ### Login / Signup page
-![Register form](public/assets/NAC-Register.png =200x369)
+### Login / Signup page
+![Register form](public/assets/NAC-Register.png)
 
-![Login form](public/assets/NAC-Login.png =200x369)
+![Login form](public/assets/NAC-Login.png)
 
-  ### Homepage
-![Homepage](public/assets/NAC-Homepage.png =200x369)
+### Homepage
+![Homepage](public/assets/NAC-Homepage.png)
 
-  ### Add your own recipe form
-![Add own recipe](public/assets/NAC-Add%20recipe.png =200x369)
+### Add your own recipe form
+![Add own recipe](public/assets/NAC-Add%20recipe.png)
 
- ### List preview page
- ![List preview](public/assets/NAC-List%20preview.png =200x369)
+### List preview page
+ ![List preview](public/assets/NAC-List%20preview.png)
 
- ### Final list with category sorting
- ![Final list](public/assets/NAC-Final%20list.png =200x369)
+### Final list with category sorting
+ ![Final list](public/assets/NAC-Final%20list.png)
 
 # The team
 
